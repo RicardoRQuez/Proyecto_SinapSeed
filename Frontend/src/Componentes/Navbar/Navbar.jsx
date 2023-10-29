@@ -1,8 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
 
-
-
 export function MyNavbar() {
   return (
     <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -18,7 +16,7 @@ export function MyNavbar() {
                   <NavLink className="nav-link" to="/info">Foro</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">Noticias</NavLink>
+                  <NavLink className="nav-link" to="/noticias">Noticias</NavLink>
                 </li>
                 <li className="nav-item">
                   <button className="nav-link btn btn-link">Registro</button>
