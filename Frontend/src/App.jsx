@@ -10,10 +10,9 @@ function App() {
   return (
     <Router>
       <MyNavbar />
-      <VistaHome/>
       <Routes>
         <Route path="/noticias" element={<VistaNoticias />} />
-        <Route path="/home" element={<VistaHome/>} />
+        <Route path="/" element={<VistaHome/>} />
         <Route path="/login" element={<VistaLogin/>} />
         <Route path="/cursos" element={<VistaCursos/>} />
       </Routes>
