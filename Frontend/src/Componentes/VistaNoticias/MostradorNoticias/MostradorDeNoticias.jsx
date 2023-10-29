@@ -43,7 +43,7 @@ export const MostradorDeNoticias = () => {
 
   return (
     <div>
-      <h1>Noticias de Tecnología en {selectedCountryLabel}</h1>
+      <h1 className='sekso'>Noticias de Tecnología en {selectedCountryLabel}</h1>
       <select value={selectedCountry} onChange={handleCountryChange}>
         {countryOptions.map((option) => (
           <option key={option.value} value={option.value}>
