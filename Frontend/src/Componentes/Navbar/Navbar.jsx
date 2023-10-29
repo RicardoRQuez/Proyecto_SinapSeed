@@ -5,7 +5,7 @@ import React from 'react';
 
 export function MyNavbar() {
   return (
-    <nav className="navbar navbar-expand navbar-dark bg-dark">
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark p-md3">
       <div className="container">
         <NavLink className="navbar-brand" to="/home">SinapSeed</NavLink>
         <div className="collapse navbar-collapse">

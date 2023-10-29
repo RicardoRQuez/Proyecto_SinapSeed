@@ -5,10 +5,12 @@ import { VistaLogin } from "./Componentes/VistaLogIn/VistaLogin.jsx";
 import { VistaCursos } from "./Componentes/VistaCursos/VistaCursos.jsx";  
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+
 function App() {
   return (
     <Router>
       <MyNavbar />
+      <VistaHome/>
       <Routes>
         <Route path="/noticias" element={<VistaNoticias />} />
         <Route path="/home" element={<VistaHome/>} />
