@@ -4,7 +4,7 @@ import './Banner.css';
 export const Banner = () => {
   return (
     <div className="banner-image w-100 vh-100 d-flex">
-      <div className="container texto-principal">
+      <div className="container-fluid texto-principal">
         <h1>
           ¡Haz <span className="color rosa">SinapSeed!</span><br />
           Sé la mejor versión de ti.
@@ -16,7 +16,7 @@ export const Banner = () => {
           <br />
           Te ofrecemos una amplia gama de recursos de aprendizaje y oportunidades<br />
           formativas en colaboración con <span className="color rosa">expertos</span> de diversas industrias para{' '}
-          <span className="color rosa">impulsar tu desarrollo profesional y crecimiento personal.</span>
+          <span className="color rosa">impulsar <br/>tu desarrollo profesional y crecimiento personal.</span>
         </p>
       </div>
     </div>
