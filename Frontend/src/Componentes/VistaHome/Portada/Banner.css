@@ -1,6 +1,25 @@
-.banner-image{
+.banner-image.w-100.vh-100.d-flex {
+  background-image: url("../../../../public/imágenes/prueba\ 2.jpg");
+  background-size: cover;
 
-    background-image: url("../../../../public/imágenes/prueba\ 2.jpg");
-    background-size: cover;
+}
+
+
+
+.container-fluid.texto-principal{
+
+    margin-top: 100px;
+    margin-left: 10px;
+    color: aliceblue;
     }
-    
+
+.parrafo-portada{
+        color: aliceblue;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 70px;
+}
+.color.rosa{
+
+    color: #F088EB;  
+    }
