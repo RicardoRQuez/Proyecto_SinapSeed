@@ -1,6 +1,6 @@
 
 .CardContainer {
-    margin: 10px;
+    margin-right: 20px;
   }
   
   .Card {
@@ -39,5 +39,8 @@
   
   .Link:hover {
     text-decoration: underline;
+  }
+  .imagen {
+    margin: 10px;
   }
   

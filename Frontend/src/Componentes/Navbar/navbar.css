@@ -1,14 +1,15 @@
-.btn-link-custom{
+.nav-link.inicioSesion{
     /* Estilos personalizados para el botón "Ingresar" */
     color: #FFFFFF; /* Cambiar el color del texto a blanco */
     background-color: #24242400; /* Cambiar el color de fondo a verde */
     border: 2px solid #C54BBF;
     font-weight: bold;
+    border-radius: 10px;
     text-decoration: none; /* Anula el subrayado del texto en los botones */
 }
 
 
-.btn-primary-custom {
+.nav-link.btn.btn-link {
     /* Estilos personalizados para el botón "Registro" */
     color: #FFFFFF; /* Cambiar el color del texto a blanco */
     background-color: #C54BBF; /* Cambiar el color de fondo a naranja */
@@ -18,4 +19,13 @@
 
 .navbar{
     font-family: 'Arial', sans-serif;
+}
+
+.nav-link.noticias{
+
+    margin-right:50px
+}
+
+.nav-item{
+    margin-right: 10px;
 }

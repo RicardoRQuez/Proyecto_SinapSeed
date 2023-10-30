@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TarjetaNoticias } from "../TarjetaNoticias/TarjetaNoticias";
 import './BuscadorDeNoticias.css'
 
 export const BuscadorDeNoticias = () => {
@@ -37,7 +38,7 @@ export const BuscadorDeNoticias = () => {
 
   return (
     <div className="container">
-      <h1 className="title">Buscador de Noticias</h1>
+      <h1 className="titleBuscador">Buscador de Noticias Internacionales</h1>
 
       <form onSubmit={handleSubmit}>
         <input
@@ -52,16 +53,18 @@ export const BuscadorDeNoticias = () => {
         </button>
       </form>
 
-      <div className="movie-list">
-        {noticias.map((noticia, index) => (
-          <div key={index} className="news-card">
-            <img src={noticia.urlToImage} alt={noticia.title} />
-            <h2>{noticia.title}</h2>
-            <h5>{noticia.publishedAt}</h5>
-            <p>{noticia.description}</p>
-          </div>
-        ))}
-      </div>
+      <div className="news-list">
+  {noticias.map((noticia, index) => (
+    <TarjetaNoticias
+      key={index}
+      titulo={noticia.title}
+      subtitulo={noticia.publishedAt}
+      descripcion={noticia.description}
+      enlace={noticia.url}
+      imagen={noticia.urlToImage}
+    />
+  ))}
+</div>
     </div>
   );
 };

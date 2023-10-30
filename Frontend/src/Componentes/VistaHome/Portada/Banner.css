@@ -1,6 +1,45 @@
-.banner-image{
+.banner-image.w-100.vh-100.d-flex {
+  background-image: url("../../../../public/imágenes/prueba\ 2.jpg");
+  background-size: cover;
+ flex-direction: column;
 
-    background-image: url("../../../../public/imágenes/prueba\ 2.jpg");
-    background-size: cover;
+}
+
+
+.container-fluid.texto-principal{
+
+    margin-top: 80px;
+    margin-left: 10px;
+    color: aliceblue;
+}
+
+.hazSinapSeed{
+
+    font-size: 48px;
+
+}
+
+
+.parrafo-portada{
+        color: aliceblue;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 70px;
+}
+.color.rosa{
+
+    color: #F088EB;  
     }
-    
+
+.container.datos-portada{
+ 
+        background-color: #ffffff9f;
+        border-radius: 5px;
+    }  
+
+    .iconito{
+
+        height: 60px;
+        width: 60px;
+    }
+
