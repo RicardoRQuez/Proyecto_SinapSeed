@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./VistaCursos.module.css";
 import image1 from "./imagenes/image1.png";
 
+
 export const VistaCursos = () => {
   return (
     <>
+     
       <div className={`${styles.portadaCursos} d-flex`}></div>
       <div className="row justify-content-center align-items-center g-2">
         {/* Primera columna */}

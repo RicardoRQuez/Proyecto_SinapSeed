@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import React from 'react';
-
-
+import React, { useEffect } from 'react';
+import './navbar.css'
 
 export function MyNavbar() {
   useEffect(() => {
