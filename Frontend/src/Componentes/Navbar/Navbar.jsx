@@ -37,7 +37,7 @@ export function MyNavbar() {
                 <NavLink className="nav-link" to="/noticias">Noticias</NavLink>
               </li>
               <li className="nav-item">
-                <button className="nav-link btn btn-link">Registro</button>
+              <NavLink className="nav-link registro" to="/registro">Registro</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link inicioSesion" to="/login">Iniciar sesión</NavLink>

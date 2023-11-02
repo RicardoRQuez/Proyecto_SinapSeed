@@ -5,8 +5,9 @@ import Col from "react-bootstrap/Col";
 
 export const PortadaNoticias = () => {
   return (
-    <div className="portada-image w-100 d-flex">
-      <Row className="container-fluid texto-principal">
+    <> 
+    <div className="container-fluid portada-image w-100 d-flex">
+      <Row className=" container-fluid texto-principal">
         <Col lg={7}>
           <h1 className="titulo-personalizado">¡<span className="color">Cultiva</span>  tu Conocimiento!</h1>
         </Col>
@@ -16,6 +17,7 @@ export const PortadaNoticias = () => {
           </p>
         </Col>
       </Row>
-    </div>
+      </div>
+      </>
   );
 };

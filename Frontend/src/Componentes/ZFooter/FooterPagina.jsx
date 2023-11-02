@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBIcon } from 'mdbreact';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faGoogle, faInstagram, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 

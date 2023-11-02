@@ -21,11 +21,11 @@ export const PortadaRegistro = () => {
         <Col lg={1}></Col>
       </Row>
       <Row className=" Formulario mt-5 container d-flex justify-content-center ">
-        <Col lg={6}></Col>
-        <Col lg={5}>
+      <Col lg={3}></Col>
+        <Col lg={7}>
           <FormularioRegistro />
         </Col>
-        <Col lg={1}></Col>
+        
       </Row>
     </div>
   );
