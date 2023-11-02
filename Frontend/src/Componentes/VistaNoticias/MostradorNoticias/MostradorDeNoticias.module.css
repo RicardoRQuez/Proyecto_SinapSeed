@@ -1,0 +1,17 @@
+.contenedorBuscador {
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.tituloMostrador {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.parrafo {
+  font-size: 18px;
+  color: #666;
+}

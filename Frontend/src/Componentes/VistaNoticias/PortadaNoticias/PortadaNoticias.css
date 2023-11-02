@@ -1,0 +1,15 @@
+.portada-image {
+  background-image: url("../../../assets/resources/portadaNoticias1.jpg");
+  background-size: cover;
+  height: 30vh;
+}
+
+
+.parrafoPortadaRegistro {
+  font-size: 25px;
+  color: rgb(223, 237, 244); 
+  margin-top: 10px;
+}
+.color {
+  color: #f088eb;
+}

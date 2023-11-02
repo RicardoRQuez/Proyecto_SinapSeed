@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { TarjetaNoticias } from "../TarjetaNoticias/TarjetaNoticias.jsx";
-import "./MostradorDeNoticias.css";
+import styles from  "./MostradorDeNoticias.module.css";
 
 export const MostradorDeNoticias = () => {
   const API_KEY = "pub_31964e2eff081d9bf1f753192009148f66f9f";
@@ -64,7 +64,7 @@ export const MostradorDeNoticias = () => {
       </select>
       {selectedCountry ? ( // Verifica si se ha seleccionado un país
         loading ? (
-          <p>Cargando noticias...</p>
+          <p className={styles.parrafo}>Cargando noticias...</p>
         ) : noticias && noticias.length > 0 ? (
           <div className="contenedorBuscador">
             {noticias.map((noticia, index) => (
@@ -83,10 +83,10 @@ export const MostradorDeNoticias = () => {
             ))}
           </div>
         ) : (
-          <p>No hay noticias disponibles para este país.</p>
+          <p className={styles.parrafo}>No hay noticias disponibles para este país.</p>
         )
       ) : (
-        <p>Por favor, selecciona un país para ver las noticias.</p>
+        <p className={styles.parrafo}>Por favor, selecciona un país para ver las noticias.</p>
       )}
     </div>
   );

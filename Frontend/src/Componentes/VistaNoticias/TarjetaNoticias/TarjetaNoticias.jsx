@@ -1,10 +1,11 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import './TarjetaNoticias.css'
+
+import style from './TarjetaNoticias.module.css'
 
 export const TarjetaNoticias = ({ titulo, subtitulo, descripcion, enlace, imagen }) => {
     return (
-      <div className="CardContainer">
+      <div className={style.CardContainer}>
         
         <Card className="Card">
           <Card.Body>

@@ -5,6 +5,8 @@ import { VistaLogin } from "./Componentes/VistaLogIn/VistaLogin.jsx";
 import { VistaCursos } from "./Componentes/VistaCursos/VistaCursos.jsx";  
 import {Footer} from "./Componentes/ZFooter/FooterPagina.jsx"
 import { CursosVistaTodos  } from "./Componentes/VistaHCursosGeneral/Listado/CursosVistaTodos.jsx"
+import { VistaForo } from "./Componentes/VistaForo/VistaForo.jsx";
+import { VistaRegistro } from "./Componentes/VistaRegistro/VistaRegistro.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
@@ -18,6 +20,8 @@ function App() {
         <Route path="/login" element={<VistaLogin/>} />
         <Route path="/cursos" element={<VistaCursos/>} />
         <Route path="/cursosGeneral" element={<CursosVistaTodos />} />
+        <Route path="/foro" element={<VistaForo/>} />
+        <Route path="/registro" element={<VistaRegistro/>}/>      
       </Routes>
       <Footer />
     </Router>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TarjetaNoticias } from "../TarjetaNoticias/TarjetaNoticias";
-import './BuscadorDeNoticias.css'
+import styles from './BuscadorDeNoticias.module.css'
 
 export const BuscadorDeNoticias = () => {
   const API_KEY = "247f7e19cca24b6daaabf2b3e383a65e";
@@ -37,18 +37,19 @@ export const BuscadorDeNoticias = () => {
   };
 
   return (
-    <div className="container">
+    <div className={`${styles.contenedor} container`}>
       <h1 className="titleBuscador">Buscador de Noticias Internacionales</h1>
 
-      <form onSubmit={handleSubmit}>
+      <form className={styles.formularioBuscador} onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Ingrese una palabra para buscar noticias"
           value={busqueda}
           onChange={handleInputChange}
+          className={styles.inputBuscador}
         />
 
-        <button type="submit" className="search-button">
+        <button type="submit" className={styles.color}>
           Buscar
         </button>
       </form>
