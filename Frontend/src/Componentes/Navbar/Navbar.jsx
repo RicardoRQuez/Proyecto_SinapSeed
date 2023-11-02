@@ -18,7 +18,7 @@ export function MyNavbar() {
                   <NavLink className="nav-link" to="/info">Foro</NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">Noticias</NavLink>
+                  <NavLink className="nav-link" to="/cursosGen">Noticias</NavLink>
                 </li>
                 <li className="nav-item">
                   <button className="nav-link btn btn-link">Registro</button>

@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "robotob";
+    src: url("../Roboto-Black.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "robotol";
+    src: url("../Roboto-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+.estudioLuis{
+    background-size: cover;
+    display:flex;
+    height:50vh;
+    width: 100vw;
+}
+
+.encabezadosCursoGen{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.tituloh2Luis{
+    margin-top: 70px;
+    font-family: robotob;
+    
+}
+
+.buscasLuis {
+    color: #f088eb;
+}
+.tituloh3Luis{
+    font-family: robotol;
+}

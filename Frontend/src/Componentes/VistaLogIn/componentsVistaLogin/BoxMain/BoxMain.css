@@ -1,0 +1,24 @@
+  .contenedorLuis {
+    display: flex;
+    float: right;
+    z-index: 5;
+    margin:0px;
+    padding:0px;    
+  }
+  
+  .rectanguloLuis {
+    flex: 0 0 auto; /* No se expande, no se encoge, tamaño automático */
+    width: 515px;
+    height: 1042px; /* Ajusta la altura según tus necesidades */
+    background-color: #F7F7F7;
+    margin-left: 0px;
+    position: left;
+  }
+
+  .imagenLogoLuis{    
+    
+    height: 186px;
+    flex-shrink: 0;
+    margin-top: 35px;
+    margin-left: 160px;
+  }
