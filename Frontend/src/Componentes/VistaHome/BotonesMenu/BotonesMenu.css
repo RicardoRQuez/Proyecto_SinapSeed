@@ -11,7 +11,7 @@
     border-radius: 12px;
 } 
 
-.container.text-center{
+.container.text-center.botonesVarios{
     display: flex;
     flex-direction: column;
     gap: 40px; /* Espacio de 20 píxeles entre las filas */

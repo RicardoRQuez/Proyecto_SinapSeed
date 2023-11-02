@@ -1,12 +1,15 @@
-.banner-image.w-100.vh-100.d-flex {
+.banner{
   background-image: url("../../../../public/imágenes/prueba\ 2.jpg");
   background-size: cover;
  flex-direction: column;
+ display:flex;
+ height:100vh;
+ width: 100vw;
 
 }
 
 
-.container-fluid.texto-principal{
+.container-fluid{
 
     margin-top: 80px;
     margin-left: 10px;
@@ -20,27 +23,15 @@
 }
 
 
-.parrafo-portada{
+.parrafo{
         color: aliceblue;
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 70px;
 }
-.color.rosa{
+.rosa{
 
     color: #F088EB;  
     }
 
-.container.datos-portada{
- 
-        background-color: #ffffff9f;
-        border-radius: 5px;
-    }  
-
-    .iconito{
-
-        height: 60px;
-        width: 60px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
 

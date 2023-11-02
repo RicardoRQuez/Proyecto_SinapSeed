@@ -1,0 +1,46 @@
+.banner-image.w-100.d-flex.trama{
+
+
+    background-image: url("/imágenes/Ilustración.png");
+
+    background-color: #C7A5E1;
+}
+
+.row.rowBotones{
+
+    margin: 60px;
+    position: relative;
+}
+
+.row.rowBotones a {
+    position: relative;
+    display: block;
+  }
+
+  .row.rowBotones .position-absolute {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente para el texto */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 10px; /* Espaciado interno del texto */
+    color: #C7A5E1;
+  }
+  
+.img-fluid.botones-grandes{
+
+    border-radius: 20px;
+    box-shadow: 10px 0 10px #331e368e; /* 10px de sombra negra con opacidad 0.5 */
+
+    }
+    
+.textoTresBotones{
+
+
+    color: #e8def0;
+    font-weight: 600;
+    font-size:larger;
+}

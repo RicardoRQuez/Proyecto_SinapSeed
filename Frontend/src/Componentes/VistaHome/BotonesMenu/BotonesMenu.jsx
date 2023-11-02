@@ -1,17 +1,19 @@
 import React from 'react';
-import './BotonesMarto.css'; 
+import './BotonesMenu.css'; 
+import { Link } from 'react-router-dom';
+
 
 export const Botones = () => {
   return (
-    <div className="container text-center titulo-botones">
+    <div className="container text-center botonesVarios">
       <h4 className="ExploraNuestroContenido">Explora nuestro contenido</h4>
 
-      <div className="container text-center">
+      <div className="container text-center botonesVarios">
         <div className="row">
           <div className="col">
-            <button type="button" className="btn btn-secondary">
-              Cursos
-            </button>
+          <Link to="/cursosGeneral" className="btn btn-secondary">
+        Cursos
+      </Link>
           </div>
           <div className="col">
             <button type="button" className="btn btn-secondary">

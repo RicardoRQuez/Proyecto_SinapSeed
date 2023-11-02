@@ -17,7 +17,7 @@
     font-weight: bold;
 }   
 
-.navbar{
+.navbar.fixed-top.navbar-expand-lg.navbar-dark.p-md3{
     font-family: 'Arial', sans-serif;
 }
 
