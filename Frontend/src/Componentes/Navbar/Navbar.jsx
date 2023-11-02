@@ -18,7 +18,7 @@ export function MyNavbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // El array vacío asegura que el efecto solo se ejecute una vez, similar a componentDidMount
+  }, []); 
 
   return (
     <nav className="navbar fixed-top navbar-expand-lg navbar-dark p-md3">
@@ -42,7 +42,7 @@ export function MyNavbar() {
               <li className="nav-item">
                 <NavLink className="nav-link inicioSesion" to="/login">Iniciar sesión</NavLink>
               </li>
-            </>
+         na </>
           </ul>
      
       </div>
