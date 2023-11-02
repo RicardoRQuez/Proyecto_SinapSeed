@@ -1,0 +1,10 @@
+.card {
+    max-width: 500px;
+}
+.card-title {
+    font-size: 1.5rem;
+    color: #A3579F;
+}
+
+.card-text {
+    color: #333; }

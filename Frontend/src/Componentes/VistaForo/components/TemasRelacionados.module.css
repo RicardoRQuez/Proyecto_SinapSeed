@@ -1,0 +1,12 @@
+
+.primary-button {
+    background-color: #A3579F; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none;
+    margin: 0 0 10px;
+  }
+  
+  .primary-button:hover {
+    background-color: #D68DD3;
+  }
+  
