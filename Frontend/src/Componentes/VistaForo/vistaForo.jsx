@@ -1,7 +1,7 @@
 import React from 'react'
-import "./vistaForo.css"
+import "./VistaForo.css"
 
-export const vistaForo = () => {
+export const VistaForo = () => {
   return (
     <div>vistaForo</div>
   )

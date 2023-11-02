@@ -1,0 +1,44 @@
+.CardContainer {
+  margin-right: 20px;
+}
+
+.Card {
+  width: 18rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.Card:hover {
+  transform: scale(1.02);
+}
+
+.Title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.Subtitle {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.Description {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.Link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.Link:hover {
+  text-decoration: underline;
+}
+.imagen {
+  margin: 10px;
+}
