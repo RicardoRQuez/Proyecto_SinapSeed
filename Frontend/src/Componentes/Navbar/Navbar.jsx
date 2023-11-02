@@ -28,7 +28,7 @@ export function MyNavbar() {
           <ul className="navbar-nav ml-auto">
             <>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/cursos">Cursos</NavLink>
+                <NavLink className="nav-link" to="/cursosGen">Cursos</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/foro">Foro</NavLink>

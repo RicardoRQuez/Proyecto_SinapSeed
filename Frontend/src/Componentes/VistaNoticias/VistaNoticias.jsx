@@ -4,7 +4,7 @@ import { BuscadorDeNoticias } from "./BuscadorDeNoticias/BuscadorDeNoticias";
 import { PortadaNoticias } from "./PortadaNoticias/PortadaNoticias";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "./VistaNoticias.css";
+
 
 export const VistaNoticias = () => {
   return (
