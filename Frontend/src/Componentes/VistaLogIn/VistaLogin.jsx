@@ -1,8 +1,13 @@
-import React from 'react';
-import './VistaLogin.css';
+import React from "react";
+import "./VistaLogin.css";
+import {BoxMain} from './componentsVistaLogin/BoxMain/BoxMain.jsx';
+
 
 export const VistaLogin = () => {
   return (
-    <div>VistaLogin</div>
-  )
-}
+    <main className="containerLuis">
+      <BoxMain />     
+
+    </main>
+  );
+};

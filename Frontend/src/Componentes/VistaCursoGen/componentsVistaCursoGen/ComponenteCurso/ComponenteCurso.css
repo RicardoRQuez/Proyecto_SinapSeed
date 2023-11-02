@@ -1,0 +1,37 @@
+.containerCursoGen{
+    width: 100%;
+    height: auto;
+    margin: 5px;
+    padding: 20px;
+    background-color: #F0F0F0;
+    border-radius: 20px;
+}
+
+.imagenCursoGen{
+    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor (la columna) */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+.ingresarCursoGen{
+    font-family: robotol;
+}
+
+.botonVermasCursoGen {
+    background-color: #f088eb;
+    border:#f088eb;
+    border-radius: 5px;
+    color:white;
+
+}
+
+.h4Luis{
+    color:#f088eb;
+    font-family: robotob;    
+}
+
+.parrafoLuis{
+    font-family: robotol;
+}

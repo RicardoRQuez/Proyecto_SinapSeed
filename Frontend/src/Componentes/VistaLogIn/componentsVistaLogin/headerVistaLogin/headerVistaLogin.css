@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'inter';
+    src: url('../../Inter-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+.headerLuisHVL{
+    font-family: inter;
+    text-align: left;
+    margin-top: 45px;
+    margin-bottom: 25px;
+    margin-left: 65px;
+    font-weight: bold;
+}
