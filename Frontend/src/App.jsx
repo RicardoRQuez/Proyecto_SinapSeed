@@ -2,7 +2,7 @@ import { VistaHome } from "./Componentes/VistaHome/VistaHome.jsx"
 import { MyNavbar } from "./Componentes/Navbar/Navbar.jsx";
 import { VistaLogin } from "./Componentes/VistaLogIn/VistaLogin.jsx";
 import {Footer} from "./Componentes/ZFooter/FooterPagina.jsx"
-import { VistaForo } from "./Componentes/VistaForo/VistaForo.jsx";
+import { VistaForo } from "./Componentes/VistaForo/VistaForoCorregido.jsx";
 import { VistaRegistro } from "./Componentes/VistaRegistro/VistaRegistro.jsx";
 import { VistaCursoGen } from "./Componentes/VistaCursoGen/VistaCursoGen.jsx"
 import {VistaNoticias} from "./Componentes/VistaNoticias/VistaNoticias.jsx"

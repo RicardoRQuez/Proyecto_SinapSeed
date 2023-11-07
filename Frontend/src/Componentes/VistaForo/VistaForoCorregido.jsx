@@ -7,13 +7,10 @@ import Footer from './components/Footer.jsx';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import imgSrc from './image/cursox2.jpg'
-import styles from './VistaForo.module.css'
-
-
 
 export const VistaForo = () => {
   return (
-    <div className='container-fluid'>
+  <>
     <ImageContainer />
     <br />
    <div className='container'>
@@ -37,6 +34,6 @@ export const VistaForo = () => {
       </Row>
       </div>
      <Footer/>
-     </div>
+     </>
   );
 }
