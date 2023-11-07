@@ -1,4 +1,3 @@
-
 import { VistaHome } from "./Componentes/VistaHome/VistaHome.jsx"
 import { MyNavbar } from "./Componentes/Navbar/Navbar.jsx";
 import { VistaLogin } from "./Componentes/VistaLogIn/VistaLogin.jsx";
@@ -8,14 +7,8 @@ import { VistaRegistro } from "./Componentes/VistaRegistro/VistaRegistro.jsx";
 import { VistaCursoGen } from "./Componentes/VistaCursoGen/VistaCursoGen.jsx"
 import {VistaNoticias} from "./Componentes/VistaNoticias/VistaNoticias.jsx"
 import {VistaCursos} from "./Componentes/VistaCursos/VistaCursos.jsx"
-import { VistaCursos } from "./Componentes/VistaCursos/VistaCursos.jsx";  
-import { VistaForo } from "./Componentes/VistaForo/VistaForo.jsx";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import React, { useEffect } from 'react';
-
-
-
-
+import React from 'react';
 
 export function App() {
   return (
@@ -31,7 +24,6 @@ export function App() {
         <Route path="/cursosGen" element={<VistaCursoGen/>} />
         <Route path="/noticias" element={<VistaNoticias />} />
         <Route path="/cursos" element={<VistaCursos />} />
-        <Route path="/cursos" element={<VistaCursos/>} />
         <Route path="/foro" element={<VistaForo/>} />
       </Routes>
       <Footer />

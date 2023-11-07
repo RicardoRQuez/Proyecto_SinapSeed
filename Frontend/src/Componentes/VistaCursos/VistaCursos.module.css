@@ -8,7 +8,7 @@ padding-top: 0%;
 
 .tituloGrande {
 color: #C54BBF;
-font-family: Roboto;
+font-family: 'Arial', sans-serif;
 font-size: 40px;
 font-style: normal;
 font-weight: 700;
@@ -17,17 +17,18 @@ line-height: normal;
 
 .tituloGratis{
 color: #C54BBF;
-font-family: Roboto;
+
 font-size: 25px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
 margin-left: 20px;
+font-family: 'Arial', sans-serif;
 }
 
 .tituloChico {
 color: #000;
-font-family: Roboto;
+font-family: 'Arial', sans-serif;
 font-size: 20px;
 font-style: normal;
 font-weight: 400;
@@ -53,4 +54,18 @@ font-size: 40px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+}
+
+.botonRaro{
+
+   
+
+  border-radius: 5px;
+  color: aliceblue;
+
+}
+
+.textoBlancoBoton{
+    color: inherit; /* Utiliza el color heredado del elemento padre (puede ser el color del texto circundante) */
+    text-decoration: none; /* Elimina el subrayado del enlace */
 }

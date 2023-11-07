@@ -17,18 +17,20 @@
 
         color: inherit; /* Usa el color heredado del elemento padre (normalmente, el color del texto) */
         text-decoration: none; /* Quita el subrayado */
+        font-size: 50px;
+        font-weight: 600;
     }
-    .col-10.calendario{
+.col-2.col-sm-10.calendarioCol2{
 
-        text-align: center;
-    margin-top: 30px;
-    font-size: 50px;
+    text-align: center;
+  
+ 
     color: #1b0b1d;
-    font-weight: 600;
-    
+   
+    margin-top: 30px;
     
     }
-    .col-2.calendario{
+.col-2.col-sm-2.calendarioCol{
     
     text-align: center;
     margin-top: 30px;

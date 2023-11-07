@@ -22,12 +22,17 @@
     font-family: 'Arial', sans-serif;
 }
 
-.nav-link.noticias{
 
-    margin-right:50px
-}
 
 .nav-item{
     margin-right: 10px;
 }
 
+.navbar-logo{
+
+
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 0px;
+    
+}

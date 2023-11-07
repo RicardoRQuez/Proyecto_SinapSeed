@@ -37,9 +37,9 @@ export const VistaCursos = () => {
           </div>
           <div className="row">
             <div className="col mt-3">
-              <a className="btn btn-primary ml-3" href="#" role="button">
-                Apúntate al curso
-              </a>
+            <button className={styles.botonRaro}type="button">
+  <a className={styles.textoBlancoBoton} href="#">Apúntate al curso</a>
+</button>
             </div>
             <div className="col mt-3">
               <p className={styles.tituloGratis}> Gratis</p>
@@ -63,7 +63,7 @@ export const VistaCursos = () => {
             {/* Segunda fila */}
             <p>
               Quieres ingresar al foro con el detalle de los usuarios de esta
-              puntuación? <a href="#">Pincha Acá</a>
+              puntuación? <a href="/foro">Pincha Acá</a>
             </p>
           </div>
         </div>

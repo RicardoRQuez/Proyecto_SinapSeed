@@ -21,12 +21,16 @@ export function MyNavbar() {
   }, []); 
 
   return (
-    <nav className="navbar fixed-top navbar-expand-lg navbar-dark p-md3">
-      <div className="container">
-        <NavLink className="navbar-brand" to="/">SinapSeed</NavLink>
+    <nav className="navbar fixed-top navbar-expand-lg navbar-dark col-lg-12 col-md-12 col-sm-12">
+      <div className="container-fluid">
+
+      <NavLink to="/"> {/* Agrega el enlace al que debe dirigirse la imagen */}
+      <img src="imágenes/Sinapsis fondo oscuro2.png" alt="Logo" className="navbar-logo" /> {/* Agrega tu imagen aquí */}
+    </NavLink>
+        <NavLink className="navbar-brand me-auto" to="/">SinapSeed</NavLink>
   
           <ul className="navbar-nav ml-auto">
-            <>
+          
               <li className="nav-item">
                 <NavLink className="nav-link" to="/cursosGen">Cursos</NavLink>
               </li>
@@ -42,7 +46,7 @@ export function MyNavbar() {
               <li className="nav-item">
                 <NavLink className="nav-link inicioSesion" to="/login">Iniciar sesión</NavLink>
               </li>
-         na </>
+      
           </ul>
      
       </div>

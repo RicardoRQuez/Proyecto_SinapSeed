@@ -8,7 +8,7 @@ const ImageContainer = () => {
     return (
     <>
       <Card>
-        <Card.Img variant="top"className={styles['image-container']}  src={image}  />
+        <img className={styles['image-container']}  src={image}  />
         <Card.Body className={styles.Border}>
           <Card.Text className={`card-title ${styles['card-title']}`} >
           Foro SinapSeed
