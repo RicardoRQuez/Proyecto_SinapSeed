@@ -18,7 +18,7 @@ export const VistaForo = () => {
     <div className="container-fluid">
     
     <br />
-   <div className='container}'>
+   <div className='container'>
     <Row >
         <Col sm={8}>
         <CommentComponent/>
