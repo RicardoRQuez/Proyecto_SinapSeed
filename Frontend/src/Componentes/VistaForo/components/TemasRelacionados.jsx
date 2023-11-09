@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import styles from './TemasRelacionados.module.css'
 
-const TemasRelacionados = () => {
+const TemasRelacionados = () => { 
   return (
     <div className={styles['card-container']}>
        <Card style={{ width: '26rem' }}>
