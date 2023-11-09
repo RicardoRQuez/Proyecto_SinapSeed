@@ -1,9 +1,10 @@
 import {Router} from 'express';
-import {signup}  from '../controllers/users.controllers.js'
+import {signup, login}  from '../controllers/users.controllers.js'
+import {emitToken} from '../middleware/emitToken.js'
 
 const router = Router()
 
-router.post("/login" );
+router.post("/login", emitToken, login);
 router.post("/signup", signup);
 
 export default router;

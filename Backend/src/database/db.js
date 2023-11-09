@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 
 export const dbConnection = async() => {
     try{
-        await mongoose.connect("mongodb://127.0.0.1:27017/SinapSeed");
+        await mongoose.connect(process.env.CONEXION_DB);
         console.log('Conectado a la base de datos de SinapSeed...');
 
     }catch(err){

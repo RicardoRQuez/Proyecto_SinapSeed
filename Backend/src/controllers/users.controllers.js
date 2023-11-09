@@ -5,38 +5,38 @@ export const signup = async (req, res) => {
   const {
     nombre,
     rut,
-    correo,
+    email,
     telefono,
     region,
-    contraseña,
+    password,
     situacionLaboral,
   } = req.body;
 
   if (
     !nombre ||
     !rut ||
-    !correo ||
+    !email ||
     !telefono ||
     !region ||
-    !contraseña ||
+    !password ||
     !situacionLaboral
   ) {
     return res.status(404).json({
       msg: "Todos los campos son requeridos",
       status: 404,
     });
-  } 
+  }
   try {
-    const passwordHash = await bcrypt.hash(contraseña, 12);
+    const passwordHash = await bcrypt.hash(password, 12);
 
     await User.create({
       nombre,
       rut,
-      correo,
+      email,
       telefono,
       region,
-      contraseña: passwordHash, //variable que contiene contraseña encriptada
-      situacionLaboral
+      password: passwordHash, //variable que contiene contraseña encriptada
+      situacionLaboral,
     });
 
     res.status(201).json({
@@ -50,4 +50,12 @@ export const signup = async (req, res) => {
       status: 500,
     });
   }
+};
+
+export const login = async (req, res) => {
+  res.json({
+    code: 200,
+    message: "Login correcto",
+    token: req.token,
+  });
 };
