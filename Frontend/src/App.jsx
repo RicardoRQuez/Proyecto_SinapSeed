@@ -16,7 +16,7 @@ import {VistaCursos} from "./Componentes/VistaCursos/VistaCursos.jsx"
 export function App() {
 
   const [showLogin, setShowLogin] = useState(false);
-  const [authenticated, setAuthenticated] = useState(false);
+  const [authenticated, setAuthenticated] = useState(true);
 
    
   const handleLogin = () => {//Maneja el login
@@ -34,9 +34,7 @@ export function App() {
         authenticated={authenticated} 
         onLogout={handleLogout}
       />
-console = {
 
-}
       {showLogin && <VistaLogin />}
       <Routes> 
         <Route path="/" element={<VistaHome/>} />
