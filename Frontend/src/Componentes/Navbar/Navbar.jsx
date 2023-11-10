@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import React, { useEffect } from 'react';
-import './navbar.css'
+import './estiloNavbar.css'
 
 export function MyNavbar() {
   useEffect(() => {
