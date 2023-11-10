@@ -95,20 +95,17 @@ export const updateUserById = async (req, res) => {
   const { nombre, email, telefono, region, situacionLaboral, password} = req.body;
   try {
       // Verificamos si el usuario existe
-      const updateUser = await User.findById(id);
-      console.log("Contenido Variable updateUser");
-      console.log(updateUser);
+
+      const updateUser = await User.findByIdAndUpdate(
+        id,
+        { nombre, email, telefono, region, situacionLaboral, password },
+        { new: true }
+      );
+  
+
       if (!updateUser) {
           return res.status(404).json({ error: "Usuario no encontrado" });
       }
-
-      // Actualizar datos del usuario
-      updateUser.nombre = nombre;
-      updateUser.email = email;
-      updateUser.telefono = telefono;
-      updateUser.region = region;
-      updateUser.situacionLaboral = situacionLaboral;
-      updateUser.password = password;
 
       await updateUser.save();
       res.json({ code: 200, message: " Usuario actualizado con exito.", token: req.token });

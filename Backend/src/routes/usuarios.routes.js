@@ -8,7 +8,7 @@ router.post("/login", emitToken, login);
 router.post("/signup", signup);
 router.get("/user", findAll)
 router.get("/user/:id", findAllUserId)
-router.put("/user/:id", updateUserById)
+router.patch("/user/:id", updateUserById)
 router.delete("/user/:id", deleteUserById )
 
 export default router;
