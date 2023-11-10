@@ -1,7 +1,12 @@
 import { NavLink } from 'react-router-dom';
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import './navbar.css';
 import { VistaLogin } from '../VistaLogIn/VistaLogin.jsx';
+=======
+import React, { useEffect } from 'react';
+import './estiloNavbar.css'
+>>>>>>> 00bf0e46f469dfc1cc360b7c254c1274fdb125e7
 
 export function MyNavbar() {
   const [showLogin, setShowLogin] = useState(false);
