@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "robotob";
+  src: url("../VistaLogIn/Roboto-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "robotol";
+  src: url("../VistaLogIn/Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .portadaCursos {
 background-image: url('./imagenes/portada.png');
 background-size: cover;

@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./VistaLogin.css";
-import {BoxMain} from './componentsVistaLogin/BoxMain/BoxMain.jsx';
+import { BoxMain } from "./componentsVistaLogin/BoxMain/BoxMain.jsx";
 
+export const VistaLogin = ({ onClose }) => {
+  const loginRef = useRef();
 
-export const VistaLogin = () => {
+  // Función para cerrar el componente cuando se hace clic fuera de él
+  const handleClickOutside = (event) => {
+    if (loginRef.current && !loginRef.current.contains(event.target)) {
+      onClose();
+    }
+  };
+
+  // Agregar un controlador de eventos al documento
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [onClose]);
+
   return (
-    <main className="containerLuis">
-      <BoxMain />     
-
+    <main ref={loginRef} className="containerLuis">
+      <BoxMain />
     </main>
   );
 };
