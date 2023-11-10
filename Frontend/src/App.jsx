@@ -16,15 +16,31 @@ import {VistaCursos} from "./Componentes/VistaCursos/VistaCursos.jsx"
 export function App() {
 
   const [showLogin, setShowLogin] = useState(false);
-  return (
-    <Router>
+  const [authenticated, setAuthenticated] = useState(false);
+
    
-      <MyNavbar setShowLogin={setShowLogin} />
+  const handleLogin = () => {//Maneja el login
+    setAuthenticated(true);
+  };
+  
+  const handleLogout = () => { //maneja el logout
+    setAuthenticated(false);
+  }; 
+
+  return (
+    <Router>   
+      <MyNavbar 
+        setShowLogin={setShowLogin} 
+        authenticated={authenticated} 
+        onLogout={handleLogout}
+      />
+console = {
+
+}
       {showLogin && <VistaLogin />}
-      <Routes>        
-        {/*<Route path="/noticias" element={<VistaNoticias />} />*/}
+      <Routes> 
         <Route path="/" element={<VistaHome/>} />
-        <Route path="/login" element={<VistaLogin/>} />
+        <Route path="/login" element={<VistaLogin onLogin={handleLogin}/>} />
         <Route path="/foro" element={<VistaForo/>} />
         <Route path="/registro" element={<VistaRegistro/>}/>      
         <Route path="/cursosGen" element={<VistaCursoGen/>} />
