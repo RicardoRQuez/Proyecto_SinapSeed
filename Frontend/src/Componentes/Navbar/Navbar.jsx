@@ -44,10 +44,9 @@ export function MyNavbar({ authenticated, onLogout }) {
         <NavLink className="navbar-brand me-auto" to="/">
           SinapSeed
         </NavLink>
-
+  
         <ul className="navbar-nav ml-auto">
           {authenticated ? (
-            //, handleLogout
             <>
               <li className="nav-item">
                 <NavLink className="nav-link" to="/cursosGen">
@@ -64,6 +63,25 @@ export function MyNavbar({ authenticated, onLogout }) {
                   Noticias
                 </NavLink>
               </li>
+              {isAdmin && (
+                <>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/administrar-usuarios">
+                      Admin. Usuarios
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/administrar-cursos">
+                      Admin. Cursos
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink className="nav-link" to="/administrar-foro">
+                      Admin. Foro
+                    </NavLink>
+                  </li>
+                </>
+              )}
               <li>
                 <button className="nav-link inicioSesion" onClick={onLogout}>
                   Cerrar Sesión
@@ -78,7 +96,11 @@ export function MyNavbar({ authenticated, onLogout }) {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link inicioSesion" to="/" onClick={toggleLogin} >
+                <NavLink
+                  className="nav-link inicioSesion"
+                  to="/"
+                  onClick={toggleLogin}
+                >
                   Iniciar sesión
                 </NavLink>
               </li>
@@ -86,8 +108,8 @@ export function MyNavbar({ authenticated, onLogout }) {
           )}
         </ul>
       </div>
-
+  
       {showLogin && <VistaLogin onClose={closeLogin} />}
     </nav>
-  );
+  );  
 }
