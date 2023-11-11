@@ -15,16 +15,16 @@ const TemasRelacionados = () => {
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button  size="lg" className={styles['primary-button']}>
+        <Button  size="lg" className={styles['primary-buttonSabrina']}>
        Temas Relacionados
       </Button>
         <br />
-        <Button  size="lg" className={styles['primary-button']}>
-      Mas Populares
+        <Button  size="lg" className={styles['primary-buttonSabrina']}>
+        Más Populares
       </Button>
         <br />
-        <Button  size="lg" className={styles['primary-button']}>
-        Lo Ultimo
+        <Button  size="lg" className={styles['primary-buttonSabrina']}>
+        Lo Último
       </Button>
       </Card.Body>
     </Card>

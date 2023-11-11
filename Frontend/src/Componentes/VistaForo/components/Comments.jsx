@@ -50,7 +50,7 @@ function CommentComponent() {
                 onChange={handleCommentChange}
                 className={styles.textarea}
               ></textarea>
-              <button onClick={handleCommentSubmit} className={styles.button}>Publicar Comentario</button>
+              <button onClick={handleCommentSubmit} className={styles.buttonChoto}>Publicar Comentario</button>
             </div>
           </div>
           <br />
@@ -58,7 +58,7 @@ function CommentComponent() {
     </Card.Body>
     </Card>
     <Card>
-      <Card.Header><h1 className={styles['comments-title']}>Comentarios</h1></Card.Header>
+      <Card.Header><h1 className={styles['comments-titleChoto']}>Comentarios</h1></Card.Header>
       <Card.Body>
       <div className={styles.comments}>
               <ul id="comment-list">

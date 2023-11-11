@@ -13,6 +13,8 @@
   font-size: 2rem;
   color: #A3579F;
   background-color: #e9dae9;
+  padding-left:15px;
+  
 }
 
 .comment-form {
@@ -31,17 +33,17 @@ textarea {
   border-radius: 5px;
 }
 
-button {
+.buttonChoto {
   background-color: #A3579F;
   color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 10px; 
 }
 
-button:hover {
+.buttonChoto:hover {
   background-color: #D68DD3;
 }
 
@@ -53,8 +55,8 @@ button:hover {
   background-color: #fff; 
 }
 
-.comments-title {
-  color: #A3579F; 
+.comments-titleChoto {
+  backcolor: #A3579F; 
   background-color: #e9dae9;
   border-bottom: 2px ; 
   padding-bottom: 10px;
