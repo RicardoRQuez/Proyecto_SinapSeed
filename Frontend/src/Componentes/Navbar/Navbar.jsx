@@ -1,10 +1,15 @@
-import { NavLink } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import './estiloNavbar.css';
 import { VistaLogin } from '../VistaLogIn/VistaLogin.jsx';
+import { useAuth, useAuthFunctions } from '../VistaLogIn/AuthContext';
 
-export function MyNavbar({ authenticated, onLogout }) {
-  const [showLogin, setShowLogin] = useState(false);
+export function MyNavbar({ onLogout }) {
+  const {showLogin, setShowLogin, authenticated, isAdmin} = useAuth();
+  const { handleLogout } = useAuthFunctions();
+  const navigate = useNavigate();
+
+
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
@@ -12,6 +17,10 @@ export function MyNavbar({ authenticated, onLogout }) {
 
   const closeLogin = () => {
     setShowLogin(false);
+  };
+
+  const goToHome = () => {
+    navigate('/'); // Navegar a la página de inicio usando navigate
   };
 
   useEffect(() => {
@@ -83,9 +92,9 @@ export function MyNavbar({ authenticated, onLogout }) {
                 </>
               )}
               <li>
-                <button className="nav-link inicioSesion" onClick={onLogout}>
-                  Cerrar Sesión
-                </button>
+              <button className="nav-link inicioSesion" onClick={() => { handleLogout(); goToHome(); }}>
+                Cerrar Sesión
+              </button>
               </li>
             </>
           ) : (
