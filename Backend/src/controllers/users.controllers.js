@@ -53,10 +53,13 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+  const user = req.user;
+
   res.json({
     code: 200,
     message: "Login correcto",
     token: req.token,
+    isAdmin: user.isAdmin,
   });
 };
 
