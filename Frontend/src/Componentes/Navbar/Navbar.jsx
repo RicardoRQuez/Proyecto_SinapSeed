@@ -72,6 +72,11 @@ export function MyNavbar({ onLogout }) {
                   Noticias
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/perfil">
+                  Perfil
+                </NavLink>
+              </li>
               {isAdmin && (
                 <>
                   <li className="nav-item">
@@ -107,7 +112,7 @@ export function MyNavbar({ onLogout }) {
               <li className="nav-item">
                 <NavLink
                   className="nav-link inicioSesion"
-                  to="/"
+                  
                   onClick={toggleLogin}
                 >
                   Iniciar sesión

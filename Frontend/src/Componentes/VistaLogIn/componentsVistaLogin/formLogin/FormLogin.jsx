@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./formLogin.css";
 import { useAuth, useAuthFunctions  } from "../../AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 
 export const FormLogin = ({ onLogin }) => {
+  const navigate = useNavigate();
+
   const {
     email,
     setEmail,
@@ -16,6 +19,12 @@ export const FormLogin = ({ onLogin }) => {
 
   const togglePasswordVisibility = () => {
     setPasswordHidden(!passwordHidden);
+  };
+
+  const handleButtonClick = async (e) => {
+    e.preventDefault();
+    await handleLogin(e);
+    navigate('/'); // Redirige a la ruta '/' después de iniciar sesión
   };
 
   return (
@@ -72,10 +81,7 @@ export const FormLogin = ({ onLogin }) => {
       <button
           type="submit"
           className="botonLuis"
-          onClick={(e) => {
-            e.preventDefault();
-            handleLogin(e);
-          }}
+          onClick={handleButtonClick}
         >
           <span className="ingresarLuis">Ingresar</span>
         </button>
