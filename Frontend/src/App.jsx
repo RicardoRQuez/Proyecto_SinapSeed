@@ -12,6 +12,9 @@ import { VistaNoticias } from "./Componentes/VistaNoticias/VistaNoticias.jsx";
 import { VistaCursos } from "./Componentes/VistaCursos/VistaCursos.jsx";
 import { AuthProvider } from "./Componentes/VistaLogIn/AuthContext";
 import { useAuth } from "./Componentes/VistaLogIn/AuthContext";
+import {AdminUser} from "./Componentes/AdminUsuarios/vistaAdminUsuarios.jsx"
+import {EditUsuario} from "./Componentes/AdminUsuarios/Tabla/editUsuarioOla.jsx"
+
 export function App() {
   const { showLogin } = useAuth();
 
@@ -31,6 +34,10 @@ export function App() {
           <Route path="/noticias" element={<VistaNoticias />} />
           <Route path="/cursos" element={<VistaCursos />} />
           <Route path="/foro" element={<VistaForo />} />
+          <Route path="/administrar-usuarios" element={<AdminUser />} />
+
+          <Route path="/editar-usuario/:id" element={<EditUsuario/>} />
+
         </Routes>
         <Footer />
       </AuthProvider>
