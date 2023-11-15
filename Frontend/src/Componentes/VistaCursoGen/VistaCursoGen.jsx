@@ -5,6 +5,7 @@ import { ComponenteCurso } from './componentsVistaCursoGen/ComponenteCurso/Compo
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { jwtDecode } from "jwt-decode";
 
 export const VistaCursoGen = () => {
   const [cursos, setCursos] = useState([]);  // Inicializa cursos como un array
@@ -14,7 +15,8 @@ export const VistaCursoGen = () => {
       try {
         const consultaCookie = Cookies.get('token');
         console.log(consultaCookie);
-
+        const tokenDecode = jwtDecode(consultaCookie)
+        console.log(tokenDecode)
         // Usar la variable consultaCookie en lugar de "token"
         const response = await axios.get("http://localhost:3000/api/v1/curso", { headers: { token: consultaCookie } });
         setCursos(response.data);
