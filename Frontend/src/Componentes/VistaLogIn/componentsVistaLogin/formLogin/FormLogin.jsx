@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./formLogin.css";
 import { useAuth, useAuthFunctions  } from "../../AuthContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 export const FormLogin = ({ onLogin }) => {
@@ -90,7 +90,7 @@ export const FormLogin = ({ onLogin }) => {
       <section>
         <h5 className="accesoDocenteLuis">
           {" "}
-          Acceso <span id="docenteLuis">docente</span>{" "}
+          Registrate <Link to="/registro" id="docenteLuis">Aqui</Link>{" "}
         </h5>
       </section>
     </form>
