@@ -1,8 +1,9 @@
 // Importa React y algunos hooks de React, así como estilos y un componente de enlace de react-router-dom.
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './adminUsuarios.css';
 import Cookies from 'js-cookie';
+import './adminUsuarios.css';
+
 
 export const TablaAdminUsuarios = () => {
 
@@ -23,6 +24,7 @@ export const TablaAdminUsuarios = () => {
       }
     };
 
+    
     obtenerUsuarios();
   }, []);
 

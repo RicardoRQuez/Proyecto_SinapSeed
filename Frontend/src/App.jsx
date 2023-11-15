@@ -14,6 +14,8 @@ import { AuthProvider } from "./Componentes/VistaLogIn/AuthContext";
 import { useAuth } from "./Componentes/VistaLogIn/AuthContext";
 import {AdminUser} from "./Componentes/AdminUsuarios/vistaAdminUsuarios.jsx"
 import {EditUsuario} from "./Componentes/AdminUsuarios/Tabla/editUsuarioOla.jsx"
+import {TablaAdminCursos} from "./Componentes/AdminCursos/adminCursos.jsx"
+import {EditCurso} from "./Componentes/AdminCursos/editCursos.jsx"
 
 export function App() {
   const { showLogin } = useAuth();
@@ -37,7 +39,8 @@ export function App() {
           <Route path="/administrar-usuarios" element={<AdminUser />} />
 
           <Route path="/editar-usuario/:id" element={<EditUsuario/>} />
-
+          <Route path="/administrar-cursos" element={<TablaAdminCursos/>} />
+          <Route path="/editar-curso/:id" element={<EditCurso/>} />
         </Routes>
         <Footer />
       </AuthProvider>
