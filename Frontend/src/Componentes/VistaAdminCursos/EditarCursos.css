@@ -1,0 +1,14 @@
+.tirarAbajo{
+    margin-top: 60px;
+    text-align: center;
+}
+
+.container-flex.antiNavbar2{
+    background-color: #212529;
+    padding-bottom: 70px;
+}
+
+.row.alMedio{
+    display: flexbox;
+    justify-content: center;
+}

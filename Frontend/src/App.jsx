@@ -17,10 +17,10 @@ import {EditUsuario} from "./Componentes/AdminUsuarios/Tabla/editUsuarioOla.jsx"
 import {TablaAdminCursos} from "./Componentes/AdminCursos/adminCursos.jsx"
 import {EditCurso} from "./Componentes/AdminCursos/editCursos.jsx"
 import { VistaPerfil } from "./Componentes/VistaPerfil/VistaPerfil.jsx";
+import { CargarCursos } from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
 export function App() {
   const { showLogin } = useAuth();
 
- 
   return (
     <Router>
       <AuthProvider>
@@ -42,6 +42,7 @@ export function App() {
           <Route path="/editar-usuario/:id" element={<EditUsuario/>} />
           <Route path="/administrar-cursos" element={<TablaAdminCursos/>} />
           <Route path="/editar-curso/:id" element={<EditCurso/>} />
+          <Route path="/administrar-cursos" element={<CargarCursos />} />
         </Routes>
         <Footer />
       </AuthProvider>

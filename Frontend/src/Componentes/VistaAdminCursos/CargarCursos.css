@@ -1,0 +1,31 @@
+.cursesSinapSeed{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.tableCurso{
+    margin-top:40px;
+}
+
+.botoncitoEdit{
+    color: #FFFFFF;
+    background-color: #212529;
+    border: 6px solid #212529;
+    font-weight: 400;
+    border-radius: 5px;
+    display: inline-flex;
+    width: 90px;
+    text-decoration: none;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.botoncitoEliminar{
+    color: #FFFFFF; 
+    background-color: rgb(247, 73, 50); 
+    font-weight: 400;
+    border-radius: 5px;
+    border: 6px solid rgb(247, 73, 50);
+    text-decoration: none; 
+    width: 90px;
+}
