@@ -11,6 +11,6 @@ router.post("/verificar", verificarExistencia, findAll)
 
 router.get("/user/:id", findAllUserId)
 router.patch("/user/:id", updateUserById)
-router.delete("/user/:id", deleteUserById )
+router.delete("/user/:id", verifyToken, deleteUserById )
 
 export default router;

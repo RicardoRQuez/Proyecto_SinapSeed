@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "robotob";
+    src: url("../VistaLogIn/Roboto-Black.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "robotol";
+    src: url("../VistaLogIn/Roboto-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+.imagenLoginLuis{
+    background-image: url('./resources/imagen-login.jpeg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-attachment: fixed; /* Hace que la imagen de fondo esté fija */
+    height: 150vh; /* Establece la altura del contenedor al 100% del viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Puedes cambiar el color del texto para que sea legible en la imagen */
+    font-size: 24px;
+}
+
+.headerLuisPerfil{
+    font-family: robotob;
+    text-align: center;
+}
+
+.tituloPerfil{
+  margin-top: 100px;
+  font-size: 1.5rem;
+  padding:25px;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.nombrePerfil{
+  color: #f088eb;
+}

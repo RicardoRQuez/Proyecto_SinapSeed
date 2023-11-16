@@ -27,6 +27,10 @@ export const FormLogin = ({ onLogin }) => {
     navigate('/'); // Redirige a la ruta '/' después de iniciar sesión
   };
 
+
+
+  
+
   return (
     <form className="formLuis container">
       <section className="input-container col-12">
@@ -78,10 +82,11 @@ export const FormLogin = ({ onLogin }) => {
         </p>
       </section>
       <section className="container row contenedorBotonLuis">
-      <button
+        <button
           type="submit"
           className="botonLuis"
-          onClick={handleButtonClick}
+          onClick={handleButtonClick }
+          
         >
           <span className="ingresarLuis">Ingresar</span>
         </button>

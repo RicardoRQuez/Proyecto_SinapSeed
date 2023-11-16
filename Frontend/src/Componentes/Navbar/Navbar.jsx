@@ -1,15 +1,15 @@
 import { NavLink, useNavigate } from 'react-router-dom';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './estiloNavbar.css';
 import { VistaLogin } from '../VistaLogIn/VistaLogin.jsx';
 import { useAuth, useAuthFunctions } from '../VistaLogIn/AuthContext';
 
 export function MyNavbar({ onLogout }) {
-  const {showLogin, setShowLogin, authenticated, isAdmin} = useAuth();
+  const { showLogin, setShowLogin, authenticated, isAdmin } = useAuth();
   const { handleLogout } = useAuthFunctions();
   const navigate = useNavigate();
 
-
+  const [botonTexto, setBotonTexto] = useState('Cerrar Sesión');
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
@@ -20,7 +20,15 @@ export function MyNavbar({ onLogout }) {
   };
 
   const goToHome = () => {
-    navigate('/'); // Navegar a la página de inicio usando navigate
+    navigate('/');
+  };
+
+  const handleMouseEnter = () => {
+    setBotonTexto('Nos Vemos!');
+  };
+
+  const handleMouseLeave = () => {
+    setBotonTexto('Cerrar Sesión');
   };
 
   useEffect(() => {
@@ -53,7 +61,7 @@ export function MyNavbar({ onLogout }) {
         <NavLink className="navbar-brand me-auto" to="/">
           SinapSeed
         </NavLink>
-  
+
         <ul className="navbar-nav ml-auto">
           {authenticated ? (
             <>
@@ -96,10 +104,18 @@ export function MyNavbar({ onLogout }) {
                   </li>
                 </>
               )}
-              <li>
-              <button className="nav-link inicioSesion" onClick={() => { handleLogout(); goToHome(); }}>
-                Cerrar Sesión
-              </button>
+              <li className="nav-item">
+                <button
+                  className="nav-link inicioSesion"
+                  onClick={() => {
+                    handleLogout();
+                    goToHome();
+                  }}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {botonTexto}
+                </button>
               </li>
             </>
           ) : (
@@ -112,7 +128,6 @@ export function MyNavbar({ onLogout }) {
               <li className="nav-item">
                 <NavLink
                   className="nav-link inicioSesion"
-                  
                   onClick={toggleLogin}
                 >
                   Iniciar sesión
@@ -122,8 +137,8 @@ export function MyNavbar({ onLogout }) {
           )}
         </ul>
       </div>
-  
+
       {showLogin && <VistaLogin onClose={closeLogin} />}
     </nav>
-  );  
+  );
 }
