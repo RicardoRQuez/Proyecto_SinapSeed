@@ -12,10 +12,10 @@ import { VistaNoticias } from "./Componentes/VistaNoticias/VistaNoticias.jsx";
 import { VistaCursos } from "./Componentes/VistaCursos/VistaCursos.jsx";
 import { AuthProvider } from "./Componentes/VistaLogIn/AuthContext";
 import { useAuth } from "./Componentes/VistaLogIn/AuthContext";
+import { CargarCursos } from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
 export function App() {
   const { showLogin } = useAuth();
 
- 
   return (
     <Router>
       <AuthProvider>
@@ -31,6 +31,7 @@ export function App() {
           <Route path="/noticias" element={<VistaNoticias />} />
           <Route path="/cursos" element={<VistaCursos />} />
           <Route path="/foro" element={<VistaForo />} />
+          <Route path="/administrar-cursos" element={<CargarCursos />} />
         </Routes>
         <Footer />
       </AuthProvider>
