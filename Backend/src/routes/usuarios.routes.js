@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import {signup, login, findAll, findAllUserId, updateUserById, deleteUserById}  from '../controllers/users.controllers.js'
+import {uploadImagen, signup, login, findAll, findAllUserId, updateUserById, deleteUserById}  from '../controllers/users.controllers.js'
 import {emitToken} from '../middleware/emitToken.js'
 import { verificarExistencia } from '../middleware/verifyEmailRut.js';
 import {verifyToken} from '../middleware/verifyToken.js'
@@ -11,7 +11,7 @@ router.get("/user", verifyToken, findAll)
 router.post("/verificar", verificarExistencia, findAll)
 
 router.get("/user/:id", findAllUserId)
-router.patch("/user/:id", updateUserById)
+router.patch("/user/:id", uploadImagen, updateUserById)
 router.delete("/user/:id", verifyToken, deleteUserById )
 
 export default router;

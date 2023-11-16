@@ -12,7 +12,6 @@ export const createCurso = async (req, res) => {
         titulo, 
         descripcion, 
         resumen,
-        imagen,
         precio,
         puntaje
     });
@@ -46,7 +45,7 @@ export const findAllCursos = async (req, res) => {
       // Verificar si se ha cargado una nueva imagen
       if (req.file) {
         const imagen = req.file.buffer;
-        updateFields = { ...updateFields, imagen };
+        updateFields = { ...updateFields };
       }
   
       // Actualizar el curso en la base de datos
