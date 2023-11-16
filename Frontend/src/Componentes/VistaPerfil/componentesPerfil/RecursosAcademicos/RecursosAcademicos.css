@@ -1,0 +1,17 @@
+.subtituloRecursosAcademicos{
+    font-size: 0.9rem;
+    padding-top: 0px;
+    margin-top: 250px;
+    margin-left: 10px;
+    font-family: robotob;
+}
+
+.botonLuisPerfil{
+    background-color: none ;
+    border: 10px;  
+    color: #f088eb;
+    font-family: robotol;
+    text-align: left;
+    font-size: 0.8rem;
+}
+

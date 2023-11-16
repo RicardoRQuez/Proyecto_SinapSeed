@@ -16,7 +16,7 @@ import {AdminUser} from "./Componentes/AdminUsuarios/vistaAdminUsuarios.jsx"
 import {EditUsuario} from "./Componentes/AdminUsuarios/Tabla/editUsuarioOla.jsx"
 import {TablaAdminCursos} from "./Componentes/AdminCursos/adminCursos.jsx"
 import {EditCurso} from "./Componentes/AdminCursos/editCursos.jsx"
-
+import { VistaPerfil } from "./Componentes/VistaPerfil/VistaPerfil.jsx";
 export function App() {
   const { showLogin } = useAuth();
 
@@ -36,6 +36,7 @@ export function App() {
           <Route path="/noticias" element={<VistaNoticias />} />
           <Route path="/cursos" element={<VistaCursos />} />
           <Route path="/foro" element={<VistaForo />} />
+          <Route path="/perfil" element={<VistaPerfil  />} />
           <Route path="/administrar-usuarios" element={<AdminUser />} />
 
           <Route path="/editar-usuario/:id" element={<EditUsuario/>} />
