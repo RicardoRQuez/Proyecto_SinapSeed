@@ -41,6 +41,9 @@ const userSchema = new mongoose.Schema({
         type: Boolean, 
         default: false 
     },
+    imagen: {
+        type: Buffer,
+      }
 },{
     timestamps:true,
 })

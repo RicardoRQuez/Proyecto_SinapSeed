@@ -1,5 +1,8 @@
 import User from "../models/users.models.js";
 import bcrypt from "bcrypt";
+import multer from 'multer';
+
+export const uploadImagen = multer().single('imagen'); // Middleware para manejar la carga de imágenes
 
 export const signup = async (req, res) => {
   const {
@@ -9,8 +12,9 @@ export const signup = async (req, res) => {
     telefono,
     region,
     password,
-    situacionLaboral,
+    situacionLaboral,    
   } = req.body;
+
 
   if (
     !nombre ||
@@ -19,7 +23,7 @@ export const signup = async (req, res) => {
     !telefono ||
     !region ||
     !password ||
-    !situacionLaboral
+    !situacionLaboral 
   ) {
     return res.status(404).json({
       msg: "Todos los campos son requeridos",
@@ -95,28 +99,40 @@ const userId = req.params.id
 
 export const updateUserById = async (req, res) => {
   const { id } = req.params;
-  const { nombre, email, telefono, region, situacionLaboral, password} = req.body;
+  const { nombre, email, telefono, region, situacionLaboral, password } = req.body;
+  let updateFields = {
+    nombre,
+    email,
+    telefono,
+    region,
+    situacionLaboral,
+    password,
+  };
+
+  // Verificar si se está enviando una nueva imagen en la solicitud
+  if (req.file) {
+    updateFields.imagen = req.file.buffer; // Acceder a la nueva imagen cargada
+  }
+
   try {
-      // Verificamos si el usuario existe
+    // Verificar si el usuario existe
+    const updateUser = await User.findByIdAndUpdate(
+      id,
+      updateFields,
+      { new: true }
+    );
 
-      const updateUser = await User.findByIdAndUpdate(
-        id,
-        { nombre, email, telefono, region, situacionLaboral, password },
-        { new: true }
-      );
-  
+    if (!updateUser) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
 
-      if (!updateUser) {
-          return res.status(404).json({ error: "Usuario no encontrado" });
-      }
-
-      await updateUser.save();
-      res.json({ code: 200, message: " Usuario actualizado con exito.", token: req.token });
+    res.json({ code: 200, message: "Usuario actualizado con éxito" });
   } catch (error) {
-      console.log("Error en la actualizacion de un Usuario", error);
-      res.status(500).json({ error: 'Error del servidor' });
+    console.log("Error en la actualización de un usuario", error);
+    res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
 
 export const deleteUserById = async (req, res) => {
   const { id } = req.params;
