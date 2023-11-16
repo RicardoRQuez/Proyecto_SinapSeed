@@ -4,7 +4,6 @@ import multer from 'multer';
 
 export const uploadImagen = multer().single('imagen'); // Middleware para manejar la carga de imágenes
 
-
 export const signup = async (req, res) => {
   const {
     nombre,
