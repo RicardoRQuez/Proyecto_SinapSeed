@@ -5,7 +5,7 @@ export const uploadImagen = multer().single('imagen'); // Middleware para maneja
 
 export const createCurso = async (req, res) => {
   const { titulo, descripcion, resumen, precio, puntaje } = req.body;
-  const imagen = req.file.buffer;
+  const imagen = req.file ? req.file.buffer : undefined;
   
   try {
     await Curso.create({ 
