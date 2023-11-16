@@ -21,6 +21,16 @@ const cursoSchema = new mongoose.Schema({
     type: Buffer,
     required:true
   },
+  precio:{
+    type: String,
+    require:true,
+    trim: true,
+  },
+  puntaje :{
+    type:String,
+    require : true,
+    trim: true,
+  }
 
 },{
   timestamps:true,
