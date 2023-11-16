@@ -19,7 +19,6 @@ const CardCurso = ({ imgSrc, title, description }) => {
           </div>
         </div>
       </div>
-   
   );
 };
 

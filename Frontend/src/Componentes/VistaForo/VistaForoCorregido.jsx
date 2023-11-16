@@ -8,6 +8,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import imgSrc from './image/cursox2.jpg'
 
+
+
+
 export const VistaForo = () => {
   return (
   <>
