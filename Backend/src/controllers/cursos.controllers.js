@@ -91,3 +91,21 @@ export const findAllCursos = async (req, res) => {
         res.status(500).json({ error: 'Error del servidor' });
     }
   };
+  export const findAllCursoId = async (req, res) => {
+
+    const cursosId = req.params.id
+    
+      try {
+    
+        const cursosById = await Curso.findById(cursosId);
+        if (!cursosById) {
+          // Si no se encuentra un usuario con el ID proporcionado, devolver un error 404
+          return res.status(404).json({ error: 'Curso no encontrado' });
+        }
+        res.json(cursosById);
+        
+      } catch (error) {
+        console.error('Error al obtener el curso:', error);
+        res.status(500).json({ error: 'Error del servidor' });
+      }
+    };
