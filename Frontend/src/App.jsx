@@ -18,6 +18,7 @@ import {CargarCursos} from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
 import {EditCurso} from "./Componentes/VistaAdminCursos/EditarCursos.jsx";
 import { VistaPerfil } from "./Componentes/VistaPerfil/VistaPerfil.jsx";
 
+
 export function App() {
   const { showLogin } = useAuth();
 

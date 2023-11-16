@@ -4,7 +4,7 @@ import image1 from "./imagenes/image1.png";
 
 
 
-export const CursoComponent = ({titulo, resumen, descripcion, precio, imagen, puntaje }) => {
+export const CursoComponent = ({titulo, resumen, descripcion, imagen, precio, puntaje }) => {
  
 
 

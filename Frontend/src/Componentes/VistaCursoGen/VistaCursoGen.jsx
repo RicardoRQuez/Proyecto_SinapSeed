@@ -53,7 +53,8 @@ export const VistaCursoGen = () => {
           <ComponenteCurso
             key={curso._id}
             titulo={curso.titulo}
-            resumen={curso.descripcion}
+            resumen={curso.resumen}
+            descripcion={curso.descripcion}
             imagen={bufferToDataURL(curso.imagen, 'image/jpeg')}
             id={curso._id}
           />
