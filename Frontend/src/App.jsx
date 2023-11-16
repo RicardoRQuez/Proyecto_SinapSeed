@@ -17,6 +17,7 @@ import {EditUsuario} from "./Componentes/AdminUsuarios/Tabla/editUsuarioOla.jsx"
 import {CargarCursos} from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
 import {EditCurso} from "./Componentes/VistaAdminCursos/EditarCursos.jsx";
 import { VistaPerfil } from "./Componentes/VistaPerfil/VistaPerfil.jsx";
+import {AgregarCurso} from "./Componentes/VistaAdminCursos/AgregarCursos.jsx"
 
 
 export function App() {
@@ -44,6 +45,7 @@ export function App() {
   
           <Route path="/editar-curso/:id" element={<EditCurso/>} />
           <Route path="/administrar-cursos" element={<CargarCursos />} />
+          <Route path="/agregar-curso" element={<AgregarCurso />} />
         </Routes>
         <Footer />
       </AuthProvider>

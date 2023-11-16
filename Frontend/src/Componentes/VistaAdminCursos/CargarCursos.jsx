@@ -41,15 +41,16 @@ export const CargarCursos = () => {
     }
   };
 
-  const editarCurso = (id) => {
-    console.log(`Editar curso con ID: ${id}`);
-  };
+
 
   return (
 <>
   <div className="container-fluid antiNavBar2"></div>
   <h5 className="cursesSinapSeed">Cursos SinapSeed</h5>
   <main className="container-fluid tablite">
+
+  <Link to={"/agregar-curso"} className="btn btn-info" botoncito>Agregar curso</Link>
+
     <table className="table table-striped tableCurso">
       <thead>
         <tr>
@@ -73,7 +74,7 @@ export const CargarCursos = () => {
             <td>{curso.resumen}</td>
             <td></td>
             <td>
-  <Link to={`/editar-curso/${curso._id}`} className="btn btn-info" botoncito>Editar</Link>
+  <Link to={`/editar-curso/${curso._id}`} className="btn btn-info">Editar</Link>
 </td>
 <td>
 <button onClick={() => handleEliminarCurso(curso._id)} className='botonElimias'>

@@ -53,7 +53,7 @@ export function MyNavbar() {
       <div className="container-fluid diego">
         <NavLink to="/">
           <img
-            src="./sinapsisFondoOscuro2.png"
+            src='/public/imágenes/sinapsisFondoOscuro2.png'
             alt="Logo"
             className="navbar-logo"
           />
