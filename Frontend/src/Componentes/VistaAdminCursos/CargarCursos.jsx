@@ -45,8 +45,8 @@ export const CargarCursos = () => {
 
   return (
 <>
-  <div className="container-fluid antiNavBar2"></div>
-  <h5 className="cursesSinapSeed">Cursos SinapSeed</h5>
+  <div className="container-flex antiNavBar"></div>
+  <h2 className="cursosSinapSeed">Cursos SinapSeed</h2>
   <main className="container-fluid tablite">
 
   <Link to={"/agregar-curso"} className="btn btn-info" botoncito>Agregar curso</Link>

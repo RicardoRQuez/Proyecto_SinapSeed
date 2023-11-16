@@ -1,9 +1,11 @@
-import React from 'react';
 import './BotonesMenu.css'; 
-import { Link } from 'react-router-dom';
+import ButtonMenu from './ButtonMenuComponents';
+
 
 
 export const Botones = () => {
+
+
   return (
     <div className="container text-center botonesVarios">
       <h4 className="ExploraNuestroContenido">¿Qué podrás encontrar en SinapSeed?</h4>
@@ -11,31 +13,37 @@ export const Botones = () => {
       <div className="container text-center botonesVarios">
         <div className="row">
           <div className="col-md-4 col-sm-6">
-          <Link to="/cursosGeneral" className="btn btn-secondary">
-        Cursos
-      </Link>
+          <ButtonMenu
+          titleButton='Cursos'
+          titlecontent="¿De qué se tratan los cursos?"
+          content= "Resumen formativo que destaca los objetivos, beneficios y resultados clave del curso de manera atractiva y directa, motivando la participación e interés de los estudiantes potenciales"
+          />
           </div>
           <div className="col-md-4 col-sm-6">
-            <button type="button" className="btn btn-secondary">
-              Bootcamp
-            </button>
+         <ButtonMenu
+         titleButton='Bootcamp'
+         content =''
+         />
           </div>
           <div className="col-md-4 col-sm-12">
-            <button type="button" className="btn btn-secondary">
-              Clases
-            </button>
+          <ButtonMenu
+         titleButton='Clases'
+         content =''
+         />
           </div>
         </div>
         <div className="row">
           <div className="col-md-6 col-sm-6">
-            <button type="button" className="btn btn-secondary">
-              Seminarios
-            </button>
+          <ButtonMenu
+         titleButton='Seminarios'
+         content =''
+         />
           </div>
           <div className="col-md-6 col-sm-6">
-            <button type="button" className="btn btn-secondary">
-              Destacados
-            </button>
+          <ButtonMenu
+         titleButton='Destacados'
+         content =''
+         />
           </div>
         </div>
       </div>
@@ -45,4 +53,3 @@ export const Botones = () => {
     </div>
   );
 };
-

@@ -1,34 +1,73 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./AgregarCursos.css";
+import imagenPerfil from "../../assets/resources/logo_generation.jpg";
 
 export const AgregarCurso = () => {
-    const navigate = useNavigate();
-    const [curso, setCurso] = useState({
-      titulo: "",
-      descripcion: "",
-      resumen: "",
-      imagen: "",
-      precio: "",
-      puntaje: "",
-    });
+  const navigate = useNavigate();
+  const [curso, setCurso] = useState({
+    titulo: "",
+    descripcion: "",
+    resumen: "",
+    imagen: "",
+    precio: "",
+    puntaje: "",
+  });
 
-  // Función para manejar cambios en el formulario
   const handleChange = (e) => {
-    setNuevoCurso({
-      ...nuevoCurso,
+    setCurso({
+      ...curso,
       [e.target.name]: e.target.value,
     });
   };
 
-  // Función para manejar la subida del formulario
   const handleGuardar = async () => {
-    // Realiza la lógica para guardar el nuevo curso en la base de datos
-    // Puedes usar fetch o alguna librería para hacer la solicitud al servidor
-    // ...
+    try {
+      const respuesta = await fetch(`http://localhost:3000/api/v1/curso`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(curso),
+      });
 
-    // Después de guardar, redirige a la página de cargar cursos o realiza alguna acción
-    // history.push('/cargar-cursos');
-  };  
-  
+      if (!respuesta.ok) {
+        const errorData = await respuesta.json();
+        throw new Error(`Error al agregar el curso: ${respuesta.status} ${respuesta.statusText}. Detalles: ${errorData.message}`);
+      }
+
+      const nuevoCurso = await respuesta.json();
+
+      // Hacer algo con el nuevoCurso si es necesario
+
+      navigate("/administrar-cursos");
+    } catch (error) {
+      console.error("Error al agregar el curso:", error);
+    }
+  };
+
+  const [imagenPerfilSrc, setImagenPerfilSrc] = useState(imagenPerfil);
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setImagenPerfilSrc(reader.result);
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const bufferToDataURL = (buffer, mimeType) => {
+    const arrayBufferView = new Uint8Array(buffer.data); // Extrae la propiedad data
+    const blob = new Blob([arrayBufferView], { type: mimeType });
+    const urlCreator = window.URL || window.webkitURL;
+    return urlCreator.createObjectURL(blob);
+  };
 
   return (
     <>
@@ -145,4 +184,3 @@ export const AgregarCurso = () => {
     </>
   );
 };
-

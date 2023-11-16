@@ -43,7 +43,7 @@ export const TablaAdminUsuarios = () => {
 
   return (
     <> 
-    <div className='container-flex antiNavbar'>.</div>
+    <div className='container-flex antiNavbar'></div>
 
     <h2 className='usersSinapSeed'>Usuarios SinapSeed</h2>
     <main className='container-fluid tablita'> 

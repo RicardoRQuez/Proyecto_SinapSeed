@@ -14,7 +14,7 @@ export const ComponenteINFO = () => {
     telefono: "",
     region: "",
     contraseña: "",
-    situacionLaboral: "Estoy ...", // Asegúrate de tener la clave correcta para situacionLaboral
+    situacionLaboral: "", // Asegúrate de tener la clave correcta para situacionLaboral
   });
 
   const togglePasswordVisibility = () => {
@@ -33,16 +33,25 @@ export const ComponenteINFO = () => {
   const obtenerDatosUsuario = async () => {
     try {
       const consultaCookie = Cookies.get("token");
-
+  
       if (consultaCookie) {
         const tokedDecode = jwtDecode(consultaCookie);
         const idToken = tokedDecode.data._id;
-
+        console.log(idToken);
+  
         if (idToken) {
-          const response = await axios.get(
-            `http://localhost:3000/api/v1/user/${idToken}`
-          );
+          const response = await axios.get(`http://localhost:3000/api/v1/user/${idToken}`);
+
+          
+          // Obtener la imagen como un objeto URL si está presente en la respuesta
+          if (response.data.imagen) {
+            const imagenUrl = bufferToDataURL(response.data.imagen, 'image/jpeg'); // Reemplaza 'image/jpeg' con el tipo MIME correcto
+            setImagenPerfilSrc(imagenUrl);
+          }
+  
+          // Configurar los datos del usuario, incluyendo la imagen y otros campos
           setDatosUsuario(response.data);
+          console.log(datosUsuario)
         } else {
           console.warn("No hay un usuario autenticado");
         }
@@ -53,6 +62,8 @@ export const ComponenteINFO = () => {
       console.error("Error al obtener los datos del usuario:", error);
     }
   };
+  
+  
 
   useEffect(() => {
     obtenerDatosUsuario();
@@ -60,18 +71,34 @@ export const ComponenteINFO = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     try {
       const consultaCookie = Cookies.get("token");
-
+  
       if (consultaCookie) {
         const tokedDecode = jwtDecode(consultaCookie);
         const idToken = tokedDecode.data._id;
-
+  
         if (idToken) {
+          const formData = new FormData(); // Crear objeto FormData
+  
+          // Agregar campos de texto al FormData
+          formData.append("nombre", datosUsuario.nombre);
+          formData.append("email", datosUsuario.email);
+          // ... otros campos
+  
+          if (datosUsuario.imagen) {
+            formData.append("imagen", datosUsuario.imagen); // Agregar la imagen al FormData
+          }
+  
           const response = await axios.patch(
             `http://localhost:3000/api/v1/user/${idToken}`,
-            datosUsuario
+            formData, // Enviar el FormData en lugar de datosUsuario
+            {
+              headers: {
+                "Content-Type": "multipart/form-data", // Asegúrate de establecer el tipo de contenido correcto para FormData
+              },
+            }
           );
           setDatosUsuario(response.data);
           console.log("Datos actualizados exitosamente");
@@ -90,21 +117,35 @@ export const ComponenteINFO = () => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-
+  
     if (file) {
       const reader = new FileReader();
-
+  
       reader.onloadend = () => {
-        setImagenPerfilSrc(reader.result);
+        setImagenPerfilSrc(reader.result); // Actualizamos la imagen en el frontend
+  
+        // Actualizamos el estado para incluir la imagen seleccionada
+        setDatosUsuario({
+          ...datosUsuario,
+          imagen: file, // Esto podría ser diferente dependiendo de la estructura de datos que espera el backend para la imagen
+        });
       };
-
+  
       reader.readAsDataURL(file);
     }
   };
 
   //---------------------------------------------------------------------------
+  const bufferToDataURL = (buffer, mimeType) => {
+    const arrayBufferView = new Uint8Array(buffer.data); // Extrae la propiedad data
+    const blob = new Blob([arrayBufferView], { type: mimeType });
+    const urlCreator = window.URL || window.webkitURL;
+    return urlCreator.createObjectURL(blob);
+  };
+  
   return (
-    <main className="containercomponenteINFO">
+
+  <>
       <section className="row">
         <img src={imagenPerfilSrc} alt="imagendePerfil" className="imagenPerfil" />
         <div className="input-group mb-3">
@@ -119,7 +160,7 @@ export const ComponenteINFO = () => {
           />
         </div>
       </section>
-      <section className="row">
+      <section className="row ">
         <h2 className="subtituloDatosPersonales"> Datos Personales</h2>
         <form
           onSubmit={handleSubmit}
@@ -153,7 +194,7 @@ export const ComponenteINFO = () => {
               readOnly //Hace que sólo sea de lectura
             />
           </div>
-          <div className="col-md-4 position-relative">
+          <div className="">
             <label htmlFor="validationTooltipUsername" className="form-label subtituloChiqui">
               Email
             </label>
@@ -175,6 +216,8 @@ export const ComponenteINFO = () => {
               />
             </div>
           </div>
+
+
           <div className="col-md-3 position-relative">
             <label htmlFor="validationTooltip03" className="form-label subtituloChiqui">
               Teléfono
@@ -270,6 +313,6 @@ export const ComponenteINFO = () => {
           </div>
         </form>
       </section>
-    </main>
+      </>
   );
 };
