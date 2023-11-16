@@ -26,8 +26,19 @@ export const CargarCursos = () => {
     obtenerCursos();
   }, []);
 
-  const eliminarCurso = (id) => {
-    console.log(`Eliminar curso con ID: ${id}`);
+  const handleEliminarCurso = async (id) => {
+    try {
+      // Realiza la solicitud para eliminar el curso por su ID
+      await fetch(`http://localhost:3000/api/v1/curso/${id}`, {
+        method: 'DELETE',
+      });
+
+      // Actualiza la lista de cursos después de eliminar
+      const nuevosCursos = cursos.filter((curso) => curso._id !== id);
+      setCursos(nuevosCursos);
+    } catch (error) {
+      console.error('Error al eliminar curso:', error);
+    }
   };
 
   const editarCurso = (id) => {
@@ -65,7 +76,7 @@ export const CargarCursos = () => {
   <Link to={`/editar-curso/${curso._id}`} className="btn btn-info" botoncito>Editar</Link>
 </td>
 <td>
-  <button onClick={() => handleEliminarUsuario(usuario._id)} className="botoncitoEliminar" botoncito>
+<button onClick={() => handleEliminarCurso(curso._id)} className='botonElimias'>
     Eliminar
   </button>
 </td>

@@ -68,13 +68,13 @@ export const EditCurso = () => {
           <div className="container alMedio">
             <div className="row alMedio ">
               <div className="col-3 izquierda">
-                <label>Nombre:</label>
+                <label>titulo:</label>
               </div>
               <div className="col-3 izquierda">
                 <input
                   type="text"
-                  name="nombre"
-                  value={curso.nombre}
+                  name="titulo"
+                  value={curso.titulo}
                   onChange={handleChange}
                 />
               </div>
@@ -94,43 +94,31 @@ export const EditCurso = () => {
             </div>
             <div className="row alMedio">
               <div className="col-3 izquierda">
-                <label>Fecha de Inicio:</label>
+                <label>Resumen:</label>
               </div>
               <div className="col-3 izquierda">
                 <input
                   type="text"
-                  name="fechaInicio"
-                  value={curso.fechaInicio}
+                  name="resumen"
+                  value={curso.resumen}
                   onChange={handleChange}
                 />
               </div>
             </div>
             <div className="row alMedio">
               <div className="col-3 izquierda">
-                <label>Duración:</label>
+                <label>Imagen</label>
               </div>
               <div className="col-3 izquierda">
                 <input
                   type="text"
-                  name="duracion"
-                  value={curso.duracion}
+                  name="imagen"
+                  value={curso.imagen}
                   onChange={handleChange}
                 />
               </div>
             </div>
-            <div className="row alMedio">
-              <div className="col-3 izquierda">
-                <label>Docente:</label>
-              </div>
-              <div className="col-3 izquierda">
-                <input
-                  type="text"
-                  name="docente"
-                  value={curso.docente}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
+      
             <div className="row alMedio">
               <div className="col-3 izquierda">
                 <label>Horario:</label>
