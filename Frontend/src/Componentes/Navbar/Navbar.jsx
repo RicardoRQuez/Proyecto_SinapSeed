@@ -4,7 +4,7 @@ import './estiloNavbar.css';
 import { VistaLogin } from '../VistaLogIn/VistaLogin.jsx';
 import { useAuth, useAuthFunctions } from '../VistaLogIn/AuthContext';
 
-export function MyNavbar({ onLogout }) {
+export function MyNavbar() {
   const { showLogin, setShowLogin, authenticated, isAdmin } = useAuth();
   const { handleLogout } = useAuthFunctions();
   const navigate = useNavigate();

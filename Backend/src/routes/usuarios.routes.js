@@ -2,11 +2,12 @@ import {Router} from 'express';
 import {signup, login, findAll, findAllUserId, updateUserById, deleteUserById}  from '../controllers/users.controllers.js'
 import {emitToken} from '../middleware/emitToken.js'
 import { verificarExistencia } from '../middleware/verifyEmailRut.js';
+import {verifyToken} from '../middleware/verifyToken.js'
 const router = Router()
 
 router.post("/login", emitToken, login);
 router.post("/signup", signup);
-router.get("/user", findAll)
+router.get("/user", verifyToken, findAll)
 router.post("/verificar", verificarExistencia, findAll)
 
 router.get("/user/:id", findAllUserId)

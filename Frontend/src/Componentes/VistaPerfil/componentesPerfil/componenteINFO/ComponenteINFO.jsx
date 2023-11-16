@@ -202,9 +202,7 @@ export const ComponenteINFO = () => {
               onChange={handleInputChange}
               required
             >
-              <option selected disabled value="">
-                Vivo en...
-              </option>
+            
               <option value="Región de Arica y Parinacota">
                 R. de Arica y Parinacota
               </option>
@@ -259,9 +257,7 @@ export const ComponenteINFO = () => {
               onChange={handleInputChange}
               required
             >
-              <option selected disabled value="">
-                Estoy...
-              </option>
+         
               <option value="Independiente">Independiente</option>
               <option value="Cesante">Cesante</option>
               <option value="Empleado">Empleado</option>

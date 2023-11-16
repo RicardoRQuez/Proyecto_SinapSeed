@@ -34,7 +34,7 @@
     position: absolute;
     width: 15px;
     height: 15px;
-    background-image: url("../../../../assets/resources/ojon.png");
+    background-image: url('../../../../assets/resources/ojon.png');
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
