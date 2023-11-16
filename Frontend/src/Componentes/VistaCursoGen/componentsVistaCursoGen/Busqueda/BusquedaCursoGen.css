@@ -1,0 +1,24 @@
+.navLuis {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;    
+}
+
+.inputLuisVCG{
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid #f088eb;    
+    padding: 5px;
+}
+
+.inputLuisVCG::placeholder{
+    padding-left: 15px;
+}
+
+.botonLuisBCG{
+    background-color: #f088eb;
+    border:#f088eb;
+    color:white;
+}
+

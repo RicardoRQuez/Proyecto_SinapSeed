@@ -1,0 +1,29 @@
+.container-fluid.portada-image.w-100.d-flex {
+  background-image: url("../../../assets/resources/portadaNoticias1.jpg");
+  background-size: cover;
+  height: 30vh;
+
+}
+
+
+.parrafoPortada{
+  font-size: 24px;
+  color: rgb(223, 237, 244); 
+  margin-top: 10px;
+}
+.color {
+  color: #f088eb;
+}
+
+.container-fluid.texto-principal{
+
+
+  margin-top: 130px;
+  
+}
+
+.titulo-personalizado{
+
+
+  color: aliceblue;
+}

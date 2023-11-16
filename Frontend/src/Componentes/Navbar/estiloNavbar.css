@@ -1,0 +1,41 @@
+.nav-link.inicioSesion{
+    /* Estilos personalizados para el botón "Ingresar" */
+    color: #FFFFFF; /* Cambiar el color del texto a blanco */
+    background-color: #24242400; /* Cambiar el color de fondo a verde */
+    border: 2px solid #C54BBF;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none; /* Anula el subrayado del texto en los botones */
+}
+
+
+.nav-link.registro {
+    /* Estilos personalizados para el botón "Registro" */
+    color: #FFFFFF; /* Cambiar el color del texto a blanco */
+    background-color: #C54BBF; /* Cambiar el color de fondo a naranja */
+    border: 2px solid #C54BBF;
+    font-weight: bold;
+    border-radius: 10px;
+}   
+
+.navbar.fixed-top.navbar-expand-lg.navbar-dark.p-md3{
+    font-family: 'Arial', sans-serif;
+}
+
+
+
+.nav-item{
+    margin-right: 10px;
+}
+
+.navbar-logo{
+
+    height: 50px;
+    margin-right: 20px;
+    margin-top: 0px;
+    
+}
+
+.container-fluid diego{
+    z-index: 1;
+}

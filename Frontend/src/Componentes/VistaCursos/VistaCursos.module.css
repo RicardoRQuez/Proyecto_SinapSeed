@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "robotob";
+  src: url("../VistaLogIn/Roboto-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "robotol";
+  src: url("../VistaLogIn/Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.portadaCursos {
+background-image: url('./imagenes/portada.png');
+background-size: cover;
+height: 50vh;
+width: 100vw;
+padding-top: 0%;
+}
+
+.tituloGrande {
+color: #C54BBF;
+font-family: 'Arial', sans-serif;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.tituloGratis{
+color: #C54BBF;
+
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+margin-left: 20px;
+font-family: 'Arial', sans-serif;
+}
+
+.tituloChico {
+color: #000;
+font-family: 'Arial', sans-serif;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: justify;
+text-align: center;
+}
+
+.textoCompleto {
+color: #000;
+font-family: Roboto;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: justify;
+}
+
+.colorNota {
+color: #C54BBF;
+font-family: Roboto;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.botonRaro{
+
+   
+
+  border-radius: 5px;
+  color: aliceblue;
+
+}
+
+.textoBlancoBoton{
+    color: inherit; /* Utiliza el color heredado del elemento padre (puede ser el color del texto circundante) */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+}

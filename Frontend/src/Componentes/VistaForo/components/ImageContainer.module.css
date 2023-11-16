@@ -1,0 +1,14 @@
+
+.image-container {
+height: 60vh;
+  }
+
+.card-title {
+    font-size: 3rem;
+    color: #A3579F;
+    text-align: center;
+    font-weight: bold;
+}
+.Border{
+  background-color: #e9dae9;
+}

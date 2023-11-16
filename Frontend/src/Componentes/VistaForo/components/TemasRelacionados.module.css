@@ -1,0 +1,13 @@
+
+.primary-buttonSabrina {
+    background-color: #af74ac !important;  /* Color de fondo */
+    color: #fff !important; ; /* Color del texto */
+    border: none !important; ;
+    margin: 0 0 10px;
+    width: 380px;
+  }
+  
+  .primary-button:hover {
+    background-color: #D68DD3;
+  }
+

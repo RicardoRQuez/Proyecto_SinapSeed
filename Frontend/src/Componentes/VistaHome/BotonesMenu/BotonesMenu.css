@@ -1,0 +1,24 @@
+.btn.btn-secondary{
+    /* Estilos personalizados para el botón "Registro" */
+    color: #FFFFFF; /* Cambiar el color del texto a blanco */
+    background-color: #A3579F; /* Cambiar el color de fondo a naranja */
+    border: 1px solid #A3579F;
+    width: 200px; /* Establece el ancho fijo para los botones */
+    min-width: 200; /* Establece el ancho mínimo para los botones */
+    height: 50px;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 12px;
+} 
+
+.container.text-center.botonesVarios{
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espacio de 20 píxeles entre las filas */
+}
+
+.ExploraNuestroContenido{
+
+margin-top: 30px;
+
+}

@@ -1,0 +1,54 @@
+.formRegistro {
+    flex-direction: column;
+    background-color: rgba(255, 192, 203, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+  }
+  
+  .formRegistro ::placeholder {
+    color: white;
+  }
+  
+  .boton {
+    border-radius: 6px;
+    border: 2px solid #f088eb;
+    margin-left: 250px;
+  }
+  
+  .color {
+    border-radius: 6px;
+    border: 2px solid #f088eb;
+    background: rgba(197, 75, 191, 0.651);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  }
+  
+  .colorLabel {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .tituloForm {
+    text-align: center;
+    color: white;
+  }
+  
+  /* Nuevos estilos para las columnas y el ancho del select */
+  .formulario-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .formColumna {
+    flex: 1;
+    padding: 0 10px; /* Espacio entre columnas */
+    box-sizing: border-box;
+  }
+  
+  /* Asegura que los input y el select tengan el mismo ancho */
+  .formColumna input, .formColumna select {
+    width: 100%;
+  }
+  

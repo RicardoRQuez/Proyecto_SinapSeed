@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "robotob";
+  src: url("../../Roboto-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "robotol";
+  src: url("../../Roboto-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Este es el bloque de codigo de estilo de los espacios para que el usuario coloque su información*/
+.espacioLuis {  
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background: rgba(197, 75, 191, 0.5);
+  width: 85%;
+  padding:7px;
+}
+
+/* el siguiente formatea el texto predefinido de estos espacios */
+
+.espacioLuis::placeholder {
+  /*el placeholder*/
+  color: white;
+  /* Establece el color del texto ingresado por el usuario en blanco */
+  font-weight: bold;
+}
+
+/* el siguiente formatea el boton ingresar */
+.botonLuis {
+  color: #f088eb;    
+  font-family: robotob;
+  font-weight: 16;  
+  width: 35%;
+  padding:10px;   
+  border-radius: 20px;
+  border: 2px solid #f088eb;
+  background: rgb(255, 255, 255,0);
+ 
+}
+
+.contenedorBotonLuis{
+  margin-left: 230px
+}
+
+
+/* el siguiente formatea los títulos que anteceden los espacios de ingreso de usuario */
+.label-textLuis {  
+  color: #f088eb;
+  font-family: robotob;
+  white-space: nowrap;
+  font-size: 23px;
+  text-align: left;
+  margin-top: 40px;
+}
+
+/* el siguiente formatea la estructura del formulario */
+.formLuis {
+  flex-direction: column;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0;
+  height: 650px;
+}
+
+/* el siguiente formatea Ingreso alumnos */
+.titulo2Luis {
+  color: #080000;
+  font-family: robotob;
+  white-space: nowrap;
+  font-size: 36px;
+  margin-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.alumnosLuis {
+  color: #f088eb;
+  font-family: robotob;
+  white-space: nowrap;
+  font-size: 36px;
+}
+
+/* Estilos para el ojo del password */
+.password-toggleLuis {
+  left: 75%;
+  top: 33%;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url("../../ojo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#parrafoLuis {
+  margin-top: 10px;
+  margin-right: 45px;
+  color: #000;
+  font-family: robotol;
+  font-size: 20px;
+  font-weight: 300;  
+  text-align: right;
+}
+
+#claveLuis {
+  color: #f088eb;
+  font-family: robotob;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.separadorLuis {
+  margin-top: 30px;
+  margin-left: 50px;
+  border: none;
+  border-top: 6px solid #a3579f;
+  width: 80%;
+  border-radius: 20px;
+}
+
+.accesoDocenteLuis {
+  color: #000;
+  text-align: center;
+  font-family: robotob;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 80px;
+}
+
+#docenteLuis {
+  color: #f088eb;
+  font-family: robotob;
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+.contenedorLuisEspacio{
+  width: 100%;
+
+}
+
+.formLuis.cerrada {
+  display: none;
+}
+
+/* Agrega cualquier otro estilo necesario para cuando la sección está abierta */

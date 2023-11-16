@@ -1,0 +1,18 @@
+.portadaRegistro {
+  background-image: url("../../../assets/resources/fotoregistro.jpg");
+  background-size: cover;
+  height: 190vh;
+}
+
+.parrafoPortadaRegistro {
+  font-size: 25px;
+  color: rgb(223, 237, 244); 
+  margin-top: 10px;
+}
+.color {
+  color: #f088eb;
+}
+.formulario{
+  text-align: center;
+
+}

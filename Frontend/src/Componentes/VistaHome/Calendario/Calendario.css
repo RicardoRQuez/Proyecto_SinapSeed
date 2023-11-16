@@ -1,0 +1,39 @@
+
+.calendario.container{
+
+    background-color: #EBD3EA;
+    border: 5px solid #753972;
+    height: 250px;
+    border-radius: 15px;
+    }
+
+.imagenCalendario{
+
+    height: 160px;
+    margin-left: 20px;
+    }
+
+.textoCalendario{
+
+        color: inherit; /* Usa el color heredado del elemento padre (normalmente, el color del texto) */
+        text-decoration: none; /* Quita el subrayado */
+        font-size: 50px;
+        font-weight: 600;
+    }
+.col-2.col-sm-10.calendarioCol2{
+
+    text-align: center;
+  
+ 
+    color: #1b0b1d;
+   
+    margin-top: 30px;
+    
+    }
+.col-2.col-sm-2.calendarioCol{
+    
+    text-align: center;
+    margin-top: 30px;
+    
+    }
+    
