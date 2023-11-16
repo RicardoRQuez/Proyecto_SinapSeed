@@ -29,7 +29,7 @@ export function App() {
           <Route path="/registro" element={<VistaRegistro />} />
           <Route path="/cursosGen" element={<VistaCursoGen />} />
           <Route path="/noticias" element={<VistaNoticias />} />
-          <Route path="/cursos" element={<VistaCursos />} />
+          <Route path="/cursos/:id" element={<VistaCursos />} />
           <Route path="/foro" element={<VistaForo />} />
         </Routes>
         <Footer />

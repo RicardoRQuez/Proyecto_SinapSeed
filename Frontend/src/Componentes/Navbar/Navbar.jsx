@@ -45,7 +45,7 @@ export function MyNavbar({ onLogout }) {
       <div className="container-fluid diego">
         <NavLink to="/">
           <img
-            src="imágenes/Sinapsis fondo oscuro2.png"
+            src="./sinapsisFondoOscuro2.png"
             alt="Logo"
             className="navbar-logo"
           />
