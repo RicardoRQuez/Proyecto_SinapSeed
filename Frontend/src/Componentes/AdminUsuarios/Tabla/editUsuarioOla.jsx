@@ -80,7 +80,8 @@ export const EditUsuario = () => {
     <label>RUT:</label>
     </div>
     <div className="col-3 izquierda">
-    <input type="text" name="rut" value={usuario.rut} onChange={handleChange} />
+    <input type="text" 
+            name="rut" value={usuario.rut} onChange={handleChange} />
     </div>
   </div>
   <div className="row alMedio">

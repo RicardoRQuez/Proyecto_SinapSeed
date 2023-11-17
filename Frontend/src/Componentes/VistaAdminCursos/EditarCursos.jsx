@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./EditarCursos.css";
+import axios from 'axios';
+import Cookies from "js-cookie";
 
 export const EditCurso = () => {
   const { id } = useParams();
@@ -10,23 +12,25 @@ export const EditCurso = () => {
     descripcion: "",
     resumen: "",
     imagen: "",
+    horario: ""
   });
 
   useEffect(() => {
-    const obtenerDetallesCurso = async () => {
+    const obtenerCursos = async () => {
       try {
-        const respuesta = await fetch(
-          `http://localhost:3000/api/v1/curso/${id}`
-        );
-        const datos = await respuesta.json();
-        setCurso(datos);
+        const consultaCookie = Cookies.get('token');
+        console.log(consultaCookie);
+        
+
+        const response = await axios.get(`http://localhost:3000/api/v1/curso/${id}`,{ headers: { token: consultaCookie } });
+        setCurso(response.data);
       } catch (error) {
-        console.error("Error al obtener detalles del curso:", error);
+        console.error('Error al obtener Cursos:', error);
       }
     };
 
-    obtenerDetallesCurso();
-  }, [id]);
+    obtenerCursos();
+  }, []); 
 
   const handleChange = (e) => {
     setCurso({
@@ -35,28 +39,24 @@ export const EditCurso = () => {
     });
   };
 
-  const handleGuardar = async () => {
-    try {
-      const respuesta = await fetch(
-        `http://localhost:3000/api/v1/curso/${id}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(curso),
-        }
-      );
 
-      const datosActualizados = await respuesta.json();
+const handleGuardar = async () => {
+  try {
+    const respuesta = await axios.patch(
+      `http://localhost:3000/api/v1/curso/${id}`,
+      curso,
+      
+    );
 
-      setCurso(datosActualizados);
+    const datosActualizados = respuesta.data;
 
-      navigate("/administrar-cursos");
-    } catch (error) {
-      console.error("Error al actualizar el curso:", error);
-    }
-  };
+    setCurso(datosActualizados);
+    navigate('/administrar-cursos');
+  } catch (error) {
+    console.error('Error al actualizar el curso:', error);
+  }
+};
+
 
   return (
     <>

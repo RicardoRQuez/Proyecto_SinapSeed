@@ -9,13 +9,21 @@ import Cookies from "js-cookie";
 export const ComponenteINFO = () => {
   const [passwordHidden, setPasswordHidden] = useState(true);
   const [datosUsuario, setDatosUsuario] = useState({
-    nombre: "",
-    email: "",
-    telefono: "",
-    region: "",
-    contraseña: "",
-    situacionLaboral: "", // Asegúrate de tener la clave correcta para situacionLaboral
+    nombre: "Nombre",
+    email: "email@example",
+    telefono: "12345678",
+    region: "Vivo en...",
+    contraseña: "********",
+    situacionLaboral: "Me encuentro...", 
   });
+//estado de region----------------------------------------------
+  const [region, setRegion] = useState("Vivo en...");
+//--------------------------------------------------------------------------------------------
+
+//estado de region----------------------------------------------
+const [situacionLaboral, setSituacionLaboral] = useState("Me encuentro...");
+//--------------------------------------------------------------------------------------------
+
 
   const togglePasswordVisibility = () => {
     setPasswordHidden(!passwordHidden);
@@ -85,6 +93,11 @@ export const ComponenteINFO = () => {
           // Agregar campos de texto al FormData
           formData.append("nombre", datosUsuario.nombre);
           formData.append("email", datosUsuario.email);
+          formData.append("telefono", datosUsuario.telefono);
+          formData.append("contraseña", datosUsuario.contraseña);
+          formData.append("region", datosUsuario.region);
+          formData.append("situacionLaboral", datosUsuario.situacionLaboral);
+          
           // ... otros campos
   
           if (datosUsuario.imagen) {
@@ -112,6 +125,7 @@ export const ComponenteINFO = () => {
       console.error("Error al obtener los datos del usuario:", error);
     }
   };
+  console.log(datosUsuario)
   //Inicio de getsion imagen-----------------------------------------------------------------
   const [imagenPerfilSrc, setImagenPerfilSrc] = useState(imagenPerfil);
 
@@ -144,8 +158,7 @@ export const ComponenteINFO = () => {
   };
   
   return (
-
-  <>
+    <main className="containercomponenteINFO">
       <section className="row">
         <img src={imagenPerfilSrc} alt="imagendePerfil" className="imagenPerfil" />
         <div className="input-group mb-3">
@@ -160,7 +173,7 @@ export const ComponenteINFO = () => {
           />
         </div>
       </section>
-      <section className="row ">
+      <section className="row">
         <h2 className="subtituloDatosPersonales"> Datos Personales</h2>
         <form
           onSubmit={handleSubmit}
@@ -194,7 +207,7 @@ export const ComponenteINFO = () => {
               readOnly //Hace que sólo sea de lectura
             />
           </div>
-          <div className="">
+          <div className="col-md-4 position-relative">
             <label htmlFor="validationTooltipUsername" className="form-label subtituloChiqui">
               Email
             </label>
@@ -216,8 +229,6 @@ export const ComponenteINFO = () => {
               />
             </div>
           </div>
-
-
           <div className="col-md-3 position-relative">
             <label htmlFor="validationTooltip03" className="form-label subtituloChiqui">
               Teléfono
@@ -313,6 +324,6 @@ export const ComponenteINFO = () => {
           </div>
         </form>
       </section>
-      </>
+    </main>
   );
 };

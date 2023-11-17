@@ -1,34 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import "./EditarCursos.css";
 
-export const AgregarCurso = () => {
-    const navigate = useNavigate();
-    const [curso, setCurso] = useState({
-      titulo: "",
-      descripcion: "",
-      resumen: "",
-      imagen: "",
-      precio: "",
-      puntaje: "",
-    });
+export const CrearCurso = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [curso, setCurso] = useState({
+    titulo: "",
+    descripcion: "",
+    resumen: "",
+    imagen: "",
+    horario: "",
+    precio: "",
+    puntaje: "",
+  });
+  
+  const EnviarSolicitud = async () => {
+    try {
+      const url = "http://localhost:3000/api/v1/curso";
 
-  // Función para manejar cambios en el formulario
-  const handleChange = (e) => {
-    setNuevoCurso({
-      ...nuevoCurso,
-      [e.target.name]: e.target.value,
-    });
+      const formData = new FormData();
+      formData.append("titulo", curso.titulo);
+      formData.append("descripcion", curso.descripcion);
+      formData.append("resumen", curso.resumen);
+      formData.append("imagen", curso.imagen);
+      formData.append("precio", curso.precio); 
+      formData.append("puntaje", curso.puntaje);
+      formData.append("horario", curso.horario); 
+
+
+      const opciones = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json", 
+        },
+        body: formData, 
+      };
+
+      const respuesta = await fetch(url, opciones);
+
+      if (respuesta) {
+        const datos = await respuesta.json();
+        // Manejar la respuesta según tus necesidades
+        console.log("Curso creado con éxito:", datos);
+      } else {
+        console.error(
+          "Error en la solicitud POST:",
+          respuesta.status,
+          respuesta.statusText
+        );
+      }
+      navigate("/administrar-cursos");
+    } catch (error) {
+      console.error("Error al enviar la solicitud POST:", error);
+    }
   };
 
-  // Función para manejar la subida del formulario
-  const handleGuardar = async () => {
-    // Realiza la lógica para guardar el nuevo curso en la base de datos
-    // Puedes usar fetch o alguna librería para hacer la solicitud al servidor
-    // ...
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setCurso({ ...curso, [name]: value });
+  };
 
-    // Después de guardar, redirige a la página de cargar cursos o realiza alguna acción
-    // history.push('/cargar-cursos');
-  };  
-  
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setCurso({ ...curso, imagen: file });
+  };
 
   return (
     <>
@@ -36,32 +72,29 @@ export const AgregarCurso = () => {
         <div className="container-flex antiNavbar">.</div>
         <h2 className="tirarAbajo">Agregar Curso</h2>
 
-        <form>
+        <form onSubmit={EnviarSolicitud}>
+          <section className="row alMedio">
+            <img
+              src={curso.imagen ? URL.createObjectURL(curso.imagen) : ''}
+              alt="imagen de Perfil"
+              className="imagenPerfil"
+            />
+          </section>
+          <section className="row alMedio">
+            <div className="input-group">
+              <label className="input-group-text">Subir</label>
 
+              <input
+                type="file"
+                className="form-control"
+                id="inputGroupFile01"
+                name="titulo"
+                value={curso.imagen}
+                onChange={handleFileChange}
+              />
+            </div>
+          </section>
 
-
-        <section className="row alMedio">
-        <img src={imagenPerfilSrc} alt="imagendePerfil" className="imagenPerfil" />
-        </section>
-        <section className="row alMedio">
-        <div className="input-group">
-          <label className="input-group-text">
-            Subir
-          </label>
-
-          
-          <input
-            type="file"
-            className="form-control"
-            id="inputGroupFile01"
-            name="titulo"
-            value={curso.imagen}
-            imagen={bufferToDataURL(curso.imagen, 'image/jpeg')}
-            onChange={handleFileChange}
-          />
-        </div>
-        </section>
-      
           <div className="container alMedio">
             <div className="row alMedio ">
               <div className="col-3 izquierda">
@@ -72,7 +105,7 @@ export const AgregarCurso = () => {
                   type="text"
                   name="titulo"
                   value={curso.titulo}
-                  onChange={handleChange}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -85,7 +118,7 @@ export const AgregarCurso = () => {
                   type="text"
                   name="descripcion"
                   value={curso.descripcion}
-                  onChange={handleChange}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -98,11 +131,11 @@ export const AgregarCurso = () => {
                   type="text"
                   name="resumen"
                   value={curso.resumen}
-                  onChange={handleChange}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
-       
+
             <div className="row alMedio">
               <div className="col-3 izquierda">
                 <label>Puntaje:</label>
@@ -112,11 +145,11 @@ export const AgregarCurso = () => {
                   type="text"
                   name="puntaje"
                   value={curso.puntaje}
-                  onChange={handleChange}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
-               <div className="row alMedio">
+            <div className="row alMedio">
               <div className="col-3 izquierda">
                 <label>Precio:</label>
               </div>
@@ -125,7 +158,7 @@ export const AgregarCurso = () => {
                   type="text"
                   name="precio"
                   value={curso.precio}
-                  onChange={handleChange}
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
@@ -134,9 +167,7 @@ export const AgregarCurso = () => {
                 <label></label>
               </div>
               <div className="col-3 izquierda">
-                <button type="button" onClick={handleGuardar }>
-                  Guardar
-                </button>
+                <button type="submit">Guardar</button>
               </div>
             </div>
           </div>
@@ -145,4 +176,3 @@ export const AgregarCurso = () => {
     </>
   );
 };
-

@@ -59,6 +59,7 @@ export const CargarCursos = () => {
           <th>Descripción</th>
           <th>Resumen</th>
           <th>Imagen</th>
+          <th>Horario</th>
           <th>Editar</th>
           <th>Eliminar</th>
           <th></th>
@@ -72,6 +73,8 @@ export const CargarCursos = () => {
             <td>{curso.titulo}</td>
             <td>{curso.descripcion}</td>
             <td>{curso.resumen}</td>
+            <td>{curso.horario}</td>
+
             <td></td>
             <td>
   <Link to={`/editar-curso/${curso._id}`} className="btn btn-info">Editar</Link>
