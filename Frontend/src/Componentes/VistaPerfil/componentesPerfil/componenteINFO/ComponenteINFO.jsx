@@ -14,7 +14,7 @@ export const ComponenteINFO = () => {
     telefono: "",
     region: "",
     contraseña: "",
-    situacionLaboral: "Estoy ...", // Asegúrate de tener la clave correcta para situacionLaboral
+    situacionLaboral: "", 
   });
 
   const togglePasswordVisibility = () => {
