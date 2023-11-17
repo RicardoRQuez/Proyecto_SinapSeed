@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { VistaHome } from "./Componentes/VistaHome/VistaHome.jsx";
 import { MyNavbar } from "./Componentes/Navbar/Navbar.jsx";
 import { VistaLogin } from "./Componentes/VistaLogIn/VistaLogin.jsx";
@@ -18,6 +19,7 @@ import {TablaAdminCursos} from "./Componentes/AdminCursos/adminCursos.jsx"
 import {EditCurso} from "./Componentes/AdminCursos/editCursos.jsx"
 import { VistaPerfil } from "./Componentes/VistaPerfil/VistaPerfil.jsx";
 import { CargarCursos } from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
+import {VistaMisionVision} from "./Componentes/QuieneSomos/vistaQuieneSomos.jsx"
 export function App() {
   const { showLogin } = useAuth();
 
@@ -43,6 +45,7 @@ export function App() {
           <Route path="/administrar-cursos" element={<TablaAdminCursos/>} />
           <Route path="/editar-curso/:id" element={<EditCurso/>} />
           <Route path="/administrar-cursos" element={<CargarCursos />} />
+          <Route path="/quienes-somos" element={<VistaMisionVision />} />
         </Routes>
         <Footer />
       </AuthProvider>
