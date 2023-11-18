@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./EditarCursos.css";
-import axios from 'axios';
+import axios from "axios";
 import Cookies from "js-cookie";
+import imagenPerfil from "../../assets/resources/cursox.jpg";
 
 export const EditCurso = () => {
   const { id } = useParams();
@@ -12,25 +13,31 @@ export const EditCurso = () => {
     descripcion: "",
     resumen: "",
     imagen: "",
-    horario: ""
+    horario: "",
   });
 
   useEffect(() => {
     const obtenerCursos = async () => {
       try {
-        const consultaCookie = Cookies.get('token');
+        const consultaCookie = Cookies.get("token");
         console.log(consultaCookie);
-        
 
-        const response = await axios.get(`http://localhost:3000/api/v1/curso/${id}`,{ headers: { token: consultaCookie } });
+        const response = await axios.get(
+          `http://localhost:3000/api/v1/curso/${id}`,
+          { headers: { token: consultaCookie } }
+        );
+        if (response.data.imagen) {
+          const imagenUrl = bufferToDataURL(response.data.imagen, "image/jpeg"); // Reemplaza 'image/jpeg' con el tipo MIME correcto
+          setImagenPerfilSrc(imagenUrl);
+        }
         setCurso(response.data);
       } catch (error) {
-        console.error('Error al obtener Cursos:', error);
+        console.error("Error al obtener Cursos:", error);
       }
     };
 
     obtenerCursos();
-  }, []); 
+  }, [id]);
 
   const handleChange = (e) => {
     setCurso({
@@ -39,33 +46,97 @@ export const EditCurso = () => {
     });
   };
 
+  const handleGuardar = async (event) => {
+    event.preventDefault();
 
-const handleGuardar = async () => {
-  try {
-    const respuesta = await axios.patch(
-      `http://localhost:3000/api/v1/curso/${id}`,
-      curso,
-      
-    );
+    try {
 
-    const datosActualizados = respuesta.data;
+      const formData = new FormData(); // Crear objeto FormData
+  
+          // Agregar campos de texto al FormData
+          formData.append("titulo", curso.titulo);
+          formData.append("descripcion", curso.descripcion);
+          formData.append("resumen", curso.resumen);
+          formData.append("horario", curso.horario);        
+          formData.append("puntaje", curso.puntaje);
+          formData.append("precio", curso.precio);
 
-    setCurso(datosActualizados);
-    navigate('/administrar-cursos');
-  } catch (error) {
-    console.error('Error al actualizar el curso:', error);
-  }
-};
+          
+          if (curso.imagen) {
+            formData.append("imagen", curso.imagen); // Agregar la imagen al FormData
+          }
+      console.log(curso); 
+      const respuesta = await axios.patch(
+        `http://localhost:3000/api/v1/curso/${id}`,
+        formData, // Enviar el FormData en lugar de datosUsuario
+            {
+              headers: {
+                "Content-Type": "multipart/form-data", // Asegúrate de establecer el tipo de contenido correcto para FormData
+              },
+            }
+      );
 
+      const datosActualizados = respuesta.data;
 
+      setCurso(datosActualizados);
+      navigate("/administrar-cursos");
+    } catch (error) {
+      console.error("Error al actualizar el curso:", error);
+    }
+  };
+
+  const [imagenPerfilSrc, setImagenPerfilSrc] = useState("imagenPerfil");
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        setImagenPerfilSrc(reader.result); // Actualizamos la imagen en el frontend
+
+        // Actualizamos el estado para incluir la imagen seleccionada
+        setCurso({
+          ...curso,
+          imagen: file, // Esto podría ser diferente dependiendo de la estructura de datos que espera el backend para la imagen
+        });
+      };
+
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const bufferToDataURL = (buffer, mimeType) => {
+    const arrayBufferView = new Uint8Array(buffer.data); // Extrae la propiedad data
+    const blob = new Blob([arrayBufferView], { type: mimeType });
+    const urlCreator = window.URL || window.webkitURL;
+    return urlCreator.createObjectURL(blob);
+  };
   return (
     <>
       <div>
         <div className="container-flex antiNavbar">.</div>
         <h2 className="tirarAbajo">Editar Curso</h2>
 
-        <form>
+        <form onSubmit={handleGuardar}>
           <div className="container alMedio">
+          <section className="row">
+              <img
+                src={imagenPerfilSrc}
+                alt="imagendePerfil"
+                className="imagenPerfil"
+              />
+              <div className="input-group mb-3">
+                <label className="input-group-text">Subir</label>
+                <input
+                  type="file"
+                  className="form-control"
+                  id="inputGroupFile01"
+                  onChange={handleFileChange}
+                />
+              </div>
+            </section>
             <div className="row alMedio ">
               <div className="col-3 izquierda">
                 <label>titulo:</label>
@@ -105,20 +176,7 @@ const handleGuardar = async () => {
                 />
               </div>
             </div>
-            <div className="row alMedio">
-              <div className="col-3 izquierda">
-                <label>Imagen</label>
-              </div>
-              <div className="col-3 izquierda">
-                <input
-                  type="text"
-                  name="imagen"
-                  value={curso.imagen}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-      
+
             <div className="row alMedio">
               <div className="col-3 izquierda">
                 <label>Horario:</label>
@@ -137,9 +195,7 @@ const handleGuardar = async () => {
                 <label></label>
               </div>
               <div className="col-3 izquierda">
-                <button type="button" onClick={handleGuardar}>
-                  Guardar
-                </button>
+                <button type="submit">Guardar</button>
               </div>
             </div>
           </div>

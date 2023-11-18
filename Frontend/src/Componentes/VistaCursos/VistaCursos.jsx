@@ -40,7 +40,8 @@ export const VistaCursos = () => {
         const urlCreator = window.URL || window.webkitURL;
         return urlCreator.createObjectURL(blob);
       } else {
-       
+        console.log("no funciona")
+       return
       }
     } catch (error) {
       console.error(error.message);
