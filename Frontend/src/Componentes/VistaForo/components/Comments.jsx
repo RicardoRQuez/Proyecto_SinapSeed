@@ -5,7 +5,7 @@ import Card from 'react-bootstrap/Card';
 import styles from './Comments.module.css';
 
 function CommentComponent() {
-  const [author, setAuthor] = useState('');
+  const [author, setAuthor] = useState(''); 
   const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
 
@@ -13,7 +13,7 @@ function CommentComponent() {
     setAuthor(e.target.value);
   };
 
-  const handleCommentChange = (e) => {
+  const handleCommentChange = (e) => { 
     setComment(e.target.value);
   };
 

@@ -1,73 +1,68 @@
-import React from "react";
 import styles from "./VistaCursos.module.css";
 import image1 from "./imagenes/image1.png";
+import { CursoComponent } from './ComponentVistaCursos';
+import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import axios from 'axios';
 
 
 export const VistaCursos = () => {
+  const { id } = useParams();
+  const [curso, setCurso] = useState({});
+
+  useEffect(() => {
+    const obtenerCurso = async () => {
+      try {
+        const consultaCookie = Cookies.get('token');
+        console.log(consultaCookie);
+
+        const response = await axios.get(`http://localhost:3000/api/v1/curso/${id}`, { headers: { token: consultaCookie } });
+        
+        if (response.data) {
+          setCurso(response.data);
+        } else {
+          console.error('La respuesta de la API no contiene datos.');
+        }
+      } catch (error) {
+        console.error('Error al obtener Cursos:', error);
+      }
+    };
+
+    obtenerCurso();
+  }, []);
+    
+  const bufferToDataURL = (buffer, mimeType) => {
+    try {
+      if (buffer && buffer.data) {
+        const arrayBufferView = new Uint8Array(buffer.data);
+        const blob = new Blob([arrayBufferView], { type: mimeType });
+        const urlCreator = window.URL || window.webkitURL;
+        return urlCreator.createObjectURL(blob);
+      } else {
+        console.log("no funciona")
+       return
+      }
+    } catch (error) {
+      console.error(error.message);
+      // Devuelve una URL predeterminada o realiza alguna acción de manejo de errores
+      return 'URL_POR_DEFECTO';
+    }
+  };
+
+  
   return (
     <>
-     
-      <div className={`${styles.portadaCursos} d-flex`}></div>
-      <div className="row justify-content-center align-items-center g-2">
-        {/* Primera columna */}
-        <div className={`${styles.columnaUno} col-5`}>
-          {/* Primera fila en la primera columna */}
-          <div className="row">
-            <h2 className={styles.tituloGrande}>Full Stack Javascript</h2>{" "}
-          </div>
-          <div className="row">
-            <span className="tituloChico">
-              <b>¿Qué es un Desarrollador Full Stack?</b>
-            </span>
-          </div>
-          <div className="row">
-            <span className="textoCompleto">
-              Domina el desarrollo web Full Stack con el curso de JavaScript de
-              Generation Chile. Aprende con proyectos reales, recibe apoyo
-              personalizado y accede a oportunidades laborales. Con horarios
-              flexibles y una carrera en crecimiento, este curso es para todos,
-              desde principiantes hasta experimentados. Inscríbete hoy y
-              prepárate para una carrera exitosa. No importa si eres un
-              principiante o ya tienes experiencia en programación; este curso
-              está diseñado para todos. Prepara tu camino hacia una emocionante
-              carrera como desarrollador web Full Stack. ¡Inscríbete en el curso
-              de JavaScript Full Stack de Generation Chile y da el siguiente
-              paso hacia tu éxito profesional!
-            </span>
-          </div>
-          <div className="row">
-            <div className="col mt-3">
-            <button className={styles.botonRaro}type="button">
-  <a className={styles.textoBlancoBoton} href="#">Apúntate al curso</a>
-</button>
-            </div>
-            <div className="col mt-3">
-              <p className={styles.tituloGratis}> Gratis</p>
-            </div>
-          </div>
-        </div>
-        <div className="col-1"></div>
-        <div className="col-5 mt-5">
-          <div className={`${styles.imagenCursos}`}>
-            <img src={image1} alt="Descripción de la imagen" />
-          </div>
-          <div className="row mt-3 text-center">
-            {" "}
-            {/* Primera fila */}
-            <h3>
-              <b className="colorNota">8.9/10</b>
-            </h3>
-          </div>
-          <div className="row mt-3">
-            {" "}
-            {/* Segunda fila */}
-            <p>
-              Quieres ingresar al foro con el detalle de los usuarios de esta
-              puntuación? <a href="/foro">Pincha Acá</a>
-            </p>
-          </div>
-        </div>
-      </div>
+      <CursoComponent
+        key={curso._id}
+        titulo={curso.titulo}
+        resumen={curso.resumen}
+        descripcion={curso.descripcion}
+        imagen={bufferToDataURL(curso.imagen, 'image/jpeg')}
+        puntaje={curso.puntaje}
+        precio={curso.precio}
+      />
     </>
   );
 };
+ 

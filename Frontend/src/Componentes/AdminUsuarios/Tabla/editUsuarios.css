@@ -1,0 +1,16 @@
+.tirarAbajo{
+    margin-top: 60px;
+    text-align: center;
+}
+
+
+
+
+.row.alMedio{
+
+display: flexbox;
+
+justify-content: center;
+
+}
+

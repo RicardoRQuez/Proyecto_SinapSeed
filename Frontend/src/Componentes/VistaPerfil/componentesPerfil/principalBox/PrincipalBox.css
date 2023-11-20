@@ -1,0 +1,8 @@
+.containerprincipalBox {
+    background-color: rgba(0,0,0,0.6);
+    border: 5px solid #f088eb;
+    border-radius: 20px;
+    width: 60rem;
+    height: 45rem;
+    margin-bottom: 250px;
+}

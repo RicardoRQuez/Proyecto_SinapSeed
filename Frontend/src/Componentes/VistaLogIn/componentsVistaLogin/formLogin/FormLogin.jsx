@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./formLogin.css";
 import { useAuth, useAuthFunctions  } from "../../AuthContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 export const FormLogin = ({ onLogin }) => {
@@ -26,6 +26,10 @@ export const FormLogin = ({ onLogin }) => {
     await handleLogin(e);
     navigate('/'); // Redirige a la ruta '/' después de iniciar sesión
   };
+
+
+
+  
 
   return (
     <form className="formLuis container">
@@ -78,10 +82,11 @@ export const FormLogin = ({ onLogin }) => {
         </p>
       </section>
       <section className="container row contenedorBotonLuis">
-      <button
+        <button
           type="submit"
           className="botonLuis"
-          onClick={handleButtonClick}
+          onClick={handleButtonClick }
+          
         >
           <span className="ingresarLuis">Ingresar</span>
         </button>
@@ -90,7 +95,7 @@ export const FormLogin = ({ onLogin }) => {
       <section>
         <h5 className="accesoDocenteLuis">
           {" "}
-          Acceso <span id="docenteLuis">docente</span>{" "}
+          Registrate <Link to="/registro" id="docenteLuis">Aqui</Link>{" "}
         </h5>
       </section>
     </form>

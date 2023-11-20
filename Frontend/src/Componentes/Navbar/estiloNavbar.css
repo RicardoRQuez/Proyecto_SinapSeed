@@ -30,13 +30,12 @@
 
 .navbar-logo{
 
-
     height: 50px;
     margin-right: 20px;
     margin-top: 0px;
     
 }
 
-.container-fluid diego{
+.container-fluid.diego{
     z-index: 1;
 }

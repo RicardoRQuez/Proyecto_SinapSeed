@@ -1,0 +1,50 @@
+
+
+.usersSinapSeed{
+  margin-top: 30px;
+  text-align: center;
+
+
+}
+
+.table.datosUsuarios{
+
+
+margin-top:40px;
+
+}
+
+.botonEdit{
+
+  color: #FFFFFF;
+  background-color: #212529;
+  border: 6px solid #212529;
+  font-weight: 400;
+  border-radius: 5px;
+  display: inline-flex;
+  width: 90px;
+  text-decoration: none;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+}
+  
+.botonEliminar{
+
+  color: #FFFFFF; /* Cambiar el color del texto a blanco */
+  background-color: rgb(247, 73, 50); /* Cambiar el color de fondo a naranja */
+
+  font-weight: 400;
+  border-radius: 5px;
+  border: 6px solid rgb(247, 73, 50);
+  text-decoration: none; /* Elimina el subrayado */
+  width: 90px;
+
+
+}
+
+.container-flex.antiNavbar{
+
+  background-color: #212529;
+  padding-bottom: 70px;
+  
+  }

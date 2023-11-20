@@ -12,8 +12,23 @@ import { VistaNoticias } from "./Componentes/VistaNoticias/VistaNoticias.jsx";
 import { VistaCursos } from "./Componentes/VistaCursos/VistaCursos.jsx";
 import { AuthProvider } from "./Componentes/VistaLogIn/AuthContext";
 import { useAuth } from "./Componentes/VistaLogIn/AuthContext";
+<<<<<<< HEAD
 import { CargarCursos } from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
 import { VistaMisionVision } from "./Componentes/VistaMisionVision/VistaMV.jsx";
+=======
+import {AdminUser} from "./Componentes/AdminUsuarios/vistaAdminUsuarios.jsx";
+import {EditUsuario} from "./Componentes/AdminUsuarios/Tabla/editUsuarioOla.jsx";
+import {CargarCursos} from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
+import {EditCurso} from "./Componentes/VistaAdminCursos/EditarCursos.jsx";
+import { VistaPerfil } from "./Componentes/VistaPerfil/VistaPerfil.jsx";
+import {CrearCurso} from "./Componentes/VistaAdminCursos/AgregarCursos.jsx"
+import {VistaMisionVision} from "./Componentes/QuieneSomos/vistaQuieneSomos.jsx"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+>>>>>>> 99aa2d825d726453bbff098ecf929caa62eaa4e4
 export function App() {
   const { showLogin } = useAuth();
 
@@ -30,10 +45,21 @@ export function App() {
           <Route path="/registro" element={<VistaRegistro />} />
           <Route path="/cursosGen" element={<VistaCursoGen />} />
           <Route path="/noticias" element={<VistaNoticias />} />
-          <Route path="/cursos" element={<VistaCursos />} />
+          <Route path="/cursos/:id" element={<VistaCursos />} />
           <Route path="/foro" element={<VistaForo />} />
+          <Route path="/perfil" element={<VistaPerfil  />} />
+          <Route path="/administrar-usuarios" element={<AdminUser />} />
+
+          <Route path="/editar-usuario/:id" element={<EditUsuario/>} />
+  
+          <Route path="/editar-curso/:id" element={<EditCurso/>} />
           <Route path="/administrar-cursos" element={<CargarCursos />} />
+<<<<<<< HEAD
           <Route path="/quienesSomos" element={<VistaMisionVision />} />
+=======
+          <Route path="/agregar-curso" element={<CrearCurso />} />
+          <Route path="/quienes-somos" element={<VistaMisionVision />} />
+>>>>>>> 99aa2d825d726453bbff098ecf929caa62eaa4e4
         </Routes>
         <Footer />
       </AuthProvider>

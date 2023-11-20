@@ -1,0 +1,21 @@
+  <label>Nombre:</label>
+        <input type="text" name="nombre" value={usuario.nombre} onChange={handleChange} />
+
+        <label>RUT:</label>
+        <input type="text" name="rut" value={usuario.rut} onChange={handleChange} />
+
+        <label>Email:</label>
+        <input type="text" name="email" value={usuario.email} onChange={handleChange} />
+
+        <label>Teléfono:</label>
+        <input type="text" name="telefono" value={usuario.telefono} onChange={handleChange} />
+
+        <label>Región:</label>
+        <input type="text" name="region" value={usuario.region} onChange={handleChange} />
+
+        <label>Situación Laboral:</label>
+        <input type="text" name="situacionLaboral" value={usuario.situacionLaboral} onChange={handleChange} />
+
+        <button type="button" onClick={handleGuardar}>
+          Guardar
+        </button>
