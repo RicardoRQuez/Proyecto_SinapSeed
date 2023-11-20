@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import estudio from './estudio.jpg';
 import './VistaCursoGen.css';
 import { BusquedaCursoGen } from './componentsVistaCursoGen/Busqueda/BusquedaCursoGen.jsx'
-import {ComponenteCurso } from './componentsVistaCursoGen/ComponenteCurso/ComponenteCurso.jsx'
-import muestra from './muestra.jpeg';
+import { ComponenteCurso } from './componentsVistaCursoGen/ComponenteCurso/ComponenteCurso.jsx'
+import { ComponenteComentarios } from './componentsVistaCursoGen/ComponenteCurso/componenteComentarios';
 import axios from 'axios';
 import Cookies from "js-cookie";
 
@@ -59,6 +59,8 @@ export const VistaCursoGen = () => {
             id={curso._id}
           />
         ))}
+         <ComponenteComentarios
+         />
       </div>
       <div className='col-2'></div>
     </section>
