@@ -47,11 +47,8 @@ export const EditCurso = () => {
           body: JSON.stringify(curso),
         }
       );
-
       const datosActualizados = await respuesta.json();
-
       setCurso(datosActualizados);
-
       navigate("/administrar-cursos");
     } catch (error) {
       console.error("Error al actualizar el curso:", error);
@@ -63,17 +60,16 @@ export const EditCurso = () => {
       <div>
         <div className="container-flex antiNavbar">.</div>
         <h2 className="tirarAbajo">Editar Curso</h2>
-
         <form>
           <div className="container alMedio">
             <div className="row alMedio ">
               <div className="col-3 izquierda">
-                <label>Nombre:</label>
+                <label>Título:</label>
               </div>
               <div className="col-3 izquierda">
                 <input
                   type="text"
-                  name="nombre"
+                  name="titulo"
                   value={curso.nombre}
                   onChange={handleChange}
                 />
@@ -94,52 +90,13 @@ export const EditCurso = () => {
             </div>
             <div className="row alMedio">
               <div className="col-3 izquierda">
-                <label>Fecha de Inicio:</label>
+                <label>Resumen:</label>
               </div>
               <div className="col-3 izquierda">
                 <input
                   type="text"
-                  name="fechaInicio"
+                  name="resumen"
                   value={curso.fechaInicio}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="row alMedio">
-              <div className="col-3 izquierda">
-                <label>Duración:</label>
-              </div>
-              <div className="col-3 izquierda">
-                <input
-                  type="text"
-                  name="duracion"
-                  value={curso.duracion}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="row alMedio">
-              <div className="col-3 izquierda">
-                <label>Docente:</label>
-              </div>
-              <div className="col-3 izquierda">
-                <input
-                  type="text"
-                  name="docente"
-                  value={curso.docente}
-                  onChange={handleChange}
-                />
-              </div>
-            </div>
-            <div className="row alMedio">
-              <div className="col-3 izquierda">
-                <label>Horario:</label>
-              </div>
-              <div className="col-3 izquierda">
-                <input
-                  type="text"
-                  name="horario"
-                  value={curso.horario}
                   onChange={handleChange}
                 />
               </div>
