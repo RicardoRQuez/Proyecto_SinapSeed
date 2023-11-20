@@ -3,7 +3,7 @@ import './ComponenteCurso.css'
 import muestra from '../../muestra.jpeg'
 import { NavLink } from 'react-router-dom';
 
-export const ComponenteCurso = ({imagen, titulo, descripcion, id}) => {
+export const ComponenteCurso = ({ imagen, titulo, descripcion, id, onClickVerOcultarComentarios }) => {
   return (
     
     <section className='containerCursoGen'>
@@ -19,6 +19,10 @@ export const ComponenteCurso = ({imagen, titulo, descripcion, id}) => {
           Ver más
         </button>
       </NavLink>
+      <button type="submit" onClick={onClickVerOcultarComentarios} className="botonComentar">
+          Ver/ocutar comentarios
+        </button>
+        
         </div>
 
       </div>

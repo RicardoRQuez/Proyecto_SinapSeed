@@ -26,6 +26,14 @@
     color:white;
 
 }
+.botonComentar {
+    background-color: white;
+    border:#f088eb;
+    border-radius: 5px;
+    color:#f088eb;
+    margin-left: 10px;
+
+}
 
 .h4Luis{
     color:#f088eb;
