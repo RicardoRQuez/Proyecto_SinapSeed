@@ -16,10 +16,10 @@ export const BotonesTres= () => {
             </a>
           </div>
           <div className="col position-relative">
-            <a href="/noticias">
-              <img src="imágenes/intentodeboton.jpg" alt="botones-grandes" className="img-fluid botones-grandes" />
+            <a href="/quienes-somos">
+              <img src="imágenes/intentodeboton.png" alt="botones-grandes" className="img-fluid botones-grandes" />
               <div className="position-absolute bottom-0">
-                <p className="textoTresBotones">Noticias</p>
+                <p className="textoTresBotones">Quienes Somos</p>
               </div>
             </a>
           </div>

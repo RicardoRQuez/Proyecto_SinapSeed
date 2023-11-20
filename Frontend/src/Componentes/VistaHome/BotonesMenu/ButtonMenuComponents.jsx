@@ -1,28 +1,42 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Toast from 'react-bootstrap/Toast';
+import {
+    Button,
+    useDisclosure,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalBody,
+    ModalFooter,
+  } from '@chakra-ui/react';
 
-const ButtonMenu = ({titleButton,content,titlecontent})=> {
-    const [showA, setShowA] = useState(false);
-    const toggleShowA = () => setShowA(!showA);
 
-  return (
-    <Row>
-    <Col md={12} >
-      <Button onClick={toggleShowA} className="btn btn-secondary" >
-        <strong>{titleButton}</strong>
-      </Button>
-      <Toast show={showA} onClose={toggleShowA} style={{ marginTop: '10px' }}>
-      <Toast.Header>
-            <strong className="me-auto">{titlecontent}</strong>
-          </Toast.Header>
-        <Toast.Body >{content}</Toast.Body>
-      </Toast>
-    </Col>
-   </Row>
-  );
-}
+const ButtonMenu = ({titleButton,content,titlecontent})=>  {
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
+    return (
+      <>
+        <Button onClick={onOpen}  className="btn btn-secondary">{titleButton}</Button>
+
+        <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose} classname="">
+          <ModalOverlay />
+          <ModalContent>
+            <ModalHeader>{titlecontent}</ModalHeader>
+            <ModalCloseButton />
+            <ModalBody pb={6}>
+              {content}
+            </ModalBody>
+
+            <ModalFooter>
+              <Button onClick={onClose} className="btn btn-secondary-2">Salir</Button>
+            </ModalFooter>
+          </ModalContent>
+        </Modal>
+      </>
+    )
+  }
+
+
 
 export default ButtonMenu;

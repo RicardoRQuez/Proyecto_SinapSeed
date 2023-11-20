@@ -28,11 +28,17 @@ export const TablaAdminUsuarios = () => {
 
   const handleEliminarUsuario = async (id) => {
     try {
+      const consultaCookie = Cookies.get('token');
+      console.log(consultaCookie);
+  
       // Realiza la solicitud para eliminar el usuario por su ID
       await fetch(`http://localhost:3000/api/v1/user/${id}`, {
         method: 'DELETE',
+        headers: {
+          token: consultaCookie,
+        },
       });
-
+  
       // Actualiza la lista de usuarios después de eliminar
       const nuevosUsuarios = usuarios.filter((usuario) => usuario._id !== id);
       setUsuarios(nuevosUsuarios);
