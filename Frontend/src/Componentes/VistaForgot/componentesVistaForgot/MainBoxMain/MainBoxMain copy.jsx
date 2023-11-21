@@ -25,6 +25,8 @@ export const MainBoxMain = () => {
         "http://localhost:3000/api/v1/verificar-datos",
         userData
       );
+      setGeneratedPassword(response.data.newPassword);
+      
   
       try {
         const emailResponse = await axios.get(
@@ -34,32 +36,38 @@ export const MainBoxMain = () => {
         if (emailResponse && emailResponse.data && emailResponse.data.userId) {
           const userId = emailResponse.data.userId;
           console.log('userId:', userId);
+          
+          // Actualizar contraseña usando userId y generatedPassword
+          await actualizarContrasenaEnBackend(userId);
   
-          // Actualizar contraseña usando userId y la contraseña del backend
-          await actualizarContrasenaEnBackend(userId, response.data.newPassword);
-          setGeneratedPassword(response.data.newPassword); // Actualiza el estado aquí
+          // Aquí puedes manejar la respuesta del servidor después de actualizar la contraseña
         } else {
           console.error(
             "La respuesta de emailResponse no tiene la estructura esperada."
           );
+          // Manejar el caso en el que emailResponse no tiene la estructura esperada
         }
       } catch (emailError) {
         console.error("Error al obtener ID de usuario:", emailError);
+        // Manejar el error al obtener ID de usuario
       }
     } catch (error) {
       console.error("Error al verificar datos:", error.response.data);
+      // Manejar el error al verificar datos
     } finally {
       setLoading(false);
     }
   };
   
-  const actualizarContrasenaEnBackend = async (userId, newPassword) => {
+
+  const actualizarContrasenaEnBackend = async (userId ) => {
+    
     try {
-      console.log(userId);
-      console.log("newPassword", newPassword);
+      console.log(userId)
+      console.log("generatedPassword", generatedPassword)
       const patchResponse = await axios.patch(
         `http://localhost:3000/api/v1/actualizar-contrasena/${userId}`,
-        { password: newPassword }
+        { password: generatedPassword }
       );
   
       console.log("Contraseña actualizada:", patchResponse.data.mensaje);

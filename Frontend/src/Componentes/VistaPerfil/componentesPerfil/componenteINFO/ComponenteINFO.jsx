@@ -9,50 +9,56 @@ import Cookies from "js-cookie";
 export const ComponenteINFO = () => {
   const [passwordHidden, setPasswordHidden] = useState(true);
   const [datosUsuario, setDatosUsuario] = useState({
-    nombre: "Nombre",
-    email: "email@example",
-    telefono: "12345678",
-    region: "Vivo en...",
-    contraseña: "********",
-    situacionLaboral: "Me encuentro...", 
+    nombre: "",
+    email: "",
+    telefono: 0,
+    region: "",
+    password: "",
+    situacionLaboral: "",
   });
-
 
   const togglePasswordVisibility = () => {
     setPasswordHidden(!passwordHidden);
   };
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    console.log(`Name: ${name}, Value: ${value}`);
-    setDatosUsuario({
-      ...datosUsuario,
-      [name]: value,
-    });
+    if (event.target.type === "file") {
+      // Lógica para manejar la carga de archivos
+    } else {
+      const { name, value } = event.target;
+      setDatosUsuario({
+        ...datosUsuario,
+        [name]: value,
+      });
+    }
   };
 
   const obtenerDatosUsuario = async () => {
     try {
       const consultaCookie = Cookies.get("token");
-  
+
       if (consultaCookie) {
         const tokedDecode = jwtDecode(consultaCookie);
         const idToken = tokedDecode.data._id;
         console.log(idToken);
-  
-        if (idToken) {
-          const response = await axios.get(`http://localhost:3000/api/v1/user/${idToken}`);
 
-          
+        if (idToken) {
+          const response = await axios.get(
+            `http://localhost:3000/api/v1/user/${idToken}`
+          );
+
           // Obtener la imagen como un objeto URL si está presente en la respuesta
           if (response.data.imagen) {
-            const imagenUrl = bufferToDataURL(response.data.imagen, 'image/jpeg'); // Reemplaza 'image/jpeg' con el tipo MIME correcto
+            const imagenUrl = bufferToDataURL(
+              response.data.imagen,
+              "image/jpeg"
+            ); // Reemplaza 'image/jpeg' con el tipo MIME correcto
             setImagenPerfilSrc(imagenUrl);
           }
-  
+
           // Configurar los datos del usuario, incluyendo la imagen y otros campos
           setDatosUsuario(response.data);
-          console.log(datosUsuario)
+          console.log(datosUsuario);
         } else {
           console.warn("No hay un usuario autenticado");
         }
@@ -63,8 +69,6 @@ export const ComponenteINFO = () => {
       console.error("Error al obtener los datos del usuario:", error);
     }
   };
-  
-  
 
   useEffect(() => {
     obtenerDatosUsuario();
@@ -72,31 +76,31 @@ export const ComponenteINFO = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-  
+
     try {
       const consultaCookie = Cookies.get("token");
-  
+
       if (consultaCookie) {
         const tokedDecode = jwtDecode(consultaCookie);
         const idToken = tokedDecode.data._id;
-  
+
         if (idToken) {
           const formData = new FormData(); // Crear objeto FormData
-  
+
           // Agregar campos de texto al FormData
           formData.append("nombre", datosUsuario.nombre);
           formData.append("email", datosUsuario.email);
           formData.append("telefono", datosUsuario.telefono);
-          formData.append("contraseña", datosUsuario.contraseña);
+          formData.append("password", datosUsuario.password);
           formData.append("region", datosUsuario.region);
           formData.append("situacionLaboral", datosUsuario.situacionLaboral);
-          
+
           // ... otros campos
-  
+
           if (datosUsuario.imagen) {
             formData.append("imagen", datosUsuario.imagen); // Agregar la imagen al FormData
           }
-  
+
           const response = await axios.patch(
             `http://localhost:3000/api/v1/user/${idToken}`,
             formData, // Enviar el FormData en lugar de datosUsuario
@@ -118,26 +122,26 @@ export const ComponenteINFO = () => {
       console.error("Error al obtener los datos del usuario:", error);
     }
   };
-  console.log(datosUsuario)
+  console.log(datosUsuario);
   //Inicio de getsion imagen-----------------------------------------------------------------
   const [imagenPerfilSrc, setImagenPerfilSrc] = useState(imagenPerfil);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
-  
+
     if (file) {
       const reader = new FileReader();
-  
+
       reader.onloadend = () => {
         setImagenPerfilSrc(reader.result); // Actualizamos la imagen en el frontend
-  
+
         // Actualizamos el estado para incluir la imagen seleccionada
         setDatosUsuario({
           ...datosUsuario,
           imagen: file, // Esto podría ser diferente dependiendo de la estructura de datos que espera el backend para la imagen
         });
       };
-  
+
       reader.readAsDataURL(file);
     }
   };
@@ -149,15 +153,17 @@ export const ComponenteINFO = () => {
     const urlCreator = window.URL || window.webkitURL;
     return urlCreator.createObjectURL(blob);
   };
-  
+
   return (
     <main className="containercomponenteINFO">
       <section className="row">
-        <img src={imagenPerfilSrc} alt="imagendePerfil" className="imagenPerfil" />
+        <img
+          src={imagenPerfilSrc}
+          alt="imagendePerfil"
+          className="imagenPerfil"
+        />
         <div className="input-group mb-3">
-          <label className="input-group-text">
-            Subir
-          </label>
+          <label className="input-group-text">Subir</label>
           <input
             type="file"
             className="form-control"
@@ -174,7 +180,10 @@ export const ComponenteINFO = () => {
           noValidate
         >
           <div className="col-md-4 position-relative">
-            <label htmlFor="validationTooltip01" className="form-label subtituloChiqui">
+            <label
+              htmlFor="validationTooltip01"
+              className="form-label subtituloChiqui"
+            >
               Nombre
             </label>
             <input
@@ -188,7 +197,10 @@ export const ComponenteINFO = () => {
             />
           </div>
           <div className="col-md-4 position-relative">
-            <label htmlFor="validationTooltip02" className="form-label subtituloChiqui">
+            <label
+              htmlFor="validationTooltip02"
+              className="form-label subtituloChiqui"
+            >
               Rut
             </label>
             <input
@@ -201,7 +213,10 @@ export const ComponenteINFO = () => {
             />
           </div>
           <div className="col-md-4 position-relative">
-            <label htmlFor="validationTooltipUsername" className="form-label subtituloChiqui">
+            <label
+              htmlFor="validationTooltipUsername"
+              className="form-label subtituloChiqui"
+            >
               Email
             </label>
             <div className="input-group has-validation">
@@ -223,7 +238,10 @@ export const ComponenteINFO = () => {
             </div>
           </div>
           <div className="col-md-3 position-relative">
-            <label htmlFor="validationTooltip03" className="form-label subtituloChiqui">
+            <label
+              htmlFor="validationTooltip03"
+              className="form-label subtituloChiqui"
+            >
               Teléfono
             </label>
             <input
@@ -231,14 +249,17 @@ export const ComponenteINFO = () => {
               className="form-control"
               id="validationTooltip03"
               name="telefono"
-              value={datosUsuario.telefono || ""}
+              value={datosUsuario.telefono}
               onChange={handleInputChange}
               pattern="[0-9]{8}" //Esta linea indica que se pueden ingresar numeros del 0 al 9, y acepta 8 digitos ni mas ni menos
               required
             />
           </div>
           <div className="col-md-3 position-relative">
-            <label htmlFor="validationTooltip06" className="form-label subtituloChiqui">
+            <label
+              htmlFor="validationTooltip06"
+              className="form-label subtituloChiqui"
+            >
               Región
             </label>
             <select
@@ -249,7 +270,6 @@ export const ComponenteINFO = () => {
               onChange={handleInputChange}
               required
             >
-            
               <option value="Región de Arica y Parinacota">
                 R. de Arica y Parinacota
               </option>
@@ -273,18 +293,21 @@ export const ComponenteINFO = () => {
             </select>
           </div>
           <div className="col-md-3 position-relative">
-            <label htmlFor="validationTooltip05" className="form-label subtituloChiqui">
+            <label
+              htmlFor="validationTooltip05"
+              className="form-label subtituloChiqui"
+            >
               Contraseña
-            </label>
+            </label>            
             <input
-              type={passwordHidden ? "password" : "text"}
-              className="form-control"
-              id="validationTooltip05"
-              name="contraseña"
-              value={datosUsuario.contraseña || ""}
-              onChange={handleInputChange}
-              required
-            />
+                type={passwordHidden ? "password" : "text"}
+                className="form-control"
+                id="validationTooltipPassword"
+                name="password"
+                value={datosUsuario.password}
+                onChange={handleInputChange}
+                required
+              />
             <div
               className="password-toggleLuisPerfil"
               onClick={togglePasswordVisibility}
@@ -293,7 +316,10 @@ export const ComponenteINFO = () => {
             </div>
           </div>
           <div className="col-md-3 position-relative">
-            <label htmlFor="validationTooltip09" className="form-label subtituloChiqui">
+            <label
+              htmlFor="validationTooltip09"
+              className="form-label subtituloChiqui"
+            >
               Sit. Laboral
             </label>
             <select
@@ -304,7 +330,6 @@ export const ComponenteINFO = () => {
               onChange={handleInputChange}
               required
             >
-         
               <option value="Independiente">Independiente</option>
               <option value="Cesante">Cesante</option>
               <option value="Empleado">Empleado</option>

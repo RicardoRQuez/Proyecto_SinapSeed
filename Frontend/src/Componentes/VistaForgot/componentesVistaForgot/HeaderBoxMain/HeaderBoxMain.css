@@ -4,6 +4,11 @@
     margin-top: 2rem;
 }
 
+.iniciarSesion{
+    color: #f088eb;
+    font-family: robotob;
+}
+
 .textoForgot{
     text-align: center;
     font-family: robotol;

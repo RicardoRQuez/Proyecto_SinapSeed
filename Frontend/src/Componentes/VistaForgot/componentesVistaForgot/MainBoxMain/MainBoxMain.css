@@ -24,14 +24,15 @@
     border-radius: 20px;
     border: 2px solid #f088eb;
     background: rgba(255, 255, 255, 0);
-    margin-left: 8vw; /* Utilizar unidades relativas para los márgenes */
+    margin-left: 0vw; /* Utilizar unidades relativas para los márgenes */
     margin-top: 5vh; /* Utilizar unidades relativas para los márgenes */
+    margin-bottom: 5vh;
   }
   
   /* Ejemplo para .mostrarContraseña */
   .mostrarContraseña {
     font-family: robotol;
-    margin-left: 11vw; /* Utilizar unidades relativas para los márgenes */
+    margin-left: 0vw; /* Utilizar unidades relativas para los márgenes */
     margin-top: 0; /* Reducir o ajustar el margen superior */
     padding-top: 0; /* Reducir o ajustar el padding superior */
   }
