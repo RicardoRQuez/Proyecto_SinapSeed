@@ -75,13 +75,9 @@ export const EditCurso = () => {
               },
             }
       );
-<<<<<<< HEAD
-      const datosActualizados = await respuesta.json();
-=======
 
       const datosActualizados = respuesta.data;
 
->>>>>>> 99aa2d825d726453bbff098ecf929caa62eaa4e4
       setCurso(datosActualizados);
       navigate("/administrar-cursos");
     } catch (error) {
@@ -122,12 +118,8 @@ export const EditCurso = () => {
       <div>
         <div className="container-flex antiNavbar">.</div>
         <h2 className="tirarAbajo">Editar Curso</h2>
-<<<<<<< HEAD
-        <form>
-=======
 
         <form onSubmit={handleGuardar}>
->>>>>>> 99aa2d825d726453bbff098ecf929caa62eaa4e4
           <div className="container alMedio">
           <section className="row">
               <img
@@ -147,21 +139,13 @@ export const EditCurso = () => {
             </section>
             <div className="row alMedio ">
               <div className="col-3 izquierda">
-<<<<<<< HEAD
-                <label>Título:</label>
-=======
                 <label>titulo:</label>
->>>>>>> 99aa2d825d726453bbff098ecf929caa62eaa4e4
               </div>
               <div className="col-3 izquierda">
                 <input
                   type="text"
                   name="titulo"
-<<<<<<< HEAD
-                  value={curso.nombre}
-=======
                   value={curso.titulo}
->>>>>>> 99aa2d825d726453bbff098ecf929caa62eaa4e4
                   onChange={handleChange}
                 />
               </div>
@@ -187,9 +171,6 @@ export const EditCurso = () => {
                 <input
                   type="text"
                   name="resumen"
-<<<<<<< HEAD
-                  value={curso.fechaInicio}
-=======
                   value={curso.resumen}
                   onChange={handleChange}
                 />
@@ -205,7 +186,6 @@ export const EditCurso = () => {
                   type="text"
                   name="horario"
                   value={curso.horario}
->>>>>>> 99aa2d825d726453bbff098ecf929caa62eaa4e4
                   onChange={handleChange}
                 />
               </div>

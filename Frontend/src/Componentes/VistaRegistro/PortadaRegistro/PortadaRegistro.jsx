@@ -10,7 +10,7 @@ export const PortadaRegistro = () => {
       <Row className="container-fluid texto-principal">
         <Col lg={1}></Col>
         <Col lg={5}>
-          <h1 className="titulo-personalizado color">¡Registrate!</h1>
+          <h1 className="titulo-Personalizado Color">¡Registrate!</h1>
         </Col>
         <Col lg={5}>
           <p className={styles.parrafoPortadaRegistro}>

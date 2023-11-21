@@ -195,10 +195,11 @@ export const FormularioRegistro = () => {
             type="submit"
             className={`${styles.boton} ${styles.color} btn btn-light mt-3 `}
           >
-            Regístrate!
+            ¡Regístrate!
           </button>
         </div>
       </form>
     </>
   );
 };
+

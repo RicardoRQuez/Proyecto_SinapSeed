@@ -12,10 +12,6 @@ import { VistaNoticias } from "./Componentes/VistaNoticias/VistaNoticias.jsx";
 import { VistaCursos } from "./Componentes/VistaCursos/VistaCursos.jsx";
 import { AuthProvider } from "./Componentes/VistaLogIn/AuthContext";
 import { useAuth } from "./Componentes/VistaLogIn/AuthContext";
-<<<<<<< HEAD
-import { CargarCursos } from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
-import { VistaMisionVision } from "./Componentes/VistaMisionVision/VistaMV.jsx";
-=======
 import {AdminUser} from "./Componentes/AdminUsuarios/vistaAdminUsuarios.jsx";
 import {EditUsuario} from "./Componentes/AdminUsuarios/Tabla/editUsuarioOla.jsx";
 import {CargarCursos} from "./Componentes/VistaAdminCursos/CargarCursos.jsx";
@@ -27,9 +23,6 @@ import { VistaForgotRoot } from "./Componentes/VistaForgot/VistaForgotRoot.jsx"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
-
->>>>>>> origin/ultimateSprint
 export function App() {
   const { showLogin } = useAuth();
 
@@ -37,6 +30,7 @@ export function App() {
     <Router>
       <AuthProvider>
         <MyNavbar/>
+
         {showLogin && <VistaLogin />}
         <Routes>
           <Route path="/" element={<VistaHome />} />
@@ -49,17 +43,15 @@ export function App() {
           <Route path="/foro" element={<VistaForo />} />
           <Route path="/perfil" element={<VistaPerfil  />} />
           <Route path="/administrar-usuarios" element={<AdminUser />} />
+
           <Route path="/editar-usuario/:id" element={<EditUsuario/>} />
+  
           <Route path="/editar-curso/:id" element={<EditCurso/>} />
           <Route path="/administrar-cursos" element={<CargarCursos />} />
-<<<<<<< HEAD
-          <Route path="/quienesSomos" element={<VistaMisionVision />} />
-=======
           <Route path="/agregar-curso" element={<CrearCurso />} />
           <Route path="/quienes-somos" element={<VistaMisionVision />} />
           <Route path="/forgot" element={<VistaForgotRoot />} />
           
->>>>>>> origin/ultimateSprint
         </Routes>
         <Footer />
       </AuthProvider>

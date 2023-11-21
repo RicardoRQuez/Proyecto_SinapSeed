@@ -179,21 +179,25 @@ export const ComponenteINFO = () => {
             </label>
             <input
               type="text"
-              className="form-control"
+              className="espacioLuis form-control"
               id="validationTooltip01"
               name="nombre"
               value={datosUsuario.nombre}
               onChange={handleInputChange}
               required
             />
+            
           </div>
           <div className="col-md-4 position-relative">
-            <label htmlFor="validationTooltip02" className="form-label subtituloChiqui">
+            <label
+              htmlFor="validationTooltip02"
+              className="form-label subtituloChiqui"
+            >
               Rut
             </label>
             <input
               type="text"
-              className="form-control"
+              className="espacioLuis2 form-control"
               id="validationTooltip02"
               name="rut"
               value={datosUsuario.rut}
@@ -213,7 +217,7 @@ export const ComponenteINFO = () => {
               </span>
               <input
                 type="text"
-                className="form-control"
+                className="espacioLuis form-control"
                 id="validationTooltipUsername"
                 name="email"
                 value={datosUsuario.email}
@@ -228,7 +232,7 @@ export const ComponenteINFO = () => {
             </label>
             <input
               type="tel" // el tipo tipo "tel" sirve para admitir solo números
-              className="form-control"
+              className="espacioLuis form-control"
               id="validationTooltip03"
               name="telefono"
               value={datosUsuario.telefono || ""}
@@ -242,7 +246,7 @@ export const ComponenteINFO = () => {
               Región
             </label>
             <select
-              className="form-select"
+              className="espacioLuis form-control"
               id="validationTooltip10"
               name="region"
               value={datosUsuario.region}
@@ -278,7 +282,7 @@ export const ComponenteINFO = () => {
             </label>
             <input
               type={passwordHidden ? "password" : "text"}
-              className="form-control"
+              className="espacioLuis form-control"
               id="validationTooltip05"
               name="contraseña"
               value={datosUsuario.contraseña || ""}
@@ -297,14 +301,13 @@ export const ComponenteINFO = () => {
               Sit. Laboral
             </label>
             <select
-              className="form-select"
+              className="espacioLuis form-control"
               id="validationTooltip07"
               name="situacionLaboral"
               value={datosUsuario.situacionLaboral}
               onChange={handleInputChange}
               required
             >
-         
               <option value="Independiente">Independiente</option>
               <option value="Cesante">Cesante</option>
               <option value="Empleado">Empleado</option>
