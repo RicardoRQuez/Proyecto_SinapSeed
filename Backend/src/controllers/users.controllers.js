@@ -1,6 +1,8 @@
 import User from "../models/users.models.js";
 import bcrypt from "bcrypt";
 import multer from 'multer';
+import nodemailer from 'nodemailer';
+
 
 export const uploadImagen = multer().single('imagen'); // Middleware para manejar la carga de imágenes
 
@@ -155,3 +157,92 @@ export const deleteUserById = async (req, res) => {
       res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
+
+
+//-----------------------------
+export const verificarDatos = async (req, res) => {
+  const { nombre, rut, email, telefono } = req.body;
+
+  try {
+    // Lógica para buscar al usuario con los datos proporcionados en la base de datos
+    const usuarioEncontrado = await User.findOne({ nombre, rut, email, telefono });
+    console.log("Usuarios encontrados!", usuarioEncontrado)
+
+    if (!usuarioEncontrado) {
+      return res.status(404).json({ mensaje: 'Datos incorrectos' });
+    }
+
+    const newPassword = generarPasswordAleatoria();
+
+    return res.status(200).json({ mensaje: 'Datos verificados', newPassword });
+
+  } catch (error) {
+    console.error('Error al verificar los datos:', error);
+    res.status(500).json({ mensaje: 'Error del servidor', error });
+  }
+};
+
+
+    // Generar una contraseña (este es solo un ejemplo, puedes usar tu lógica real para generar una contraseña)
+const generarPasswordAleatoria = () => {
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let newPassword = '';
+  let longitud = 8;
+  
+  for (let i = 0; i < longitud; i++) {
+    const randomIndex = Math.floor(Math.random() * caracteres.length);
+    newPassword += caracteres.charAt(randomIndex);
+  }
+        
+  return newPassword;
+};
+
+//Actualizar contraseña-------------------------------------
+// Controlador para actualizar contraseña
+export const actualizarContrasena = async (req, res) => {
+  const { userId, nuevaContrasena } = req.body;
+
+  try {
+    // Encuentra al usuario por su ID
+    const usuario = await User.findById(userId);
+
+    if (!usuario) {
+      return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    }
+
+    // Aquí debes actualizar el campo de la contraseña correctamente
+    usuario.password = nuevaContrasena;
+    await usuario.save();
+
+    return res.status(200).json({ mensaje: 'Contraseña actualizada exitosamente' });
+  } catch (error) {
+    console.error('Error al actualizar la contraseña:', error);
+    return res.status(500).json({ mensaje: 'Error del servidor' });
+  }
+};
+
+
+//-------------------------------------------------------------------
+
+//Obtener ID del usuario----------------------------------------------------
+// Controlador en tu backend para obtener el ID del usuario por su correo electrónico
+
+export const obtenerIdUsuario = async (req, res) => {
+  const { email } = req.query;
+
+  try {
+    const user = await User.findOne({ email: email });
+
+    if (!user) {
+      return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    }
+
+    return res.status(200).json({ userId: user._id });
+  } catch (error) {
+    console.error('Error al obtener el usuario por correo electrónico:', error);
+    return res.status(500).json({ error: 'Error interno del servidor' });
+  }
+};
+
+//----------------------------------------------------
