@@ -1,7 +1,7 @@
 import React from "react";
 import "./PrincipalBox.css";
 import { RecursosAcademicos } from "../RecursosAcademicos/RecursosAcademicos.jsx";
-import { ComponenteINFO } from "../componenteInfo/ComponenteInfo.jsx";
+import { ComponenteINFO } from "../componenteINFO/ComponenteINFO.jsx";
 
 export const PrincipalBox = () => {
   return (

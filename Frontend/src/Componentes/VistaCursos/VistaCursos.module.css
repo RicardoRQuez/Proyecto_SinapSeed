@@ -32,12 +32,10 @@ line-height: normal;
 
 .tituloGratis{
 color: #C54BBF;
-
 font-size: 25px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
-margin-left: 20px;
 font-family: 'Arial', sans-serif;
 }
 
@@ -71,16 +69,54 @@ font-weight: 700;
 line-height: normal;
 }
 
-.botonRaro{
-
-   
-
+.botonRaro{ 
+  color:white;
   border-radius: 5px;
-  color: aliceblue;
-
+  background-color:#C54BBF ;
+  border: 2px solid #C54BBF;
+}
+.botonRaro:hover{
+  background-color: #f088eb;
+  border: #f088eb;
 }
 
 .textoBlancoBoton{
     color: inherit; /* Utiliza el color heredado del elemento padre (puede ser el color del texto circundante) */
     text-decoration: none; /* Elimina el subrayado del enlace */
 }
+.linkForo {
+border: 2px solid #f088eb ;
+display: inline-block;
+width: 100% ;
+padding: 15px; /* Ajusta el padding según sea necesario */
+
+}
+
+.tarjetita{
+  background-color:  rgba(250, 250, 250, 0.4);
+  border: 2px solid #f088eb;
+  font-size: large;
+}
+.tituloPrecio{
+  color: #C54BBF;
+  width: 400px;
+  border: 2px solid #f088eb;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-family: 'Arial', sans-serif;
+  }
+
+  .imagenCursos{
+   width: 300px; 
+   height: 300px;
+   margin-left: 150px;  
+
+  }
+
+  .precio{
+    font-size: bold;
+    color: #000;
+
+  }

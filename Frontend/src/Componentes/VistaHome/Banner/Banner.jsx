@@ -5,11 +5,11 @@ import { CuadroDatos } from "./CuadroDatos/CuadroDatos";
 export const Banner = () => {
   // Define los datos que quieres pasar como props
   const datosCuadro = {
-    enlaces: [
-      "https://www.google.cl",
-      "https://www.google.cl",
-      "https://www.google.cl",
-      "https://www.google.cl",
+    tooltips : [
+      "Podrás encontrar una gran variedad de cursos en tecnología.",
+      "Contamos con varias empresas asociadas para que puedas encontrar el curso que buscas.",
+      "Nuestros egresados tardan menos de 3 meses en encontrar empleo.",
+      "Contamos con una gran cantidad de estudiantes que nos prefieren a diario."
     ],
     imagenes: [
       "imágenes/cuadro 1.png",

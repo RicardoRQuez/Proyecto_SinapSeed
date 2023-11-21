@@ -138,7 +138,7 @@ export function MyNavbar() {
         </ul>
       </div>
 
-      {showLogin && <VistaLogin onClose={closeLogin} />}
+      {!authenticated && showLogin && <VistaLogin onClose={closeLogin} />}
     </nav>
   );
 }
