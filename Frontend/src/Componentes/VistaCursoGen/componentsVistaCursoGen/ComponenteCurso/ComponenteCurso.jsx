@@ -1,33 +1,128 @@
-import React from 'react';
-import './ComponenteCurso.css'
-import muestra from '../../muestra.jpeg'
-import { NavLink } from 'react-router-dom';
+import React, {useState} from "react";
+import "./ComponenteCurso.css";
+import muestra from "../../muestra.jpeg";
+import { NavLink } from "react-router-dom";
+import { Modal, Button, Form } from "react-bootstrap"; 
+import Cookies from "js-cookie";
+import axios from 'axios'
 
-export const ComponenteCurso = ({ imagen, titulo, descripcion, id, onClickVerOcultarComentarios }) => {
+export const ComponenteCurso = ({
+  imagen,
+  titulo,
+  descripcion,
+  id,
+  onClickVerOcultarComentarios,
+  usuarioNombre,
+  usuarioImagen,
+  userId,
+}) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [comentario, setComentario] = useState("");
+  
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+    setComentario(""); // Limpiar el comentario al cerrar el modal
+  };
+
+  const handleComentar = async () => {
+    try {
+      const consultaCookie = Cookies.get("token");
+      const response = await axios.post(
+        `http://localhost:3000/api/v1/comment/${id}/${userId}`, // Reemplaza la URL con tu endpoint
+        {
+          comentario: comentario,
+        },
+        {
+          headers: { token: consultaCookie },
+        }
+      );
+  
+      console.log("Respuesta del servidor:", response.data);
+  
+      // Lógica adicional después de crear el comentario (actualizar estado, etc.)
+  
+      // Cierra el modal y reinicia el estado del nuevo comentario
+      closeModal();
+      setComentario("");
+    } catch (error) {
+      console.error("Error al crear el comentario:", error);
+    }
+  };
+  
   return (
-    
-    <section className='containerCursoGen'>
-      <div className='row'>
-        <div className='col-2'>
-          <img src={imagen} alt="imagen de muestra" className='imagenCursoGen'/>
+    <section className="containerCursoGen">
+      <div className="row">
+        <div className="col-2">
+          <img
+            src={imagen}
+            alt="imagen de muestra"
+            className="imagenCursoGen"
+          />
         </div>
-        <div className='col-10'>
-          <h4 className='h4Luis'>{titulo}</h4>
-          <p className='parrafoLuis'>{descripcion}</p>
+        <div className="col-10">
+          <h4 className="h4Luis">{titulo}</h4>
+          <p className="parrafoLuis">{descripcion}</p>
           <NavLink className="ingresarCursoGen" to={`/cursos/${id}`}>
-        <button type="submit" className="botonVermasCursoGen">
-          Ver más
-        </button>
-      </NavLink>
-      <button type="submit" onClick={onClickVerOcultarComentarios} className="botonComentar">
-          Ver/ocutar comentarios
-        </button>
-        
-        </div>
+            <button type="submit" className="botonVermasCursoGen">
+              Ver más
+            </button>
+          </NavLink>
+          
+          <button
+            type="submit"
+            onClick={openModal}
+            className="botonComentar"
+          >
+            Comentar
+          </button>
 
+          <button
+            type="submit"
+            onClick={onClickVerOcultarComentarios}
+            className="botonComentar"
+          >
+            Ver/ocutar comentarios
+          </button>
+
+          <Modal show={modalIsOpen} onHide={closeModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>Comentar</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {/* Mostrar la imagen y el nombre del usuario que está comentando */}
+              <div className="userInfo">
+                <img src={usuarioImagen} alt="imagen de usuario" className="imagenPerfil" />
+                <span>Nombre: {usuarioNombre}</span>
+              </div>
+              {/* Textarea para el comentario */}
+              <Form.Group controlId="formComment">
+                <Form.Label>Deja tu comentario:</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  value={comentario}
+                  onChange={(e) => setComentario(e.target.value)}
+                />
+              </Form.Group>
+            </Modal.Body>
+            <Modal.Footer>
+              {/* Botones para cancelar y comentar */}
+              <Button variant="secondary" onClick={closeModal}>
+                Cancelar
+              </Button>
+              <Button variant="primary" onClick={handleComentar}>
+                Comentar
+              </Button>
+            </Modal.Footer>
+          </Modal>
+
+        </div>
       </div>
-      
     </section>
   );
 };
-

@@ -6,11 +6,41 @@ import { ComponenteCurso } from "./componentsVistaCursoGen/ComponenteCurso/Compo
 import { ComponenteComentarios } from "./componentsVistaCursoGen/ComponenteCurso/componenteComentarios";
 import axios from "axios";
 import Cookies from "js-cookie";
+import {jwtDecode} from 'jwt-decode';
 
 export const VistaCursoGen = () => {
+
   const [cursos, setCursos] = useState([]);
   const [comment, setComment] = useState([]);
   const [cursoSeleccionado, setCursoSeleccionado] = useState(null);
+  const [usuarioActual, setUsuarioActual] = useState(null);
+
+  useEffect(() => {
+    const obtenerUsuarioActual = async () => {
+      try {
+        const consultaCookie = Cookies.get("token");
+  
+        if (consultaCookie) {
+          const idToken = jwtDecode(consultaCookie).data._id;
+  
+          const response = await axios.get(
+            `http://localhost:3000/api/v1/user/${idToken}`,
+            {
+              headers: { token: consultaCookie },
+            }
+          );
+          console.log("usuarioActual",response)
+          setUsuarioActual(response.data);
+        } else {
+          console.warn("No hay una cookie de token");
+        }
+      } catch (error) {
+        console.error("Error al obtener el usuario actual:", error);
+      }
+    };
+  
+    obtenerUsuarioActual();
+  }, []);
 
   useEffect(() => {
     const obtenerCursos = async () => {
@@ -29,7 +59,7 @@ export const VistaCursoGen = () => {
   }, []);
 
   useEffect(() => {
-    const obtenerUsuarios = async () => {
+    const obtenerComentarios = async () => {
       try {
         const consultaCookie = Cookies.get("token");
 
@@ -40,6 +70,7 @@ export const VistaCursoGen = () => {
               headers: { token: consultaCookie },
             }
           );
+          console.log("idComentario",response.data)
           setComment(response.data);
         } else {
           console.warn("No hay una cookie de token");
@@ -49,7 +80,7 @@ export const VistaCursoGen = () => {
       }
     };
 
-    obtenerUsuarios();
+    obtenerComentarios();
   }, []);
   console.log("responsecomment", comment);
 
@@ -110,6 +141,11 @@ export const VistaCursoGen = () => {
                 onClickVerOcultarComentarios={() =>
                   handleClickMostrarOcultarComentarios(curso._id)
                 }
+                usuarioNombre={usuarioActual.nombre}
+                usuarioImagen={bufferToDataURL(
+                  usuarioActual.imagen,
+                  "image/jpeg")}
+                userId={usuarioActual._id}
               />
               {/* Mostrar comentarios solo si el curso está seleccionado */}
               {cursoSeleccionado === curso._id &&
@@ -123,6 +159,11 @@ export const VistaCursoGen = () => {
                       "image/jpeg"
                     )}
                     id={comentario._id}
+                    usuarioActual={usuarioActual}
+                    usuarioActualId={usuarioActual._id}
+                    userId={comentario.userId._id}
+                    admin={usuarioActual.administrador}
+                    commentId={comentario._id}
                   />
                 ))}
             </React.Fragment>

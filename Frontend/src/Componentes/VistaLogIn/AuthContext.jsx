@@ -32,8 +32,6 @@ export const AuthProvider = ({ children }) => {
     const onLogout = () => {
     // Limpiar el token
     Cookies.remove("token");
-
-    // Limpiar otros estados si es necesario
     setAuthenticated(false);
     setIsAdmin(false);
     setEmail("");

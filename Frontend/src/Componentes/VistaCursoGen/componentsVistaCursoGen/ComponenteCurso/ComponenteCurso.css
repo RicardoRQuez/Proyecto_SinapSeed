@@ -43,3 +43,12 @@
 .parrafoLuis{
     font-family: robotol;
 }
+.imagenPerfil{
+    margin-top: 10px;
+    margin-left: 250px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 180px; 
+    max-width: 100%;
+    border-radius: 50px;
+}
