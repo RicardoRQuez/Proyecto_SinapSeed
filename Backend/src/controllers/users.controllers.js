@@ -80,16 +80,15 @@ export const findAll = async (req, res) => {
 };
 
 export const findAllUserId = async (req, res) => {
-
-const userId = req.params.id
+  const userId = req.params.id;
 
   try {
+    const userById = await User.findById(userId).select('-password');
 
-    const userById = await User.findById(userId);
     if (!userById) {
-      // Si no se encuentra un usuario con el ID proporcionado, devolver un error 404
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
+
     res.json(userById);
     
   } catch (error) {
@@ -97,6 +96,7 @@ const userId = req.params.id
     res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
 
 export const updateUserById = async (req, res) => {
   const { id } = req.params;
@@ -107,7 +107,7 @@ export const updateUserById = async (req, res) => {
     telefono,
     region,
     situacionLaboral,
-    password,
+    password
   };
 
   // Verificar si se está enviando una nueva imagen en la solicitud
@@ -117,15 +117,27 @@ export const updateUserById = async (req, res) => {
 
   try {
     // Verificar si el usuario existe
+    const user = await User.findById(id);
+
+    if (!user) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    // Encriptar la nueva contraseña si se proporciona
+    if (password) {
+      const passwordHash = await bcrypt.hash(password, 12);
+      updateFields.password = passwordHash;
+
+      // Si necesitas enviar la contraseña encriptada al frontend (no recomendado por razones de seguridad)
+      res.locals.encryptedPassword = passwordHash;
+    }
+
+    // Actualizar el usuario con los campos actualizados
     const updateUser = await User.findByIdAndUpdate(
       id,
       updateFields,
       { new: true }
     );
-
-    if (!updateUser) {
-      return res.status(404).json({ error: "Usuario no encontrado" });
-    }
 
     res.json({ code: 200, message: "Usuario actualizado con éxito" });
   } catch (error) {
@@ -133,6 +145,7 @@ export const updateUserById = async (req, res) => {
     res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
 
 
 export const deleteUserById = async (req, res) => {
@@ -195,30 +208,6 @@ const generarPasswordAleatoria = () => {
   }
         
   return newPassword;
-};
-
-//Actualizar contraseña-------------------------------------
-// Controlador para actualizar contraseña
-export const actualizarContrasena = async (req, res) => {
-  const { userId, nuevaContrasena } = req.body;
-
-  try {
-    // Encuentra al usuario por su ID
-    const usuario = await User.findById(userId);
-
-    if (!usuario) {
-      return res.status(404).json({ mensaje: 'Usuario no encontrado' });
-    }
-
-    // Aquí debes actualizar el campo de la contraseña correctamente
-    usuario.password = nuevaContrasena;
-    await usuario.save();
-
-    return res.status(200).json({ mensaje: 'Contraseña actualizada exitosamente' });
-  } catch (error) {
-    console.error('Error al actualizar la contraseña:', error);
-    return res.status(500).json({ mensaje: 'Error del servidor' });
-  }
 };
 
 
