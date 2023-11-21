@@ -3,8 +3,7 @@ import "./formLogin.css";
 import { useAuth, useAuthFunctions  } from "../../AuthContext";
 import { useNavigate, Link } from 'react-router-dom';
 
-
-export const FormLogin = ({ onLogin }) => {
+export const FormLogin = ({ onLogin, onClose  }) => {
   const navigate = useNavigate();
 
   const {
@@ -24,6 +23,7 @@ export const FormLogin = ({ onLogin }) => {
   const handleButtonClick = async (e) => {
     e.preventDefault();
     await handleLogin(e);
+    onClose();
     navigate('/'); // Redirige a la ruta '/' después de iniciar sesión
   };
 
@@ -76,26 +76,27 @@ export const FormLogin = ({ onLogin }) => {
           onClick={togglePasswordVisibility}
         ></div>
       </section>
-      <section>
-        <p id="parrafoLuis">
+      <Link to="/forgot">
+        <p id="parrafoLuis" onClick={onClose}>
           ¿No te acuerdas de tu <span id="claveLuis">clave</span>?
         </p>
-      </section>
+      </Link>
       <section className="container row contenedorBotonLuis">
         <button
           type="submit"
           className="botonLuis"
           onClick={handleButtonClick }
           
+          
         >
-          <span className="ingresarLuis">Ingresar</span>
+          <span className="ingresarLuis" >Ingresar</span>
         </button>
       </section>
       <hr className="separadorLuis" />
       <section>
         <h5 className="accesoDocenteLuis">
           {" "}
-          Registrate <Link to="/registro" id="docenteLuis">Aqui</Link>{" "}
+          Registrate <Link to="/registro" id="docenteLuis" onClick={onClose}>Aqui</Link>{" "}
         </h5>
       </section>
     </form>

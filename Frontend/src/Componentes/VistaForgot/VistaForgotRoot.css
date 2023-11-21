@@ -1,0 +1,5 @@
+.forgotLuis {
+    background-size: cover;
+    height: 50vh; /* Usar altura completa de la ventana */
+    width: 100%; /* Usar el ancho completo del contenedor */
+  }

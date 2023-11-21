@@ -16,13 +16,6 @@ export const ComponenteINFO = () => {
     contraseña: "********",
     situacionLaboral: "Me encuentro...", 
   });
-//estado de region----------------------------------------------
-  const [region, setRegion] = useState("Vivo en...");
-//--------------------------------------------------------------------------------------------
-
-//estado de region----------------------------------------------
-const [situacionLaboral, setSituacionLaboral] = useState("Me encuentro...");
-//--------------------------------------------------------------------------------------------
 
 
   const togglePasswordVisibility = () => {

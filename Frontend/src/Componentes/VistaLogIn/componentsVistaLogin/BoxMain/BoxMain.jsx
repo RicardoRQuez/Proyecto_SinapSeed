@@ -4,7 +4,7 @@ import { FormLogin } from '../formLogin/FormLogin.jsx';
 import './BoxMain.css';
 import logo from '../../../VistaLogIn/logo_SinapSeed.png';
 
-export const BoxMain = () => {
+export const BoxMain = ({onClose}) => {
   return (
     <div className="contenedorLuis">
       <div className="rectanguloLuis">
@@ -14,7 +14,7 @@ export const BoxMain = () => {
             <div className='col-1'>              
             </div>
             <div className='col-10'>
-              <FormLogin />
+              <FormLogin onClose={onClose} />
             </div>            
           </div>
         </section>        

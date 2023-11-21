@@ -1,0 +1,46 @@
+/* Ejemplo para .subtituloForgotForm */
+.subtituloForgotForm {
+    font-family: robotob;
+    font-size: 1.0rem;
+    text-align: center;
+    margin-top: 2vh; /* Utilizar unidades relativas para los márgenes */
+    margin-left: 2vw; /* Utilizar unidades relativas para los márgenes */
+  }
+  
+  /* Ejemplo para .spanFormForgot */
+  .spanFormForgot {
+    color: #f088eb;
+    font-family: robotob;
+    text-align: center;
+  }
+  
+  /* Ejemplo para .botonMainBoxMain */
+  .botonMainBoxMain {
+    color: #f088eb;
+    font-family: robotob;
+    font-weight: 500; /* Ajustar el peso de la fuente */
+    width: 50%; /* Usar un porcentaje del ancho disponible */
+    padding: 1.5vh 3vw; /* Utilizar unidades relativas para el padding */
+    border-radius: 20px;
+    border: 2px solid #f088eb;
+    background: rgba(255, 255, 255, 0);
+    margin-left: 8vw; /* Utilizar unidades relativas para los márgenes */
+    margin-top: 5vh; /* Utilizar unidades relativas para los márgenes */
+  }
+  
+  /* Ejemplo para .mostrarContraseña */
+  .mostrarContraseña {
+    font-family: robotol;
+    margin-left: 11vw; /* Utilizar unidades relativas para los márgenes */
+    margin-top: 0; /* Reducir o ajustar el margen superior */
+    padding-top: 0; /* Reducir o ajustar el padding superior */
+  }
+  
+  /* Ejemplo de media query para dispositivos más pequeños */
+  @media (max-width: 768px) {
+    .botonMainBoxMain {
+      width: 80%; /* Ajustar el ancho para dispositivos más pequeños */
+      margin-left: 5vw; /* Cambiar el margen izquierdo para dispositivos más pequeños */
+    }
+  }
+  
