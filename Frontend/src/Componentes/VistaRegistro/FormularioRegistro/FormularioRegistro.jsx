@@ -38,10 +38,6 @@ export const FormularioRegistro = () => {
       // Utiliza directamente el objeto formData en la solicitud POST
       await axios.post("http://localhost:3000/api/v1/signup", formData);
       setFormData(initialState);
-  
-      alert('Usuario creado correctamente');
-    } catch (error) {
-      console.error("Error en la solicitud:", error);
     }
   };    
   
