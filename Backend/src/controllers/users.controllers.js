@@ -1,7 +1,6 @@
 import User from "../models/users.models.js";
 import bcrypt from "bcrypt";
 import multer from 'multer';
-import nodemailer from 'nodemailer';
 
 
 export const uploadImagen = multer().single('imagen'); // Middleware para manejar la carga de imágenes
