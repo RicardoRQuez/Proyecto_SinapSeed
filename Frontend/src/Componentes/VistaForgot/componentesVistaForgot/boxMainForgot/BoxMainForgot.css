@@ -1,0 +1,23 @@
+.containerBoxMainForgot {
+    background-color: white;
+    border: 5px solid #F7F7F7;
+    border-radius: 20px;
+    width: 90%; /* Usar un porcentaje del ancho de su contenedor */
+    max-width: 45rem; /* Establecer un ancho máximo */
+    height: auto; /* Permitir que la altura se ajuste automáticamente */
+    margin: 2.5rem auto; /* Centrar el contenedor y ajustar márgenes */
+    padding: 2rem; /* Agregar padding interno al contenedor */
+  }
+  
+  /* Ejemplo de media query para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .containerBoxMainForgot {
+      width: 90%;
+      max-width: 100%; /* Ocupar todo el ancho disponible */
+      margin: 1.5rem auto; /* Ajustar los márgenes para dispositivos más pequeños */
+      padding: 1rem; /* Reducir el padding en pantallas más pequeñas */
+    }
+  }
+
+
+  

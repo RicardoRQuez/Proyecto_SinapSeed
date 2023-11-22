@@ -22,7 +22,7 @@ export const VistaLogin = ({ onClose }) => {
 
   return (
     <main ref={loginRef} className="containerLuis">
-      <BoxMain />
+      <BoxMain onClose={onClose} />
     </main>
   );
 };

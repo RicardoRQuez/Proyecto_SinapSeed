@@ -2,6 +2,7 @@ import User from "../models/users.models.js";
 import bcrypt from "bcrypt";
 import multer from 'multer';
 
+
 export const uploadImagen = multer().single('imagen'); // Middleware para manejar la carga de imágenes
 
 export const signup = async (req, res) => {
@@ -79,16 +80,15 @@ export const findAll = async (req, res) => {
 };
 
 export const findAllUserId = async (req, res) => {
-
-const userId = req.params.id
+  const userId = req.params.id;
 
   try {
+    const userById = await User.findById(userId).select('-password');
 
-    const userById = await User.findById(userId);
     if (!userById) {
-      // Si no se encuentra un usuario con el ID proporcionado, devolver un error 404
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
+
     res.json(userById);
     
   } catch (error) {
@@ -96,6 +96,7 @@ const userId = req.params.id
     res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
 
 export const updateUserById = async (req, res) => {
   const { id } = req.params;
@@ -106,7 +107,7 @@ export const updateUserById = async (req, res) => {
     telefono,
     region,
     situacionLaboral,
-    password,
+    password
   };
 
   // Verificar si se está enviando una nueva imagen en la solicitud
@@ -116,15 +117,27 @@ export const updateUserById = async (req, res) => {
 
   try {
     // Verificar si el usuario existe
+    const user = await User.findById(id);
+
+    if (!user) {
+      return res.status(404).json({ error: "Usuario no encontrado" });
+    }
+
+    // Encriptar la nueva contraseña si se proporciona
+    if (password) {
+      const passwordHash = await bcrypt.hash(password, 12);
+      updateFields.password = passwordHash;
+
+      // Si necesitas enviar la contraseña encriptada al frontend (no recomendado por razones de seguridad)
+      res.locals.encryptedPassword = passwordHash;
+    }
+
+    // Actualizar el usuario con los campos actualizados
     const updateUser = await User.findByIdAndUpdate(
       id,
       updateFields,
       { new: true }
     );
-
-    if (!updateUser) {
-      return res.status(404).json({ error: "Usuario no encontrado" });
-    }
 
     res.json({ code: 200, message: "Usuario actualizado con éxito" });
   } catch (error) {
@@ -132,6 +145,7 @@ export const updateUserById = async (req, res) => {
     res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
 
 
 export const deleteUserById = async (req, res) => {
@@ -155,3 +169,68 @@ export const deleteUserById = async (req, res) => {
       res.status(500).json({ error: 'Error del servidor' });
   }
 };
+
+
+
+//-----------------------------
+export const verificarDatos = async (req, res) => {
+  const { nombre, rut, email, telefono } = req.body;
+
+  try {
+    // Lógica para buscar al usuario con los datos proporcionados en la base de datos
+    const usuarioEncontrado = await User.findOne({ nombre, rut, email, telefono });
+    console.log("Usuarios encontrados!", usuarioEncontrado)
+
+    if (!usuarioEncontrado) {
+      return res.status(404).json({ mensaje: 'Datos incorrectos' });
+    }
+
+    const newPassword = generarPasswordAleatoria();
+
+    return res.status(200).json({ mensaje: 'Datos verificados', newPassword });
+
+  } catch (error) {
+    console.error('Error al verificar los datos:', error);
+    res.status(500).json({ mensaje: 'Error del servidor', error });
+  }
+};
+
+
+    // Generar una contraseña (este es solo un ejemplo, puedes usar tu lógica real para generar una contraseña)
+const generarPasswordAleatoria = () => {
+  const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  let newPassword = '';
+  let longitud = 8;
+  
+  for (let i = 0; i < longitud; i++) {
+    const randomIndex = Math.floor(Math.random() * caracteres.length);
+    newPassword += caracteres.charAt(randomIndex);
+  }
+        
+  return newPassword;
+};
+
+
+//-------------------------------------------------------------------
+
+//Obtener ID del usuario----------------------------------------------------
+// Controlador en tu backend para obtener el ID del usuario por su correo electrónico
+
+export const obtenerIdUsuario = async (req, res) => {
+  const { email } = req.query;
+
+  try {
+    const user = await User.findOne({ email: email });
+
+    if (!user) {
+      return res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    }
+
+    return res.status(200).json({ userId: user._id });
+  } catch (error) {
+    console.error('Error al obtener el usuario por correo electrónico:', error);
+    return res.status(500).json({ error: 'Error interno del servidor' });
+  }
+};
+
+//----------------------------------------------------
