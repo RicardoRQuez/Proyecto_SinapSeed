@@ -3,10 +3,10 @@ import { Card } from "react-bootstrap";
 import styles from '../../../VistaForo/components/Comments.module.css';
 import Cookies from "js-cookie";
 import axios from 'axios';
-import { VerComentarios } from "./VerComentarios";
+import { VerComentarios } from "./VerComentarios.jsx";
 
 export  const Comentario=({imagenUsuario,nombreUsario,cursoId,usuarioActualId})=> {
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState('');
 
 
         const handleComentar = async () => {
@@ -16,7 +16,7 @@ export  const Comentario=({imagenUsuario,nombreUsario,cursoId,usuarioActualId})=
               const response = await axios.post(
                 `http://localhost:3000/api/v1/comment/${cursoId}/${usuarioActualId}`, // Reemplaza la URL con tu endpoint
                 {
-                  comments: comentario,
+                  comentario: comments,
                 },
                 {
                   headers: { token: consultaCookie },
@@ -58,7 +58,7 @@ export  const Comentario=({imagenUsuario,nombreUsario,cursoId,usuarioActualId})=
           </Card.Body>
           </Card>
           <VerComentarios
-          comentario={comments.comentario}
+
           />
           </>  
             
