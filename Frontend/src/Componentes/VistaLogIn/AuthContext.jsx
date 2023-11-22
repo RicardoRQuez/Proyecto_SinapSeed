@@ -1,7 +1,8 @@
 // AuthContext.js
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
 
 const AuthContext = createContext();
 
@@ -24,25 +25,42 @@ export const AuthProvider = ({ children }) => {
   const setIsAdminValue = (value) => {
     setIsAdmin(value);
   };
-  
+
   const onLogin = () => {
     setAuthenticated(true);
     console.log("Usuario inició sesión");
   };
-    const onLogout = () => {
+  const onLogout = () => {
     // Limpiar el token
     Cookies.remove("token");
-
-    // Limpiar otros estados si es necesario
     setAuthenticated(false);
     setIsAdmin(false);
     setEmail("");
     setPassword("");
     setLoginSuccess(false);
-
-
     // Redirigir al usuario, por ejemplo, a la página de inicio
   };
+
+  useEffect(() => {
+    // Verifica el token almacenado al cargar la aplicación
+    const consultaCookie = Cookies.get("token");
+    if (consultaCookie) {
+      setAuthenticated(true);    
+    }
+  }, []);
+
+  useEffect(() => {
+    // Verifica el token almacenado al cargar la aplicación
+    const consultaCookie = Cookies.get("token");
+    if (consultaCookie) {
+      const tokedDecode = jwtDecode(consultaCookie);
+      const Administrador = tokedDecode.data.administrador;
+
+      if (Administrador ) { 
+          setIsAdmin(true);
+      }
+    }
+  }, []);
 
   const handleLogin = async (event) => {
     event.preventDefault(); //Para que no se reinicie el formulario
@@ -61,8 +79,8 @@ export const AuthProvider = ({ children }) => {
       Cookies.set("token", token); //se almacena token en token, dentro de una galletita
 
       const nuevoValorAdmin = response.data.isAdmin; // Ajusta esto según la estructura real de tu respuesta
-    setIsAdmin(nuevoValorAdmin);
-    
+      setIsAdmin(nuevoValorAdmin);
+
       onLogin(); //ACAAAAAAAAAAAAAAA ESTA EL ONLOGIN PA QUE NO SE NOS PIERDA DESPUES
       alert("Inicio de sesion correcto");
     } catch (error) {
@@ -86,11 +104,10 @@ export const AuthProvider = ({ children }) => {
   };
 
   const handleLogout = () => {
-    onLogout() 
- };
+    onLogout();
+  };
 
   if (loginSuccess) {
-     ;
   }
 
   return (
