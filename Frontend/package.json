@@ -18,7 +18,7 @@
     "cdbreact": "^1.5.18",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
-    "mdbreact": "^5.2.0",
+    "mdbreact": "^4.6.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
@@ -28,11 +28,11 @@
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react-swc": "^3.3.2",
+    "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.5"
+    "vite": "^5.0.2"
   }
 }
