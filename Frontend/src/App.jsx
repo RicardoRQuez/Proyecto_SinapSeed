@@ -55,6 +55,7 @@ export function App() {
           <Route path="/agregar-curso" element={<CrearCurso />} />
           <Route path="/quienesSomos" element={<VistaMisionVision />} />
           <Route path="/forgot" element={<VistaForgotRoot />} />
+          <Route path="*" element={<VistaError />} />
           <Route path="/alumni" element={<AlumniJSX />} />
           
         </Routes>

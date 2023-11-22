@@ -48,7 +48,7 @@ export const BotonesTres= () => {
   )}
 
           <div className="col-lg-4 col-md-6 mb-4 position-relative">
-            <a href="/quienes-somos">
+            <a href="/quienesSomos">
               <img src="imágenes/intentodeboton.png" alt="botones-grandes" className="img-fluid botones-grandes" />
               <div className="position-absolute bottom-0">
                 <p className="textoTresBotones">Quienes Somos</p>

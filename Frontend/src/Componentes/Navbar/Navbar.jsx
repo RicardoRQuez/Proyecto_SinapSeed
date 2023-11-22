@@ -10,7 +10,7 @@ export function MyNavbar() {
   const navigate = useNavigate();
 
   const [botonTexto, setBotonTexto] = useState('Cerrar Sesión');
-  const [holaBotonTexto, setHolaBotonTexto] = useState('Cerrar Sesión');
+  const [holaBotonTexto, setHolaBotonTexto] = useState('Iniciar Sesión');
 
 
   const toggleLogin = () => {

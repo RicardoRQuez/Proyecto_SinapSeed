@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./VistaError.css"; // Importa el archivo de estilos CSS
 import gif from './cerebro-burnout.gif';
+
 export const VistaError = () => {
   const location = useLocation();
   const navigate = useNavigate();

@@ -56,9 +56,9 @@ export const Footer = () => {
       </div>
 
       <div className="text-center text-dark p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+     
+        <a className="text-dark" href="https://www.instagram.com/enjulandia/">
         © 2023 SinapSeed
-        <a className="text-dark" href="https://mdbootstrap.com/">
-          SinapSeed.cl
         </a>
       </div>
     </footer>
