@@ -1,6 +1,14 @@
 import React from "react";
 import "./RecursosAcademicos.css";
 
+/**
+ * Componente React que muestra los recursos académicos de un usuario.
+ * Permite visualizar información sobre cursos, bootcamps, clases, seminarios,
+ * certificados y compras relacionadas con la educación.
+ * 
+ * @returns {JSX.Element} Elemento JSX que representa la sección de recursos académicos.
+ */
+
 export const RecursosAcademicos = () => {
   return (
     <>

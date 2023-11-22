@@ -19,7 +19,8 @@ import {EditCurso} from "./Componentes/VistaAdminCursos/EditarCursos.jsx";
 import { VistaPerfil } from "./Componentes/VistaPerfil/VistaPerfil.jsx";
 import {CrearCurso} from "./Componentes/VistaAdminCursos/AgregarCursos.jsx"
 import {VistaMisionVision} from "./Componentes/QuieneSomos/vistaQuieneSomos.jsx";
-import { VistaForgotRoot } from "./Componentes/VistaForgot/VistaForgotRoot.jsx"
+import { VistaForgotRoot } from "./Componentes/VistaForgot/VistaForgotRoot.jsx";
+import { VistaError } from "./Componentes/VistaError/VistaError.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -51,7 +52,7 @@ export function App() {
           <Route path="/agregar-curso" element={<CrearCurso />} />
           <Route path="/quienesSomos" element={<VistaMisionVision />} />
           <Route path="/forgot" element={<VistaForgotRoot />} />
-          
+          <Route path="*" element={<VistaError />} />
         </Routes>
         <Footer />
       </AuthProvider>

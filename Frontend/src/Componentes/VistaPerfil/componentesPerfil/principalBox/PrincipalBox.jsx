@@ -3,6 +3,13 @@ import "./PrincipalBox.css";
 import { RecursosAcademicos } from "../RecursosAcademicos/RecursosAcademicos.jsx";
 import { ComponenteINFO } from "../componenteINFO/ComponenteINFO.jsx";
 
+/**
+ * Componente React que representa la caja principal del componente VistaPerfil.
+ * Contiene dos secciones: Recursos Académicos y Componente INFO.
+ * 
+ * @returns {JSX.Element} Elemento JSX que representa la caja principal.
+ */
+
 export const PrincipalBox = () => {
   return (
     <>

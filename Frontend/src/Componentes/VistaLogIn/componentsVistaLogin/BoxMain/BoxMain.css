@@ -1,27 +1,31 @@
+/* Estilos para el contenedor principal */
 .contenedorLuis {
   display: flex;
-  justify-content: flex-end; /* Alinea los elementos al extremo derecho */
-  z-index: 5;
+  justify-content: flex-end; /* Alineación de elementos al extremo derecho */
+  z-index: 5; /* Capa z para la superposición */
   margin: 0;
-  padding: 0;    
+  padding: 0;
 }
 
+/* Estilos para el rectángulo principal */
 .rectanguloLuis {
   flex: 0 0 auto;
-  width: 80%; /* Usa porcentaje para que sea adaptable */
-  max-width: 515px; /* Establece un máximo para evitar que se expanda demasiado */
-  height: 100vh; /* Usa altura relativa al 50% del viewport height (altura de la ventana del navegador) */
-  background-color: #F7F7F7;
+  width: 80%; /* Porcentaje para adaptabilidad */
+  max-width: 515px; /* Establece un máximo para evitar expansión excesiva */
+  height: 100vh; /* Altura relativa al 100% del viewport height */
+  background-color: #F7F7F7; /* Color de fondo */
+  border-left: 2px solid #ccc8c8; /* Borde izquierdo transparente */
 }
 
+/* Estilos para la imagen del logo */
 .imagenLogoLuis {
-  height: 5rem;
-  margin-top: 0.5rem;
+  height: 5rem; /* Altura fija */
+  margin-top: 0.5rem; /* Margen superior */
 }
 
-
-.contenedorImagen{
+/* Estilos para el contenedor de la imagen */
+.contenedorImagen {
   display: flex;
-  justify-content: center; /* Alinea a la izquierda */
-  align-items: center;
+  justify-content: center; /* Alineación al centro horizontalmente */
+  align-items: center; /* Alineación al centro verticalmente */
 }

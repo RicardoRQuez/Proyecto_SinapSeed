@@ -4,6 +4,13 @@ import { FormLogin } from '../formLogin/FormLogin.jsx';
 import './BoxMain.css';
 import logo from '../../../VistaLogIn/logo_SinapSeed.png';
 
+/**
+ * Componente React que representa el contenido principal de la vista de inicio de sesión.
+ * 
+ * @param {Function} onClose - Función para cerrar el componente.
+ * @returns {JSX.Element} Elemento JSX que representa el contenido principal de la vista de inicio de sesión.
+ */
+
 export const BoxMain = ({onClose}) => {
   return (
     <div className="contenedorLuis">

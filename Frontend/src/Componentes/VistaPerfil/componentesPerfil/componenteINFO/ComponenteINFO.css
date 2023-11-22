@@ -3,12 +3,21 @@
     margin-top: 1rem;
     margin-bottom: 2rem;
     width: 200px;
-    height: 180px; 
+    height: 180px;
     max-width: 100%;
+  
+    /* Borde redondeado para la imagen */
     border-radius: 50px;
-}
+  }
 
-.subtituloDatosPersonales{
+
+
+  /*----------------------------------------------------------------------*/
+
+
+  /* Estilos para el título de datos personales */
+  .subtituloDatosPersonales {
+    /* Tamaño de fuente y ajustes de margen */
     font-size: 1.5rem;
     margin-top: 1rem;
 }
@@ -29,6 +38,8 @@
     left: 80%;
     top: 70%;
     position: absolute;
+  
+    /* Tamaño y apariencia del icono */
     width: 15px;
     height: 15px;
     background-image: url('../../../../assets/resources/ojon.png');

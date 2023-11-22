@@ -3,18 +3,30 @@ import "./formLogin.css";
 import { useAuth, useAuthFunctions } from "../../AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 
+/**
+ * Componente para el formulario de inicio de sesión.
+ * 
+ * @param {Function} onLogin - Función para iniciar sesión.
+ * @param {Function} onClose - Función para cerrar el formulario.
+ * @returns {JSX.Element} Elemento JSX que representa el formulario de inicio de sesión.
+ */
+
+
 export const FormLogin = ({ onLogin, onClose }) => {
   const navigate = useNavigate();
 
+  // Obtención de estado y funciones de autenticación
   const { email, setEmail, password, setPassword } = useAuth();
   const { handleLogin } = useAuthFunctions();
 
   const [passwordHidden, setPasswordHidden] = useState(true);
 
+  // Alternar visibilidad de la contraseña
   const togglePasswordVisibility = () => {
     setPasswordHidden(!passwordHidden);
   };
 
+  // Manejar clic en el botón de inicio de sesión
   const handleButtonClick = async (e) => {
     e.preventDefault();
     await handleLogin(e);
