@@ -50,7 +50,7 @@ export function App() {
           <Route path="/editar-curso/:id" element={<EditCurso/>} />
           <Route path="/administrar-cursos" element={<CargarCursos />} />
           <Route path="/agregar-curso" element={<CrearCurso />} />
-          <Route path="/quienes-somos" element={<VistaMisionVision />} />
+          <Route path="/quienesSomos" element={<VistaMisionVision />} />
           <Route path="/forgot" element={<VistaForgotRoot />} />
           <Route path="*" element={<VistaError />} />
         </Routes>
