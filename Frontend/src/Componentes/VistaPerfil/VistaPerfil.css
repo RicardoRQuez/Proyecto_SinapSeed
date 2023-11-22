@@ -13,23 +13,18 @@
   font-style: normal;
 }
 
-/* Estilos para la sección de imagen de login */
-.imagenLoginLuis {
-  /* Propiedades para la imagen de fondo */
-  background-image: url('./resources/imagen-login.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 150vh;
 
-  /* Alineación del contenido */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  /* Estilos del texto */
-  color: white;
-  font-size: 24px;
+.imagenLoginLuis{
+    background-image: url('./resources/imagen-login.jpeg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-attachment: fixed; /* Hace que la imagen de fondo esté fija */
+    height: 50vh; /* Establece la altura del contenedor al 100% del viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(22, 22, 22); /* Puedes cambiar el color del texto para que sea legible en la imagen */
+    font-size: 24px;
 }
 
 
@@ -56,20 +51,17 @@
 .tituloPerfil {
   margin-top: 100px;
   font-size: 1.5rem;
-  padding: 25px;
-  background-color: rgba(0, 0, 0, 0.6);
+  padding:25px;
+  background-color: rgba(246, 176, 227, 0.6);
 }
 
+.nombrePerfil{
+  color: #842f7f;
+}
 
-
-
-  /*----------------------------------------------------------------------*/
-
-
- 
-/* Estilos para el nombre del perfil */
-.nombrePerfil {
-  color: #f088eb;
+.hola{
+  z-index: 1;
+  min-height: calc(85rem - 0px);
 }
 
 

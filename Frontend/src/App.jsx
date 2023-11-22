@@ -24,13 +24,11 @@ import { VistaError } from "./Componentes/VistaError/VistaError.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
-
 export function App() {
   const { showLogin } = useAuth();
 
   return (
-    <Router>
+    <Router >
       <AuthProvider>
         <MyNavbar/>
 

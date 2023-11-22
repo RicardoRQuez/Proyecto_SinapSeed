@@ -76,6 +76,11 @@ export function MyNavbar() {
           {authenticated ? (
             <>
               <li className="nav-item">
+                <NavLink className="nav-link" to="/quienesSomos">
+                  Quienes Somos
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <NavLink className="nav-link" to="/cursosGen">
                   Cursos
                 </NavLink>

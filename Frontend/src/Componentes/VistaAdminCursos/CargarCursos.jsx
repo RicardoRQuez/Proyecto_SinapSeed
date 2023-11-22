@@ -77,7 +77,7 @@ export const CargarCursos = () => {
                 <td>
                   <Link
                     to={`/editar-curso/${curso._id}`}
-                    className="btn btn-info"
+                    className="botoncitoEdit"
                   >
                     Editar
                   </Link>
@@ -85,7 +85,7 @@ export const CargarCursos = () => {
                 <td>
                   <button
                     onClick={() => handleEliminarCurso(curso._id)}
-                    className="botonElimias"
+                    className="botoncitoEliminar"
                   >
                     Eliminar
                   </button>

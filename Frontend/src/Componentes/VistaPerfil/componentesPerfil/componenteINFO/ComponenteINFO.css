@@ -1,11 +1,7 @@
-/* Estilos para la imagen de perfil */
-.imagenPerfil {
-    /* Ajustes de margen para posicionar la imagen */
-    margin-top: 10px;
-    margin-left: 250px;
-    margin-bottom: 20px;
-  
-    /* Tamaño de la imagen */
+
+.imagenPerfil{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     width: 200px;
     height: 180px;
     max-width: 100%;
@@ -23,35 +19,22 @@
   .subtituloDatosPersonales {
     /* Tamaño de fuente y ajustes de margen */
     font-size: 1.5rem;
-    padding-top: 0px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-  }
-  
+    margin-top: 1rem;
+}
 
-  
-  /*----------------------------------------------------------------------*/
-
-
-  
-  /* Estilos para el botón de actualización de datos */
-  .botonComponenteInfo {
-    /* Estilos de color, fuente y margen */
+.botonComponenteInfo{
     background-color: #f088eb;
     color: white;
     font-family: robotob;
-    margin-left: 270px;
-  }
-  
+}
 
-  
-  /*----------------------------------------------------------------------*/
+.containerbotonA1{
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;
+}
 
-
-  
-  /* Estilos para el icono de mostrar/ocultar contraseña */
-  .password-toggleLuisPerfil {
-    /* Posicionamiento absoluto para el icono */
+.password-toggleLuisPerfil {
     left: 80%;
     top: 70%;
     position: absolute;
@@ -63,19 +46,32 @@
     background-size: contain;
     background-repeat: no-repeat;
     cursor: pointer;
-  }
-  
+    
+}
 
-  
-  /*----------------------------------------------------------------------*/
-
-
-  
-  /* Estilos para los subtítulos pequeños */
-  .subtituloChiqui {
-    /* Tamaño de fuente, color y fuente */
+.subtituloChiqui{
     font-size: 1.1rem;
     color: #f088eb;
     font-family: robotob;
     margin-left: 5px;
-  }
+}
+
+.espacioLuis {  
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background: rgba(197, 75, 191, 0.5);
+    width: 100%;
+    font-size: 1rem; /* Tamaño de fuente más pequeño, ajusta según sea necesario */
+}
+.espacioLuis2{
+    background: rgba(197, 75, 191, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    padding-right: 0%;
+}
+
+.columnaImagen{
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;
+}
