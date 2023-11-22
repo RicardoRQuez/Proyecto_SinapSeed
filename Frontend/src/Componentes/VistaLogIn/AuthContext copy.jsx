@@ -1,5 +1,5 @@
 // AuthContext.js
-import React, { createContext, useContext, useState, useEffect  } from "react";
+import React, { createContext, useContext, useState  } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -24,16 +24,7 @@ export const AuthProvider = ({ children }) => {
   const setIsAdminValue = (value) => {
     setIsAdmin(value);
   };
-  
-  useEffect(() => {
-    // Al cargar el componente, verifica si hay un token almacenado en las cookies
-    const token = Cookies.get("token");
-    if (token) {
-      // Si existe un token, establece el estado de autenticación como verdadero
-      setAuthenticated(true);
-      // Aquí puedes realizar más lógica si es necesario, como validar el token en el backend
-    }
-  }, []); // Se ejecuta una vez al montar el componente
+ 
 
   const onLogin = () => {
     setAuthenticated(true);

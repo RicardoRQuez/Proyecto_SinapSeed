@@ -41,3 +41,7 @@
 .nombrePerfil{
   color: #f088eb;
 }
+
+.row.imagenLoginLuis {
+  margin-bottom: 100px; /* Ajusta este valor según sea necesario */
+}

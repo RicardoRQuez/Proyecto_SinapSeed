@@ -17,8 +17,11 @@ export const BoxMain = ({onClose}) => {
               <FormLogin onClose={onClose} />
             </div>            
           </div>
-        </section>        
-        <img src={logo} alt="Logo" className='imagenLogoLuis'/>
+        </section>  
+        <section className='contenedorImagen'>
+          <img src={logo} alt="Logo" className='imagenLogoLuis'/>         
+        </section>
+        
       </div>
     </div>
   );

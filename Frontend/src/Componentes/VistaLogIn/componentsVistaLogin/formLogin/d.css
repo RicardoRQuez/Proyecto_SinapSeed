@@ -12,23 +12,20 @@
   font-style: normal;
 }
 
+
+
 /* Este es el bloque de codigo de estilo de los espacios para que el usuario coloque su información*/
 .espacioLuis {
-  width: 90%;
-  margin-left: 0rem;
+  margin-left: 0.5rem;
   border-radius: 6px;
   border: 1px solid rgba(0, 0, 0, 0);
-  background: rgba(197, 75, 191, 0.5);
-  padding: 0%; /* Utiliza porcentaje para el padding */
+  background-color: rgba(197, 75, 191, 0.5);
+  width: 65%;
+  padding: 0%;
+  position: relative; /* Agrega posición relativa para los elementos internos */
 }
-
-.espacioLuisEspecial{
-  width: 90%;
-  padding:0%;
-  margin: 0rem;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0);
-  background: rgba(197, 75, 191, 0.5);
+.espacioLuis input {
+  padding-right: 30px; /* Espacio para el ícono */
 }
 
 /* el siguiente formatea el texto predefinido de estos espacios */
@@ -38,16 +35,10 @@
   color: white;
   /* Establece el color del texto ingresado por el usuario en blanco */
   font-weight: bold;
-  padding-left: 0.5rem;
+  margin-top: 2.5vh;
 }
 
-.espacioLuisEspecial::placeholder {
-  /*el placeholder*/
-  color: white;
-  /* Establece el color del texto ingresado por el usuario en blanco */
-  font-weight: bold;
-  padding-left: 0.5rem;
-}
+
 /*prueba*/
 /* Estilos para el placeholder del input */
 .espacioLuis::-webkit-input-placeholder {
@@ -55,7 +46,9 @@
   color: #fff; /* Cambia el color del texto del placeholder */
   font-style: italic; /* Cambia el estilo de fuente del placeholder */
   opacity: 0.7; /* Cambia la opacidad del placeholder */
-  font-size: 0.8rem
+  font-size: 0.8vw;  
+  font-weight: bold;
+  margin-top: 2.5vh;
 }
 
 .espacioLuis:-moz-placeholder {
@@ -63,7 +56,7 @@
   color: #fff; /* Cambia el color del texto del placeholder */
   font-style: italic; /* Cambia el estilo de fuente del placeholder */
   opacity: 0.7; /* Cambia la opacidad del placeholder */
-  font-size: 0.8rem
+  font-size: 0.8vw
 }
 
 .espacioLuis::-moz-placeholder {
@@ -71,7 +64,7 @@
   color: #fff; /* Cambia el color del texto del placeholder */
   font-style: italic; /* Cambia el estilo de fuente del placeholder */
   opacity: 0.7; /* Cambia la opacidad del placeholder */
-  font-size: 0.8rem
+  font-size: 0.8vw
 }
 
 .espacioLuis:-ms-input-placeholder {
@@ -79,44 +72,8 @@
   color: #fff; /* Cambia el color del texto del placeholder */
   font-style: italic; /* Cambia el estilo de fuente del placeholder */
   opacity: 0.7; /* Cambia la opacidad del placeholder */
-  font-size: 0.8rem
+  font-size: 0.8vw
 }
-
-/*----------------------------------------*/
-
-/* Estilos para el placeholder del input */
-.espacioLuisEspecial::-webkit-input-placeholder {
-  /* Estilos para Chrome, Safari, Edge y otros navegadores basados en WebKit */
-  color: #fff; /* Cambia el color del texto del placeholder */
-  font-style: italic; /* Cambia el estilo de fuente del placeholder */
-  opacity: 0.7; /* Cambia la opacidad del placeholder */
-  font-size: 0.8rem
-}
-
-.espacioLuisEspecial:-moz-placeholder {
-  /* Estilos para Firefox 18- */
-  color: #fff; /* Cambia el color del texto del placeholder */
-  font-style: italic; /* Cambia el estilo de fuente del placeholder */
-  opacity: 0.7; /* Cambia la opacidad del placeholder */
-  font-size: 0.8rem
-}
-
-.espacioLuisEspecial::-moz-placeholder {
-  /* Estilos para Firefox 19+ */
-  color: #fff; /* Cambia el color del texto del placeholder */
-  font-style: italic; /* Cambia el estilo de fuente del placeholder */
-  opacity: 0.7; /* Cambia la opacidad del placeholder */
-  font-size: 0.8rem
-}
-
-.espacioLuisEspecial:-ms-input-placeholder {
-  /* Estilos para Edge */
-  color: #fff; /* Cambia el color del texto del placeholder */
-  font-style: italic; /* Cambia el estilo de fuente del placeholder */
-  opacity: 0.7; /* Cambia la opacidad del placeholder */
-  font-size: 0.8rem
-}
-
 
 
 /*--------------------------------*/
@@ -125,29 +82,27 @@
 .botonLuis {
   color: #f088eb;
   font-family: "robotob";
-  font-size: 0.7rem; /* Utiliza em para el tamaño de fuente */
+  font-size: 1.2em; /* Utiliza em para el tamaño de fuente */
   width: 35%;
   padding: 2%; /* Utiliza porcentaje para el padding */
-  border-radius: 20px;  
-  margin-right: 0.8rem;
+  border-radius: 20px;
   border: 2px solid #f088eb;
   background: transparent;
 }
 
 .contenedorBotonLuis {
-  display: flex;
-  justify-content: flex-end; /* Alinea a la izquierda */
-  align-items: center; /* Mantiene centrado verticalmente */
+  margin-left: 10%; /* Utiliza porcentaje para el margen izquierdo */
 }
+
 
 /* el siguiente formatea los títulos que anteceden los espacios de ingreso de usuario */
 .label-textLuis {
   color: #f088eb;
   font-family: "robotob";
-  font-size: 0.9rem; /* Usa vw (viewport width) para el tamaño de fuente */
-    text-align: left;
-    margin-top: 2vh; /* Usa vh para el margen superior */
-  }
+  font-size: 1vw; /* Usa vw (viewport width) para el tamaño de fuente */
+  text-align: left;
+  margin-top: 2.5vh; /* Usa vh para el margen superior */
+}
 
 
 /* el siguiente formatea la estructura del formulario */
@@ -156,14 +111,14 @@
   background-color: white;
   border-radius: 20px;
   padding: 0;
-  height: 26rem;
+  height: 650px;
 }
 
 
 .titulo2Luis {
   color: #080000;
   font-family: "robotob";
-  font-size: 1.2rem; 
+  font-size: 1.3vw; 
   margin-left: 0.5vh; 
   padding-top: 3vh; 
   padding-bottom: 5vh; 
@@ -173,34 +128,33 @@
   color: #f088eb;
   font-family: robotob;
   white-space: nowrap;
-  font-size: 1.2rem;
+  font-size: 1.3vw;
 }
 
-/* Estilos para el ojo del password */
-.password-toggleLuis {
-  display: flex;
-  margin-top: 0.5rem;
-  margin-right: 2rem;
-  width: 1rem;
-  height: 1rem;
-  background-image: url("../../../../assets/resources/ojon.png");
-  background-size: contain;
-  background-repeat: no-repeat;
+.espacioLuis[type="password"] {
+  background-image: url("../../ojo.png"); /* Agrega la imagen del ícono */
   cursor: pointer;
 }
 
-.columnaOjo {
-  display: flex;
-  justify-content: flex-end; /* Alinea a la izquierda */
-  align-items: center; /* Mantiene centrado verticalmente */
+.password-toggleLuis {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-image: url("../../ojo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 1;
 }
-
 #parrafoLuis {
-  margin-top: 1rem;
-  margin-right: 1.6rem;
+  margin-top: 10px;
+  margin-right: 45px;
   color: #000;
   font-family: robotol;
-  font-size: 0.7rem;
+  font-size: 20px;
   font-weight: 300;  
   text-align: right;
 }
@@ -209,7 +163,7 @@
   color: #f088eb;
   font-family: robotob;
   white-space: nowrap;
-  font-size: 0.7rem;
+  font-size: 20px;
   font-weight: 300;
 }
 
@@ -218,14 +172,14 @@
   margin-left: 5%; /* Utiliza porcentaje para el margen izquierdo */
   border: none;
   border-top: 0.6vw solid #a3579f; /* Usa vw para el grosor del borde */
-  width: 14rem;
+  width: 80%;
   border-radius: 20px;
 }
 
 .accesoDocenteLuis {
   color: #000;
   font-family: "robotob";
-  font-size: 0.7rem; /* Usa vw para el tamaño de fuente */
+  font-size: 2vw; /* Usa vw para el tamaño de fuente */
   font-weight: 700;
   margin-bottom: 8vh; /* Usa vh para el margen inferior */
 }
@@ -234,13 +188,11 @@
   color: #f088eb;
   font-family: robotob;
   white-space: nowrap;
-  font-size: 0.8rem;
+  font-size: 20px;
 }
 
 .contenedorLuisEspacio{
   width: 100%;
-  padding: 0%;
-  margin: 0%;
 
 }
 
@@ -248,8 +200,4 @@
   display: none;
 }
 
-.contenedorRegistrarse{
-  display: flex;
-  justify-content: center; /* Alinea a la izquierda */
-  align-items: center; /* Mantiene centrado verticalmente */
-}
+/* Agrega cualquier otro estilo necesario para cuando la sección está abierta */
