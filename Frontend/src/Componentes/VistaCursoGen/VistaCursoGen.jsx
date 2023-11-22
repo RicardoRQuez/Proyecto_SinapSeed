@@ -3,7 +3,7 @@ import estudio from "./estudio.jpg";
 import "./VistaCursoGen.css";
 import { BusquedaCursoGen } from "./componentsVistaCursoGen/Busqueda/BusquedaCursoGen.jsx";
 import { ComponenteCurso } from "./componentsVistaCursoGen/ComponenteCurso/ComponenteCurso.jsx";
-import { ComponenteComentarios } from "./componentsVistaCursoGen/ComponenteCurso/componenteComentarios";
+import { ComponenteComentarios } from "./componentsVistaCursoGen/ComponenteCurso/ComponenteComentarios.jsx";
 import axios from "axios";
 import Cookies from "js-cookie";
 import {jwtDecode} from 'jwt-decode';
@@ -85,11 +85,16 @@ export const VistaCursoGen = () => {
   console.log("responsecomment", comment);
 
   const bufferToDataURL = (buffer, mimeType) => {
+    if (!buffer || !buffer.data) {
+      return null; // O algún valor predeterminado si prefieres
+    }
+  
     const arrayBufferView = new Uint8Array(buffer.data);
     const blob = new Blob([arrayBufferView], { type: mimeType });
     const urlCreator = window.URL || window.webkitURL;
     return urlCreator.createObjectURL(blob);
   };
+  
 
   const handleClickMostrarOcultarComentarios = (cursoId) => {
     // Cambiar el estado para mostrar/ocultar los comentarios
