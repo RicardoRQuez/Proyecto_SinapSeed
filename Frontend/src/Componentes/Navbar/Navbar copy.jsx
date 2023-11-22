@@ -10,8 +10,6 @@ export function MyNavbar() {
   const navigate = useNavigate();
 
   const [botonTexto, setBotonTexto] = useState('Cerrar Sesión');
-  const [holaBotonTexto, setHolaBotonTexto] = useState('Cerrar Sesión');
-
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
@@ -26,19 +24,11 @@ export function MyNavbar() {
   };
 
   const handleMouseEnter = () => {
-    setBotonTexto('¡Nos Vemos!');
+    setBotonTexto('Nos Vemos!');
   };
 
   const handleMouseLeave = () => {
     setBotonTexto('Cerrar Sesión');
-  };
-
-  const handleMouseEnterHola = () => {
-    setHolaBotonTexto('¡Hola De Nuevo!');
-  };
-
-  const handleMouseLeaveHola = () => {
-    setHolaBotonTexto('Iniciar Sesión');
   };
 
   useEffect(() => {
@@ -136,17 +126,13 @@ export function MyNavbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <button
+                <NavLink
                   className="nav-link inicioSesion"
                   onClick={toggleLogin}
-                  onMouseEnter={handleMouseEnterHola}
-                  onMouseLeave={handleMouseLeaveHola}
                 >
-                  {holaBotonTexto}
-                </button>
+                  Iniciar sesión
+                </NavLink>
               </li>
-
-              
             </>
           )}
         </ul>

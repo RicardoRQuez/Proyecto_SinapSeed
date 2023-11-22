@@ -3,6 +3,7 @@
     color: #FFFFFF; /* Cambiar el color del texto a blanco */
     background-color: #24242400; /* Cambiar el color de fondo a verde */
     border: 2px solid #C54BBF;
+    width: 10rem;
     font-weight: bold;
     border-radius: 10px;
     text-decoration: none; /* Anula el subrayado del texto en los botones */
