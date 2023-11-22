@@ -27,8 +27,6 @@ export const CursoComponent = ({titulo, resumen, descripcion, imagen, precio, pu
             <Card.Text>
           {descripcion}
           </Card.Text>
-          <Button  className={styles.botonRaro} variant="primary"><a className={styles.textoBlancoBoton} href="#">Apúntate al curso</a>
-          </Button>
           </Card.Body>
           </Card>
             <div className="col mt-3">
