@@ -16,7 +16,7 @@ export const FormularioRegistro = () => {
   };
 
   const [formData, setFormData] = useState(initialState);
-  const [mostrarModal, setMostrarModal] = useState(true);
+  const [mostrarModal, setMostrarModal] = useState(false);
 
    const handleClose = () => {
     setMostrarModal(false);

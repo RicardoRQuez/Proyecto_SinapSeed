@@ -28,21 +28,18 @@ export const CursoComponent = ({titulo, resumen, descripcion, imagen, precio, pu
           {descripcion}
           </Card.Text>
           <Button  className={styles.botonRaro} variant="primary"><a className={styles.textoBlancoBoton} href="#">Apúntate al curso</a>
-         </Button>
-      </Card.Body>
-    </Card>
+          </Button>
+          </Card.Body>
+          </Card>
             <div className="col mt-3">
             <ListGroup>
-      <ListGroup.Item className={styles.tituloPrecio}><span className={styles.precio}>Precio:</span> {precio}</ListGroup.Item>
-    </ListGroup>
-              <p ></p>
+            <ListGroup.Item className={styles.tituloPrecio}><span className={styles.precio}>Precio:</span> {precio}</ListGroup.Item>
+            </ListGroup>
             </div>
           </div>
         </div>
         <div className="col-1"></div>
         <div className="col-5 mt-5">
-        
-       
         <Card.Img variant="top" src={imagen}   className={`${styles.imagenCursos}`}/>
           <div className="row mt-3 text-center">
             {" "}
