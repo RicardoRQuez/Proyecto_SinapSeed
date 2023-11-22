@@ -85,12 +85,6 @@ export const VistaCursos = () => {
         puntaje={curso.puntaje}
         precio={curso.precio}
       />
-      <Comentario
-      cursoId={curso._id}
-      imagenUsuario={bufferToDataURL(usuarioActual.imagen, 'image/jpeg')}
-      nombreUsario={usuarioActual.nombre}
-      usuarioActualId={usuarioActual._id}
-       />
 </>
   );
 };

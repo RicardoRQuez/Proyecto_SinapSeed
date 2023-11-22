@@ -43,6 +43,7 @@ const userSchema = new mongoose.Schema({
     },
     imagen: {
         type: Buffer,
+        default: Buffer.from([]), // Valor predeterminado: Buffer vacío
       }
 },{
     timestamps:true,
