@@ -1,8 +1,8 @@
 .containerprincipalBox {
-    background-color: #F7F7F7;
-    border: 5px solid #eacee9;
+    background-color: white;
+    border: 5px solid #F7F7F7;
     border-radius: 20px;
     width: 60rem;
-    height: 45rem;
+    height: 125vh;
     margin-bottom: 100rem;
 }

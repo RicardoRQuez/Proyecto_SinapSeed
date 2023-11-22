@@ -40,7 +40,7 @@ export const FormLogin = ({ onLogin, onClose }) => {
         <input
           type="text"
           id="username"
-          className="espacioLuis"
+          className="espacioLuisUnico"
           name="username"
           placeholder="Ingresa tu correo acá."
           value={email}

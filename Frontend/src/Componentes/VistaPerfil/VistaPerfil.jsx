@@ -43,6 +43,7 @@ export const VistaPerfil = () => {
         <div className="hola">
         
             <section className="row imagenLoginLuis">
+                
                 <ComponenteHeader nombreUsuario={datosUsuario.nombre} />
                 <PrincipalBox />
             </section>

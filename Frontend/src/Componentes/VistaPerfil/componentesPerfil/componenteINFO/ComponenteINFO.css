@@ -1,8 +1,7 @@
 
 .imagenPerfil{
-    margin-top: 10px;
-    margin-left: 250px;
-    margin-bottom: 20px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     width: 200px;
     height: 180px; 
     max-width: 100%;
@@ -11,16 +10,19 @@
 
 .subtituloDatosPersonales{
     font-size: 1.5rem;
-    padding-top: 0px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+    margin-top: 1rem;
 }
 
 .botonComponenteInfo{
     background-color: #f088eb;
     color: white;
     font-family: robotob;
-    margin-left: 270px;
+}
+
+.containerbotonA1{
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;
 }
 
 .password-toggleLuisPerfil {
@@ -47,13 +49,18 @@
     border-radius: 6px;
     border: 1px solid rgba(0, 0, 0, 0);
     background: rgba(197, 75, 191, 0.5);
-    width: 70%;
-    padding: 7px;
-    font-size: 15px; /* Tamaño de fuente más pequeño, ajusta según sea necesario */
+    width: 100%;
+    font-size: 1rem; /* Tamaño de fuente más pequeño, ajusta según sea necesario */
 }
 .espacioLuis2{
     background: rgba(197, 75, 191, 0.5);
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 6px;
     padding-right: 0%;
+}
+
+.columnaImagen{
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;
 }

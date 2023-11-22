@@ -1,21 +1,31 @@
 .portadaRegistro {
-  background-image: url("../../../assets/resources/fondo_Registro.jpg");
-  background-size: cover;
-  flex-direction: column;
-  display:flex;
-  height:55vh;
-  width: 100vw;
+  margin-bottom: 100px;
 }
 
 .parrafoPortadaRegistro {
   font-size: 25px;
-  color: rgb(244, 240, 240); 
+  color: black; 
   margin-top: 10px;
+  font-family: robotol
 }
+
+.Color {
+  color: #f088eb;
+  font-family: robotob;
+}
+
 .color {
   color: #f088eb;
+  font-family: robotob;
 }
 .formulario{
   text-align: center;
+  font-family: robotob;
 
 }
+
+.titulo-Personalizado Color{
+  color: #f088eb;
+}
+
+

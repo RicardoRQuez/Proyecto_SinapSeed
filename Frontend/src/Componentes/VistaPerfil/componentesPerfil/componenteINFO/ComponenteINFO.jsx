@@ -157,11 +157,13 @@ export const ComponenteINFO = () => {
   return (
     <main className="containercomponenteINFO">
       <section className="row">
+        <div className="columnaImagen">
         <img
           src={imagenPerfilSrc}
           alt="imagendePerfil"
           className="imagenPerfil"
         />
+        </div>        
         <div className="input-group mb-3">
           <label className="input-group-text">Subir</label>
           <input
@@ -336,7 +338,7 @@ export const ComponenteINFO = () => {
               <option value="Empleado">Empleado</option>
             </select>
           </div>
-          <div className="col-12">
+          <div className="col-12 containerbotonA1">
             <button className="btn botonComponenteInfo" type="submit">
               Actualizar Datos
             </button>

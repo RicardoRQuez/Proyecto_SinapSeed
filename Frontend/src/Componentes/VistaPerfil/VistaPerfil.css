@@ -35,15 +35,16 @@
   margin-top: 100px;
   font-size: 1.5rem;
   padding:25px;
-  background-color: rgba(219, 140, 198, 0.6);
+  background-color: rgba(246, 176, 227, 0.6);
 }
 
 .nombrePerfil{
-  color: #a1509d;
+  color: #842f7f;
 }
 
 .hola{
   z-index: 1;
+  min-height: calc(85rem - 0px);
 }
 
 .row.imagenLoginLuis {

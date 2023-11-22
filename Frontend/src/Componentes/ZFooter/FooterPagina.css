@@ -1,7 +1,22 @@
-footer  {
-    
-    position: fixed;
-    bottom: 0;
+.footer {
+    /* Asegúrate de que ocupe todo el ancho disponible */
     width: 100%;
-      
-}
+    /* Ajusta el espaciado y colores según sea necesario */
+    background-color: #f1f1f1;
+    color: white;
+    text-align: center;
+    /* Otros estilos según tu diseño */
+  }
+  
+  .social-icons {
+    /* Estilos para la sección de enlaces sociales */
+    /* ... */
+  }
+  
+  .social-icons a {
+    /* Estilos para los enlaces */
+    /* ... */
+  }
+  
+  /* Estilos para la sección de derechos de autor */
+  /* ... */

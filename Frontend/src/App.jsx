@@ -27,7 +27,7 @@ export function App() {
   const { showLogin } = useAuth();
 
   return (
-    <Router>
+    <Router >
       <AuthProvider>
         <MyNavbar/>
 
