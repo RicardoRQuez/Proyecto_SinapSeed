@@ -12,9 +12,9 @@ export const EquipoSinapSeed = () => {
    <>
    
     <div className="container pie">
-    <div className="col">
+
           <h4 className="teamSinap">Equipo SinapSeed</h4>
-        </div>
+      
       <div className="row">
         {miniaturas.map((imagen, index) => (
           <div className="col" key={index}>

@@ -4,7 +4,7 @@ import { CuadroDatos } from "../Banner/CuadroDatos/CuadroDatos";
 
 export const Beneficios = () => {
   // Define los datos que quieres pasar como props
-  const datosCuadro = {
+  const DatosCuadro2 = {
     enlaces: [
       "https://www.google.cl",
       "https://www.google.cl",
@@ -33,7 +33,7 @@ export const Beneficios = () => {
 <br />
 <br />
         {/* Pasa los datos como props al componente CuadroDatos */}
-        <CuadroDatos datos={datosCuadro} />
+        <CuadroDatos datos={DatosCuadro2} />
         <br />
         <br />
         </>
