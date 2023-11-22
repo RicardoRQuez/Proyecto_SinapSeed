@@ -13,7 +13,7 @@ export const Botones = () => {
 
       <div className="container text-center botonesVarios">
         <div className="row">
-          <div className="col-md-4 col-sm-6">
+          <div className="col-md-4 col-sm-4">
 
           <ButtonMenu
           titleButton='Cursos'
@@ -21,14 +21,14 @@ export const Botones = () => {
           content= "Resumen formativo que destaca los objetivos, beneficios y resultados clave del curso de manera atractiva y directa, motivando la participación e interés de los estudiantes potenciales"
           />
           </div>
-          <div className="col-md-4 col-sm-6">
+          <div className="col-md-4 col-sm-4">
          <ButtonMenu
          titleButton='Bootcamp'
          titlecontent="¿De qué se tratan los Bootcamps?"
          content ='Un bootcamp, en el ámbito educativo y de formación profesional, se refiere a un programa de aprendizaje intensivo y de corta duración diseñado para enseñar habilidades específicas en áreas como la programación informática, el diseño, el marketing digital, la ciencia de datos, entre otros. Estos programas suelen ser prácticos, enfocados en proyectos y buscan preparar a los participantes para roles laborales específicos en el menor tiempo posible. Los bootcamps pueden ser presenciales o en línea y a menudo son elegidos por personas que buscan una rápida actualización de habilidades o un cambio de carrera.'
          />
           </div>
-          <div className="col-md-4 col-sm-12">
+          <div className="col-md-4 col-sm-4">
           <ButtonMenu
          titleButton='Clases'
          content =''

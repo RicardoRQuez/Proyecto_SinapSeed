@@ -1,7 +1,8 @@
 // AuthContext.js
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { jwtDecode } from 'jwt-decode';
 
 const AuthContext = createContext();
 
@@ -11,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loginSuccess, setLoginSuccess] = useState(false);
+
 
   const setEmailValue = (value) => {
     setEmail(value);
@@ -43,6 +44,32 @@ export const AuthProvider = ({ children }) => {
 
     // Redirigir al usuario, por ejemplo, a la página de inicio
   };
+
+
+
+  useEffect(() => {
+    // Verifica el token almacenado al cargar la aplicación
+    const consultaCookie = Cookies.get("token");
+    if (consultaCookie) {
+      setAuthenticated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Verifica el token almacenado al cargar la aplicación
+    const consultaCookie = Cookies.get("token");
+    if (consultaCookie) {
+      const tokedDecode = jwtDecode(consultaCookie);
+      const Administrador = tokedDecode.data.administrador;
+
+      if (Administrador ) { 
+          setIsAdmin(true);
+      }
+    }
+  }, []);
+
+
+
 
   const handleLogin = async (event) => {
     event.preventDefault(); //Para que no se reinicie el formulario
@@ -89,9 +116,7 @@ export const AuthProvider = ({ children }) => {
     onLogout() 
  };
 
-  if (loginSuccess) {
-     ;
-  }
+ 
 
   return (
     <AuthContext.Provider

@@ -1,42 +1,37 @@
 import React from "react";
-import './BeneficiosContainer.css';
-import { CuadroDatos } from "../Banner/CuadroDatos/CuadroDatos";
+import "./BeneficiosContainer.css";
+import { CuadroDatos } from "../Banner/CuadroDatos/CuadroDatos.jsx";
 
-export const Beneficios = () => {
-  // Define los datos que quieres pasar como props
-  const DatosCuadro2 = {
-    enlaces: [
-      "https://www.google.cl",
-      "https://www.google.cl",
-      "https://www.google.cl",
-      "https://www.google.cl",
-    ],
-    imagenes: [
-      "imágenes/01.png",
-      "imágenes/02.png",
-      "imágenes/03.png",
-      "imágenes/04.png"
-    ],
-    numeros: ["", "", "", ""],
-    textos: [
-      "Sentirse realizado",
-      "Mayores probabilidades de empleo",
-      "Mejores condiciones laborales",  
-      "Mejor remuneración"
-    ]
-  };
+export function Beneficios() {
   
   return (
-  <> 
+  
+<>
 
 <h4 className="beneficiosTitulo">Beneficios de capacitarse</h4>
-<br />
-<br />
-        {/* Pasa los datos como props al componente CuadroDatos */}
-        <CuadroDatos datos={DatosCuadro2} />
-        <br />
-        <br />
-        </>
-  
+  <div className="cajitaBeneficios container">
+
+  <div className="cajitaBeneficios row">
+
+    <div className="cajitaBeneficios col-3 col-md-3">
+    <CuadroDatos imagenes='imágenes/01.png' numeros='' textos='Sentirse realizado' />
+    </div>
+    <div className="cajitaBeneficios col-3 col-md-3">
+    <CuadroDatos imagenes='imágenes/02.png' numeros='' textos='Mayores probabilidades de empleo' />
+    </div>
+    <div className="cajitaBeneficios col-3 col-md-3">
+    <CuadroDatos imagenes='imágenes/03.png' numeros='' textos='Mejores condiciones laborales' />
+    </div>
+    <div className="cajitaBeneficios col-3 col-md-3">
+    <CuadroDatos imagenes='imágenes/04.png' numeros='' textos='Mejor remuneración' />
+    </div>
+
+  </div>
+
+
+
+</div>
+</>
+    
   );
 };

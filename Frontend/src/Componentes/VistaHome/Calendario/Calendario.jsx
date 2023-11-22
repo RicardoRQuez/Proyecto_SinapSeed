@@ -9,8 +9,8 @@ export const Calendario = () => {
         <div className="col-2 col-sm-2 calendarioCol">
           <img src="/imágenes/calendario.png" alt="calendario" className="imagenCalendario" />
         </div>
-        <div className="col-2 col-sm-10 calendarioCol2">
-          <a className="textoCalendario" href="#">Revisa nuestro calendario para que organices tu aprendizaje</a>
+        <div className="col-10 col-sm-10 calendarioCol2">
+          <a className="textoCalendario text-sm text-md" href="#!">Revisa nuestro calendario para que organices tu aprendizaje (proximamente)</a>
         </div>
       </div>
     </div>
