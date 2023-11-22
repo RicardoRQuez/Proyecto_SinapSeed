@@ -22,16 +22,16 @@ import {VistaMisionVision} from "./Componentes/QuieneSomos/vistaQuieneSomos.jsx"
 import { VistaForgotRoot } from "./Componentes/VistaForgot/VistaForgotRoot.jsx"
 import {AlumniJSX} from "./Componentes/Alumni/Alumni.jsx"
 
+
+import { VistaError } from "./Componentes/VistaError/VistaError.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 
 
 export function App() {
   const { showLogin } = useAuth();
 
   return (
-    <Router>
+    <Router >
       <AuthProvider>
         <MyNavbar/>
 
@@ -53,7 +53,7 @@ export function App() {
           <Route path="/editar-curso/:id" element={<EditCurso/>} />
           <Route path="/administrar-cursos" element={<CargarCursos />} />
           <Route path="/agregar-curso" element={<CrearCurso />} />
-          <Route path="/quienes-somos" element={<VistaMisionVision />} />
+          <Route path="/quienesSomos" element={<VistaMisionVision />} />
           <Route path="/forgot" element={<VistaForgotRoot />} />
           <Route path="/alumni" element={<AlumniJSX />} />
           

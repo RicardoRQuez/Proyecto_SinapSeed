@@ -6,15 +6,28 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 import Cookies from "js-cookie";
 
+
+/**
+ * Componente React que representa la vista del perfil de usuario.
+ * 
+ * @returns {JSX.Element} Elemento JSX que representa la vista del perfil.
+ */
+
+
 export const VistaPerfil = () => {
+    // Estado para almacenar los datos del usuario
     const [datosUsuario, setDatosUsuario] = useState({
         nombre: ""
     });
 
+
+    // Efecto que se ejecuta al cargar el componente para obtener los datos del usuario
     useEffect(() => {
         obtenerDatosUsuario();
     }, []);
 
+
+    // Función para obtener los datos del usuario desde la API
     const obtenerDatosUsuario = async () => {   
         try {
             const consultaCookie = Cookies.get("token");
@@ -40,11 +53,15 @@ export const VistaPerfil = () => {
     };
 
     return (
-        <>
+        <div className="hola">
+        
             <section className="row imagenLoginLuis">
+                
                 <ComponenteHeader nombreUsuario={datosUsuario.nombre} />
                 <PrincipalBox />
             </section>
-        </>
+        </div>
     )
 }
+
+

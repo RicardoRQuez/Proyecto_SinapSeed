@@ -1,17 +1,30 @@
-.subtituloRecursosAcademicos{
-    font-size: 0.9rem;
-    padding-top: 0px;
-    margin-top: 250px;
-    margin-left: 10px;
-    font-family: robotob;
+/* Estilos base */
+.subtituloRecursosAcademicos {
+    font-size: 1rem; /* Ajusta el tamaño base */
+    padding-top: 0; /* Se puede ajustar si es necesario */
+    margin-top: 50vh; /* Usamos unidades relativas para el margen superior */
+    margin-left: 1vw; /* Usamos unidades relativas para el margen izquierdo */
+    font-family: 'robotob', sans-serif; /* Establecemos la fuente */
 }
 
-.botonLuisPerfil{
-    background-color: none ;
-    border: 10px;  
+.botonLuisPerfil {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
     color: #f088eb;
-    font-family: robotol;
+    font-family: 'robotol', sans-serif; /* Establecemos la fuente */
     text-align: left;
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Ajustamos el tamaño de la fuente */
 }
 
+/* Media queries para adaptarse a pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    .subtituloRecursosAcademicos {
+        font-size: 0.8rem; /* Ajusta el tamaño para pantallas más pequeñas */
+        margin-top: 3vh; /* Cambiamos el margen superior */
+        margin-left: 2vw; /* Cambiamos el margen izquierdo */
+    }
+
+    .botonLuisPerfil {
+        font-size: 0.7rem; /* Ajustamos el tamaño de la fuente para pantallas más pequeñas */
+    }
+}

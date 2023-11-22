@@ -1,8 +1,12 @@
+/* Estilos para el contenedor principal de la caja PrincipalBox */
+
 .containerprincipalBox {
-    background-color: rgba(0,0,0,0.6);
-    border: 5px solid #f088eb;
+    background-color: white;
+    border: 5px solid #F7F7F7;
     border-radius: 20px;
+  
+    /* Establece un ancho de 60rem para el contenedor */
     width: 60rem;
-    height: 45rem;
+    height: 125vh;
     margin-bottom: 100rem;
 }

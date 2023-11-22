@@ -1,8 +1,9 @@
+
+
 .formRegistro {
     flex-direction: column;
-    background-color: rgba(255, 192, 203, 0.7);
+    background-color: white;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 15px 0;
   }
   
@@ -16,25 +17,44 @@
   
   .boton {
     border-radius: 6px;
-    border: 2px solid #f088eb;
-    margin-left: 250px;
+    margin-top: 2rem;
+    border: 2px solid #d298cf;
+    color:#d298cf;
+    font-family: robotob;
   }
   
+  .cambioColorRegistro{
+    
+    color: #f088eb;
+  }
   .color {
     border-radius: 6px;
-    border: 2px solid #f088eb;
-    background: rgba(197, 75, 191, 0.651);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 0);
+    background: rgba(197, 75, 191, 0.5);
+  }
+
+  .colorÑaqui{
+    border-radius: 20px;
+    color: #d298cf;
+    background: none;
+    padding:0.5rem;
+  }
+
+  .botonÑaqui{
+    border: 2px solid #d298cf;
+    color:#f088eb;    
+    border-color: #f088eb;
+    font-family: robotob;
   }
   
   .colorLabel {
-    color: black;
+    color: #f088eb;
     font-weight: bold;
   }
   
   .tituloForm {
     text-align: center;
-    color: white;
+    color: rgb(5, 5, 5);
   }
   
   /* Nuevos estilos para las columnas y el ancho del select */
@@ -56,3 +76,8 @@
     width: 100%;
   }
   
+  .Contenedorboton{
+    display: flex;
+    justify-content: center; /* Alinea a la izquierda */
+    align-items: center;
+  }

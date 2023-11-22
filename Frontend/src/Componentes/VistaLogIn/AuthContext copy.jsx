@@ -1,8 +1,7 @@
 // AuthContext.js
-import React, { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState  } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { jwtDecode } from 'jwt-decode';
 
 const AuthContext = createContext();
 
@@ -12,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   const setEmailValue = (value) => {
     setEmail(value);
@@ -25,16 +24,7 @@ export const AuthProvider = ({ children }) => {
   const setIsAdminValue = (value) => {
     setIsAdmin(value);
   };
-  
-  useEffect(() => {
-    // Al cargar el componente, verifica si hay un token almacenado en las cookies
-    const token = Cookies.get("token");
-    if (token) {
-      // Si existe un token, establece el estado de autenticación como verdadero
-      setAuthenticated(true);
-      // Aquí puedes realizar más lógica si es necesario, como validar el token en el backend
-    }
-  }, []); // Se ejecuta una vez al montar el componente
+ 
 
   const onLogin = () => {
     setAuthenticated(true);
@@ -54,32 +44,6 @@ export const AuthProvider = ({ children }) => {
 
     // Redirigir al usuario, por ejemplo, a la página de inicio
   };
-
-
-
-  useEffect(() => {
-    // Verifica el token almacenado al cargar la aplicación
-    const consultaCookie = Cookies.get("token");
-    if (consultaCookie) {
-      setAuthenticated(true);
-    }
-  }, []);
-
-  useEffect(() => {
-    // Verifica el token almacenado al cargar la aplicación
-    const consultaCookie = Cookies.get("token");
-    if (consultaCookie) {
-      const tokedDecode = jwtDecode(consultaCookie);
-      const Administrador = tokedDecode.data.administrador;
-
-      if (Administrador ) { 
-          setIsAdmin(true);
-      }
-    }
-  }, []);
-
-
-
 
   const handleLogin = async (event) => {
     event.preventDefault(); //Para que no se reinicie el formulario
@@ -126,7 +90,9 @@ export const AuthProvider = ({ children }) => {
     onLogout() 
  };
 
- 
+  if (loginSuccess) {
+     ;
+  }
 
   return (
     <AuthContext.Provider

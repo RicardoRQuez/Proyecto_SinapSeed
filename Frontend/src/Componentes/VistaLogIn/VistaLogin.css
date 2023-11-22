@@ -1,6 +1,8 @@
-.containerLuis{
+/* Estilos para el contenedor principal de la vista de inicio de sesión */
+.containerLuis {
+    /* Posicionamiento absoluto para superponer el componente */
     position: absolute;
-    top: 0px; 
-    right: 1px; 
-    z-index: 9999;
+    top: 0px;
+    right: 0px;
+    z-index: 9999; /* Asegura que el componente esté en el frente */
 }

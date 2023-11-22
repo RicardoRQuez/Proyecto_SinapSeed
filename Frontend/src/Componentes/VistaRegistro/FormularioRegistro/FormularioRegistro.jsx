@@ -66,7 +66,7 @@ export const FormularioRegistro = () => {
     <>
       <form onSubmit={handleSignup}>
         <div className={`${styles.formRegistro} formulario-container`}>
-          <h1 className={styles.tituloForm}>Formulario de Registro</h1>
+          <h1 className={styles.tituloForm}>Formulario de <span className={styles.cambioColorRegistro}> Registro </span></h1>
           <div className={`${styles.formColumna}`}>
             <div>
               <label className={`${styles.colorLabel} form-label`}>
@@ -191,14 +191,17 @@ export const FormularioRegistro = () => {
               </select>
             </div>
           </div>
+          <div className={styles.Contenedorboton}>
           <button
             type="submit"
-            className={`${styles.boton} ${styles.color} btn btn-light mt-3 `}
+            className={`${styles.botonÑaqui} ${styles.colorÑaqui} btn-light mt-3 `}
           >
-            Regístrate!
+            ¡Regístrate!
           </button>
+          </div>
         </div>
       </form>
     </>
   );
 };
+
