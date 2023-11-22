@@ -1,33 +1,62 @@
-
-
-.imagenPerfil{
+/* Estilos para la imagen de perfil */
+.imagenPerfil {
+    /* Ajustes de margen para posicionar la imagen */
     margin-top: 10px;
     margin-left: 250px;
     margin-bottom: 20px;
+  
+    /* Tamaño de la imagen */
     width: 200px;
-    height: 180px; 
+    height: 180px;
     max-width: 100%;
+  
+    /* Borde redondeado para la imagen */
     border-radius: 50px;
-}
+  }
 
-.subtituloDatosPersonales{
+
+
+  /*----------------------------------------------------------------------*/
+
+
+  /* Estilos para el título de datos personales */
+  .subtituloDatosPersonales {
+    /* Tamaño de fuente y ajustes de margen */
     font-size: 1.5rem;
     padding-top: 0px;
     margin-top: 10px;
     margin-bottom: 0px;
-}
+  }
+  
 
-.botonComponenteInfo{
+  
+  /*----------------------------------------------------------------------*/
+
+
+  
+  /* Estilos para el botón de actualización de datos */
+  .botonComponenteInfo {
+    /* Estilos de color, fuente y margen */
     background-color: #f088eb;
     color: white;
     font-family: robotob;
     margin-left: 270px;
-}
+  }
+  
 
-.password-toggleLuisPerfil {
+  
+  /*----------------------------------------------------------------------*/
+
+
+  
+  /* Estilos para el icono de mostrar/ocultar contraseña */
+  .password-toggleLuisPerfil {
+    /* Posicionamiento absoluto para el icono */
     left: 80%;
     top: 70%;
     position: absolute;
+  
+    /* Tamaño y apariencia del icono */
     width: 15px;
     height: 15px;
     background-image: url('../../../../assets/resources/ojon.png');
@@ -35,12 +64,18 @@
     background-repeat: no-repeat;
     cursor: pointer;
   }
+  
 
-  .subtituloChiqui{
+  
+  /*----------------------------------------------------------------------*/
+
+
+  
+  /* Estilos para los subtítulos pequeños */
+  .subtituloChiqui {
+    /* Tamaño de fuente, color y fuente */
     font-size: 1.1rem;
     color: #f088eb;
     font-family: robotob;
     margin-left: 5px;
   }
-
-

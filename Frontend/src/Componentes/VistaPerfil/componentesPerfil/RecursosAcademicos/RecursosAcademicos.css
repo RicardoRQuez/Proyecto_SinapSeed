@@ -1,17 +1,40 @@
-.subtituloRecursosAcademicos{
+/* Estilos para el título de la sección de recursos académicos */
+.subtituloRecursosAcademicos {
+    /* Establece el tamaño de fuente del título */
     font-size: 0.9rem;
+  
+    /* Ajusta el espacio en la parte superior del título */
     padding-top: 0px;
+  
+    /* Coloca el título a 250px desde el borde superior y 10px desde el borde izquierdo */
     margin-top: 250px;
     margin-left: 10px;
+  
+    /* Aplica la fuente 'robotob' al título */
     font-family: robotob;
-}
+  }
+  
+/*--------------------------------------------------------------------------------*/
 
-.botonLuisPerfil{
-    background-color: none ;
-    border: 10px;  
+
+  /* Estilos para los botones en el perfil de Luis */
+  .botonLuisPerfil {
+    /* Define un color de fondo nulo (transparente) para los botones */
+    background-color: none;
+  
+    /* Establece un borde con un grosor de 10px a los botones (¡asegúrate de especificar el tipo de borde!) */
+    border: 10px;
+  
+    /* Define el color del texto de los botones como #f088eb */
     color: #f088eb;
+  
+    /* Aplica la fuente 'robotol' a los botones */
     font-family: robotol;
+  
+    /* Alinea el texto a la izquierda dentro de los botones */
     text-align: left;
+  
+    /* Establece el tamaño de fuente de los botones */
     font-size: 0.8rem;
-}
-
+  }
+  

@@ -6,6 +6,13 @@ import imagenPerfil from "../../resources/imagenPerfil.png";
 import { jwtDecode } from "jwt-decode";
 import Cookies from "js-cookie";
 
+/**
+ * Componente React que muestra y permite editar la información del usuario.
+ * Permite la visualización y edición de los datos personales y la imagen de perfil.
+ * 
+ * @returns {JSX.Element} Elemento JSX que representa la sección de información del usuario.
+ */
+
 export const ComponenteINFO = () => {
   const [passwordHidden, setPasswordHidden] = useState(true);
   const [datosUsuario, setDatosUsuario] = useState({
@@ -33,6 +40,9 @@ export const ComponenteINFO = () => {
     }
   };
 
+
+  
+  // Lógica para obtener los datos del usuario desde la AP
   const obtenerDatosUsuario = async () => {
     try {
       const consultaCookie = Cookies.get("token");
@@ -70,6 +80,7 @@ export const ComponenteINFO = () => {
     }
   };
 
+  // Efecto que se ejecuta al cargar el componente para obtener los datos del usuario
   useEffect(() => {
     obtenerDatosUsuario();
   }, []);
@@ -126,6 +137,7 @@ export const ComponenteINFO = () => {
   //Inicio de getsion imagen-----------------------------------------------------------------
   const [imagenPerfilSrc, setImagenPerfilSrc] = useState(imagenPerfil);
 
+  // Manejador de cambios en la imagen de perfil seleccionada por el usuario
   const handleFileChange = (event) => {
     const file = event.target.files[0];
 
@@ -147,6 +159,7 @@ export const ComponenteINFO = () => {
   };
 
   //---------------------------------------------------------------------------
+  // Conversión de buffer a URL de imagen
   const bufferToDataURL = (buffer, mimeType) => {
     const arrayBufferView = new Uint8Array(buffer.data); // Extrae la propiedad data
     const blob = new Blob([arrayBufferView], { type: mimeType });
