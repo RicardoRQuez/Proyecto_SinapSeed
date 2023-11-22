@@ -1,0 +1,86 @@
+.banner{
+    background-image: url("./ImagMV/image1.jpg");
+    background-size: cover;
+   flex-direction: column;
+   display:flex;
+   height:70vh;
+   width: 100vw;
+  
+}
+
+.tituloMision {
+    color: #C54BBF;
+    font-family: 'Arial', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.tituloVision {
+    color: #C54BBF;
+    font-family: 'Arial', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.tituloNosotros {
+    color: #C54BBF;
+    font-family: 'Arial', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}
+.textoCompleto1 {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: justify;
+}
+.textoCompleto2 {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: justify;
+}
+.textoCompletito3 {
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.row.filita {
+margin-bottom: 100px;
+margin-top: 40px;
+}
+.styles.portadaMV {
+width: 100vw;
+background-size: cover;
+height: 100vh;
+}
+.tituloquien{
+    color:#c64dc0f4; 
+    font-weight: 700;
+    text-align: center;
+    margin-top: 150px;
+    font-size: 120px;
+}
+.imagenNosotros{
+    width: 100px;
+    max-width: 100%; 
+    height: auto;
+    display: block;
+    margin: auto; 
+}

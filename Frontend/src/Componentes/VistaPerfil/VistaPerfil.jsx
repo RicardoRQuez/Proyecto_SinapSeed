@@ -40,12 +40,13 @@ export const VistaPerfil = () => {
     };
 
     return (
-        <>
+        <div className="hola">
+        
             <section className="row imagenLoginLuis">
                 <ComponenteHeader nombreUsuario={datosUsuario.nombre} />
                 <PrincipalBox />
             </section>
-        </>
+        </div>
     )
 }
 

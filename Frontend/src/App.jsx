@@ -23,8 +23,6 @@ import { VistaForgotRoot } from "./Componentes/VistaForgot/VistaForgotRoot.jsx"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
-
 export function App() {
   const { showLogin } = useAuth();
 

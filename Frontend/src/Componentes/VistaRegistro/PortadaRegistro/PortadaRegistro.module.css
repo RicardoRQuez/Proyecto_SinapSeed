@@ -1,12 +1,15 @@
 .portadaRegistro {
-  background-image: url("../../../assets/resources/fotoregistro.jpg");
+  background-image: url("../../../assets/resources/fondo_Registro.jpg");
   background-size: cover;
-  height: 190vh;
+  flex-direction: column;
+  display:flex;
+  height:55vh;
+  width: 100vw;
 }
 
 .parrafoPortadaRegistro {
   font-size: 25px;
-  color: rgb(223, 237, 244); 
+  color: rgb(244, 240, 240); 
   margin-top: 10px;
 }
 .color {
