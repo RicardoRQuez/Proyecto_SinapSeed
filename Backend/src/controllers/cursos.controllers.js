@@ -39,10 +39,10 @@ export const findAllCursos = async (req, res) => {
 
   export const editCurso = async (req, res) => {
     const { id } = req.params;
-    const { titulo, descripcion, resumen, precio, puntaje } = req.body;
+    const { titulo, descripcion, resumen, precio, puntaje, horario } = req.body;
   
     try {
-      let updateFields = { titulo, descripcion, resumen, precio, puntaje };
+      let updateFields = { titulo, descripcion, resumen, precio, puntaje, horario };
   
       // Verificar si se ha cargado una nueva imagen
       if (req.file) {
