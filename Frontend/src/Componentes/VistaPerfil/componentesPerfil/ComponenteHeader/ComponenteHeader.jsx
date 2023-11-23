@@ -7,7 +7,7 @@ import React from 'react';
  * @returns {JSX.Element} Elemento JSX que representa el encabezado del perfil.
  */
 
-export const ComponenteHeader = ({nombreUsuario}) => {
+export const ComponenteHeader = ({nombreMayusculas}) => {
   return (
     <header className="row headerLuisPerfil">
       <h1 className="tituloPerfil">

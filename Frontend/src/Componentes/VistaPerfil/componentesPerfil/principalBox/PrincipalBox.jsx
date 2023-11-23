@@ -1,5 +1,5 @@
 import React from "react";
-import "./PrincipalBox.css";
+import "./Betano.css";
 import { RecursosAcademicos } from "../RecursosAcademicos/RecursosAcademicos.jsx";
 import { ComponenteINFO } from "../componenteINFO/ComponenteINFO.jsx";
 

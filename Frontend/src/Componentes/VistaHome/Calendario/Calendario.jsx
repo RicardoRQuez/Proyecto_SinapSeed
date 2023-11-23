@@ -7,13 +7,14 @@ export const Calendario = () => {
   
   return (
     <>
+    <a href="https://101.nerdear.la/es/" target="_blank">
     <div className="calendario container" id="particles-container">
 
 <header className='tituloNerderla'> Evento del 22 al 24 de noviembre <span className='rosadito'>¡No te lo pierdas! </span> </header>
-    <a href="https://101.nerdear.la/es/"> </a>
+   
           
     </div>
-  
+    </a>
       </>
   );
 };

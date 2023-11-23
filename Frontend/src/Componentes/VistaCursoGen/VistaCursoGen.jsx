@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import estudio from './estudio.jpg';
 import './VistaCursoGen.css';
-import { BusquedaCursoGen } from './componentsVistaCursoGen/Busqueda/BusquedaCursoGen.jsx'
+
 import {ComponenteCurso } from './componentsVistaCursoGen/ComponenteCurso/ComponenteCurso.jsx'
 import muestra from './muestra.jpeg';
 import axios from 'axios';
@@ -43,8 +43,8 @@ export const VistaCursoGen = () => {
     <section className='row'>
       <div className='col-2'></div>
       <div className='col-8'>
-        <BusquedaCursoGen />
-        <section className='row text-center encabezadosCursoGen'>
+       
+        <section className='row text-center encabezadosCursoGen mt-5'>
           <h2 className='tituloh2Luis'> ¡ Encuentra lo que <span className='buscasLuis'> buscas</span> !</h2>
           <h3 className='tituloh3Luis'> Conoce recursos académicos de tú interés. </h3>
         </section>
