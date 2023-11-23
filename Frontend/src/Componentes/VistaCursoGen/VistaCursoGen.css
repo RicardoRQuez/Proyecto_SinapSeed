@@ -26,6 +26,7 @@
 }
 
 .tituloh2Luis{
+    margin-top: 10px;
     margin-top: 70px;
     font-family: robotob;
     
@@ -36,4 +37,8 @@
 }
 .tituloh3Luis{
     font-family: robotol;
+}
+
+.guagua{
+    margin-top: 10px;
 }

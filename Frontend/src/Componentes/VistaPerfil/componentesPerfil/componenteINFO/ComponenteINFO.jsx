@@ -155,13 +155,15 @@ export const ComponenteINFO = () => {
   };
 
   return (
-    <main className="containercomponenteINFO">
-      <section className="row">
-        <img
-          src={imagenPerfilSrc}
-          alt="imagendePerfil"
-          className="imagenPerfil"
-        />
+    <main >
+      <section>
+      <div className="containercomponenteINFO"> {/* Agregar una clase para centrar */}
+          <img
+            src={imagenPerfilSrc}
+            alt="imagendePerfil"
+            className="imagenPerfil"
+          />
+        </div>
         <div className="input-group mb-3">
           <label className="input-group-text">Subir</label>
           <input

@@ -85,11 +85,7 @@ export function MyNavbar() {
                   Cursos
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/foro">
-                  Foro
-                </NavLink>
-              </li>
+              
               <li className="nav-item">
                 <NavLink className="nav-link" to="/noticias">
                   Noticias
@@ -112,11 +108,7 @@ export function MyNavbar() {
                       Admin. Cursos
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/administrar-foro">
-                      Admin. Foro
-                    </NavLink>
-                  </li>
+                  
                 </>
               )}
               <li className="nav-item">

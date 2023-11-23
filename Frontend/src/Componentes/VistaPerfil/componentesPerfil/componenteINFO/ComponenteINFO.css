@@ -1,14 +1,14 @@
 
 
-.imagenPerfil{
+.imagenPerfil {
     margin-top: 10px;
-    margin-left: 250px;
     margin-bottom: 20px;
     width: 200px;
-    height: 180px; 
+    height: 180px;
     max-width: 100%;
     border-radius: 50px;
-}
+    margin-right: 15rem;
+  }
 
 .subtituloDatosPersonales{
     font-size: 1.5rem;
@@ -42,3 +42,16 @@
     font-family: robotob;
     margin-left: 5px;
   }
+
+  .centrarImagen {
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+  }
+
+  .containercomponenteINFO{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

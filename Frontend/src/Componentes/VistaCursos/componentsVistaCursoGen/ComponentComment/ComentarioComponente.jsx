@@ -32,6 +32,7 @@ export const Comentario = ({
   
 
       setCommentText(""); //
+      window.location.reload();
     } catch (error) {
       console.error("Error al crear el comentario:", error);
     }
