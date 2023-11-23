@@ -2,26 +2,28 @@ import Comment from "../models/foro.models.js";
 import User from "../models/users.models.js";
 
 // controlador para comentarios
-export const comment = async (req, res) => {
+export const createComment = async (req, res) => {
+  const { courseId, userId, userName } = req.params;
   const { comentario } = req.body;
-  const { nombre } = req.params;
 
   try {
-    await Comment.create({
-      nombre,
+    // Utilizar el método create para crear y guardar el comentario
+    const savedComment = await Comment.create({
+      courseId,
+      userId,
       comentario,
     });
 
-    res.status(201).json({
-      msg: "¡Comentario creado con éxito!",
-      status: 201,
-    });
+    res.status(201).json(savedComment);
   } catch (error) {
-    console.log(error);
-    res.status(500).json({
-      msg: "Error al publicar el comentario",
-      status: 500,
-    });
+    if (error.name === 'ValidationError') {
+      // Si hay un error de validación (por ejemplo, courseId o userId no son válidos)
+      res.status(400).json({ message: 'Datos de comentario no válidos.' });
+    } else {
+      // Otros errores
+      console.error('Error al crear un comentario:', error);
+      res.status(500).json({ message: 'Error al crear un comentario' });
+    }
   }
 };
 

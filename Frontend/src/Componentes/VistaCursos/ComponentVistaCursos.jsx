@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./VistaCursos.module.css";
-import image1 from "./imagenes/image1.png";
-
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
 export const CursoComponent = ({titulo, resumen, descripcion, imagen, precio, puntaje }) => {
@@ -17,51 +18,48 @@ export const CursoComponent = ({titulo, resumen, descripcion, imagen, precio, pu
         {/* Primera columna */}
         <div className={`${styles.columnaUno} col-5`}>
           {/* Primera fila en la primera columna */}
+          <br />
           <div className="row">
-            <h2 className={styles.tituloGrande}>{titulo}</h2>{" "}
-          </div>
-          <div className="row">
-            <span className="tituloChico">
-              <b>{resumen}</b>
-            </span>
-          </div>
-          <div className="row">
-            <span className="textoCompleto">{descripcion}
-            </span>
-          </div>
-          <div className="row">
+            <Card className={`${styles.tarjetita}`}>
+      <Card.Body>
+        <Card.Title className={`${styles.tituloGratis}`}>{titulo}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted" >{resumen}</Card.Subtitle>
+            <Card.Text>
+          {descripcion}
+          </Card.Text>
+          </Card.Body>
+          </Card>
             <div className="col mt-3">
-            <button className={styles.botonRaro}type="button">
-  <a className={styles.textoBlancoBoton} href="#">Apúntate al curso</a>
-</button>
-            </div>
-            <div className="col mt-3">
-              <p className={styles.tituloGratis}>{precio}</p>
+            <ListGroup>
+            <ListGroup.Item className={styles.tituloPrecio}><span className={styles.precio}>Precio:</span> {precio}</ListGroup.Item>
+            </ListGroup>
             </div>
           </div>
         </div>
         <div className="col-1"></div>
         <div className="col-5 mt-5">
-          <div className={`${styles.imagenCursos}`}>
-            <img src={imagen} alt="Descripción de la imagen"  height="300px" />
-          </div>
+        <Card.Img variant="top" src={imagen}   className={`${styles.imagenCursos}`}/>
           <div className="row mt-3 text-center">
             {" "}
             {/* Primera fila */}
-            <h3>
-              <b className="colorNota">{puntaje}</b>
-            </h3>
+            <ListGroup>
+      <ListGroup.Item className={styles.tituloPrecio}><span className={styles.precio}>Puntaje:</span> {puntaje}</ListGroup.Item>
+    </ListGroup>
           </div>
+          
           <div className="row mt-3">
             {" "}
             {/* Segunda fila */}
-            <p>
-              Quieres ingresar al foro con el detalle de los usuarios de esta
+           <Card className={styles.linkForo}>
+             Quieres ingresar al foro con el detalle de los usuarios de esta
               puntuación? <a href="/foro">Pincha Acá</a>
-            </p>
+              </Card>
           </div>
         </div>
       </div>
+      <br />
     </>
   );
 };
+
+

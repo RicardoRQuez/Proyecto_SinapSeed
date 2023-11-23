@@ -1,15 +1,46 @@
 import styles from "./VistaCursos.module.css";
-import image1 from "./imagenes/image1.png";
 import { CursoComponent } from './ComponentVistaCursos';
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import axios from 'axios';
+import {Comentario}  from './componentsVistaCursoGen/ComponentComment/ComentarioComponente.jsx'
+import {jwtDecode} from 'jwt-decode';
+import { VerComentarios } from "./componentsVistaCursoGen/ComponentComment/VerComentarios.jsx";
 
 
 export const VistaCursos = () => {
   const { id } = useParams();
   const [curso, setCurso] = useState({});
+  const [usuarioActual, setUsuarioActual] = useState({});
+
+  useEffect(() => {
+    const obtenerUsuarioActual = async () => {
+      try {
+        const consultaCookie = Cookies.get("token");
+  
+        if (consultaCookie) {
+          const idToken = jwtDecode(consultaCookie).data._id;
+  
+          const response = await axios.get(
+            `http://localhost:3000/api/v1/user/${idToken}`,
+            {
+              headers: { token: consultaCookie },
+            }
+          );
+          console.log("usuarioActual",response)
+          setUsuarioActual(response.data);
+        } else {
+          console.warn("No hay una cookie de token");
+        }
+      } catch (error) {
+        console.error("Error al obtener el usuario actual:", error);
+      }
+    };
+  
+    obtenerUsuarioActual();
+  }, []);
+
 
   useEffect(() => {
     const obtenerCurso = async () => {
@@ -33,24 +64,16 @@ export const VistaCursos = () => {
   }, []);
     
   const bufferToDataURL = (buffer, mimeType) => {
-    try {
-      if (buffer && buffer.data) {
-        const arrayBufferView = new Uint8Array(buffer.data);
-        const blob = new Blob([arrayBufferView], { type: mimeType });
-        const urlCreator = window.URL || window.webkitURL;
-        return urlCreator.createObjectURL(blob);
-      } else {
-        console.log("no funciona")
-       return
-      }
-    } catch (error) {
-      console.error(error.message);
-      // Devuelve una URL predeterminada o realiza alguna acción de manejo de errores
-      return 'URL_POR_DEFECTO';
+    if (!buffer || !buffer.data) {
+      return null; // O algún valor predeterminado si prefieres
     }
-  };
-
   
+    const arrayBufferView = new Uint8Array(buffer.data);
+    const blob = new Blob([arrayBufferView], { type: mimeType });
+    const urlCreator = window.URL || window.webkitURL;
+    return urlCreator.createObjectURL(blob);
+  };
+  console.log('curso Actual return',curso)
   return (
     <>
       <CursoComponent
@@ -61,6 +84,12 @@ export const VistaCursos = () => {
         imagen={bufferToDataURL(curso.imagen, 'image/jpeg')}
         puntaje={curso.puntaje}
         precio={curso.precio}
+      />
+      <Comentario
+      cursoId={curso._id}
+      imagenUsuario={bufferToDataURL(usuarioActual.imagen, 'image/jpeg')}
+      nombreUsario={usuarioActual.nombre}
+      usuarioActualId={usuarioActual._id}
       />
     </>
   );
