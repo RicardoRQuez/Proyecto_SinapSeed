@@ -1,0 +1,66 @@
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .error-box {
+    border: 2px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  .error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .error-box {
+    border: 5px solid #f088eb; /* Cambiado el color del borde */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: white;
+  }
+  
+  .gifError {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .gifError{
+    width: 150px;
+    height: 150px;
+  }
+
+
+  .botonLuisError {
+    color: #f088eb;
+    font-family: "robotob";
+    font-size: 0.7rem; /* Utiliza em para el tamaño de fuente */
+    width: 35%;
+    padding: 2%; /* Utiliza porcentaje para el padding */
+    border-radius: 20px;  
+    margin-right: 0.8rem;
+    border: 2px solid #f088eb;
+    background: transparent;
+  }
+
+  .cambioColorError{
+    font-family: robotob;    
+    color: #f088eb;
+  }
+
+  .textoNegro1{
+    
+    font-family: robotob;  
+  }
+
+  .textoNegro2{
+    
+    font-family: robotol;  
+  }
