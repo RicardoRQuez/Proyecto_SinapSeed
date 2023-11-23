@@ -40,7 +40,7 @@ export const CargarCursos = () => {
       console.error("Error al eliminar curso:", error);
     }
   };
-
+console.log(cursos)
   return (
     <>
       <div className="container-flex antiNavBar"></div>
@@ -77,7 +77,7 @@ export const CargarCursos = () => {
                 <td>
                   <Link
                     to={`/editar-curso/${curso._id}`}
-                    className="botoncitoEdit"
+                    className="btn btn-info"
                   >
                     Editar
                   </Link>
@@ -85,7 +85,7 @@ export const CargarCursos = () => {
                 <td>
                   <button
                     onClick={() => handleEliminarCurso(curso._id)}
-                    className="botoncitoEliminar"
+                    className="botonElimias"
                   >
                     Eliminar
                   </button>

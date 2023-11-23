@@ -13,7 +13,8 @@ export const createCurso = async (req, res) => {
         descripcion, 
         resumen,
         precio,
-        puntaje
+        puntaje,
+        imagen
     });
 
     res.status(201).json({ message: "Curso creado correctamente" });
@@ -24,15 +25,15 @@ export const createCurso = async (req, res) => {
 };
 
 export const findAllCursos = async (req, res) => {
-    try {
+  try {
 
-      const allCursos = await Curso.find();
-      res.json(allCursos);
-    } catch (error) {
-      console.error('Error al obtener los cursos:', error);
-      res.status(500).json({ error: 'Error del servidor' });
-    }
-  };
+    const allCursos = await Curso.find();
+    res.json(allCursos);
+  } catch (error) {
+    console.error('Error al obtener los cursos:', error);
+    res.status(500).json({ error: 'Error del servidor' });
+  }
+};
 
 
   export const editCurso = async (req, res) => {
