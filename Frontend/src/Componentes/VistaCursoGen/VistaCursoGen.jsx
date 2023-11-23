@@ -152,25 +152,6 @@ export const VistaCursoGen = () => {
                   "image/jpeg")}
                 userId={usuarioActual._id}
               />
-              {/* Mostrar comentarios solo si el curso está seleccionado */}
-              {cursoSeleccionado === curso._id &&
-                curso.comentarios.map((comentario) => (
-                  <ComponenteComentarios
-                    key={comentario._id}
-                    nombre={comentario.userId.nombre}
-                    comentario={comentario.comentario}
-                    imagen={bufferToDataURL(
-                      comentario.userId.imagen,
-                      "image/jpeg"
-                    )}
-                    id={comentario._id}
-                    usuarioActual={usuarioActual}
-                    usuarioActualId={usuarioActual._id}
-                    userId={comentario.userId._id}
-                    admin={usuarioActual.administrador}
-                    commentId={comentario._id}
-                  />
-                ))}
             </React.Fragment>
           ))}
         </div>

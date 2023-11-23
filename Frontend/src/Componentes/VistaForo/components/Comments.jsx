@@ -2,7 +2,7 @@
 import image from '../image/estudiante_estrellaGen.jpeg'
 import React, { useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import styles from './Comments.module.css';
+
 
 function CommentComponent() {
   const [author, setAuthor] = useState(''); 

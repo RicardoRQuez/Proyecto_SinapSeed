@@ -72,55 +72,6 @@ export const ComponenteCurso = ({
               Ver más
             </button>
           </NavLink>
-          
-          <button
-            type="submit"
-            onClick={openModal}
-            className="botonComentar"
-          >
-            Comentar
-          </button>
-
-          <button
-            type="submit"
-            onClick={onClickVerOcultarComentarios}
-            className="botonComentar"
-          >
-            Ver/ocutar comentarios
-          </button>
-
-          <Modal show={modalIsOpen} onHide={closeModal}>
-            <Modal.Header closeButton>
-              <Modal.Title>Comentar</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              {/* Mostrar la imagen y el nombre del usuario que está comentando */}
-              <div className="userInfo">
-                <img src={usuarioImagen} alt="imagen de usuario" className="imagenPerfil" />
-                <span>Nombre: {usuarioNombre}</span>
-              </div>
-              {/* Textarea para el comentario */}
-              <Form.Group controlId="formComment">
-                <Form.Label>Deja tu comentario:</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows={3}
-                  value={comentario}
-                  onChange={(e) => setComentario(e.target.value)}
-                />
-              </Form.Group>
-            </Modal.Body>
-            <Modal.Footer>
-              {/* Botones para cancelar y comentar */}
-              <Button variant="secondary" onClick={closeModal}>
-                Cancelar
-              </Button>
-              <Button variant="primary" onClick={handleComentar}>
-                Comentar
-              </Button>
-            </Modal.Footer>
-          </Modal>
-
         </div>
       </div>
     </section>
