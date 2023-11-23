@@ -57,6 +57,7 @@ export function App() {
           <Route path="/forgot" element={<VistaForgotRoot />} />
           <Route path="*" element={<VistaError />} />
           <Route path="/alumni" element={<AlumniJSX />} />
+  
           
         </Routes>
         <Footer />

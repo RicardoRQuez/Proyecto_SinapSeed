@@ -27,9 +27,6 @@ export function Beneficios() {
     </div>
 
   </div>
-
-
-
 </div>
 </>
     

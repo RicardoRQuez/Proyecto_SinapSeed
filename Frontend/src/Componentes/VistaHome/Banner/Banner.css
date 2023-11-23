@@ -1,0 +1,54 @@
+.portadaHome.banner{
+    background-image: url("../../../../imágenes/prueba2.jpg");
+    background-size: cover;
+   flex-direction: column;
+   display:flex;
+   height:100vh;
+   width: 100vw;
+  
+  }
+  
+  
+  .portadaHome.container-fluid{
+  
+      margin-top: 80px;
+      margin-left: 10px;
+      color: aliceblue;
+  }
+  
+  .hazSinapSeed{
+  
+      font-size: 48px;
+  
+  }
+  
+  
+  .parrafo{
+          color: aliceblue;
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 70px;
+  }
+  .rosa{
+  
+      color: #F088EB;  
+      }
+  
+      .cajitaProps.col-3.col-md-3{
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; 
+      color: #300a2e;
+      font-size: 18px;
+      
+  }
+  
+  .cajitaProps.container{
+  
+  
+      background: #f1f1f175;
+      border-radius: 15px;
+      padding-bottom: 18px;
+  }
