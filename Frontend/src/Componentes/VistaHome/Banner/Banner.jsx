@@ -2,7 +2,29 @@ import React from "react";
 import "./Banner.css";
 import { CuadroDatos } from "./CuadroDatos/CuadroDatos";
 
-export function Banner() {
+export const Banner = () => {
+  // Define los datos que quieres pasar como props
+  const datosCuadro = {
+    tooltips : [
+      "Podrás encontrar una gran variedad de cursos en tecnología.",
+      "Contamos con varias empresas asociadas para que puedas encontrar el curso que buscas.",
+      "Nuestros egresados tardan menos de 3 meses en encontrar empleo.",
+      "Contamos con una gran cantidad de estudiantes que nos prefieren a diario."
+    ],
+    imagenes: [
+      "imágenes/cuadro 1.png",
+      "imágenes/cuadro 2.png",
+      "imágenes/cuadro 3.png",
+      "imágenes/cuadro 4.png"
+    ],
+    numeros: ["70+", "40+", "5000+", "100+"],
+    textos: [
+      "Cursos, bootcamps y más!",
+      "Empresas asociadas",
+      "Egresados con empleo",
+      "Usuarios al día"
+    ]
+  };
   
   return (
   

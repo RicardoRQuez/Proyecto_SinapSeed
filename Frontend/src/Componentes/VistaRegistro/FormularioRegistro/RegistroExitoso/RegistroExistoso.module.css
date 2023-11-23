@@ -1,0 +1,26 @@
+.customModal {
+    position: fixed;
+    top: 50px; /* Ajusta esta posición según sea necesario */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999; /* Asegúrate de tener un z-index alto para que esté sobre otros elementos */
+    width: 80%; /* Ancho del modal */
+    max-width: 400px; /* Ancho máximo del modal */
+}
+
+.buttonCustom {
+    width: 120px; /* Ancho del botón */
+    height: 40px; /* Altura del botón */
+    font-size: 16px; /* Tamaño del texto dentro del botón */
+    color: white; /* Color del texto dentro del botón */
+    border: none; /* Eliminar borde */
+    margin-right: 10px; /* Margen derecho entre botones */
+}
+
+.textTile{
+    color:#f088eb ;
+}
+
+.modalBody{
+    font-weight: bold; 
+}

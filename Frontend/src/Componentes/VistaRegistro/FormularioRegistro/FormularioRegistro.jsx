@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styles from "./FormularioRegistro.module.css";
 import axios from 'axios';
-
+import RegistroExitoso from './RegistroExitoso/RegistroExitoso.jsx'
 
 export const FormularioRegistro = () => {
   const initialState = {
@@ -16,7 +16,13 @@ export const FormularioRegistro = () => {
   };
 
   const [formData, setFormData] = useState(initialState);
-  
+  const [mostrarModal, setMostrarModal] = useState(false);
+
+   const handleClose = () => {
+    setMostrarModal(false);
+    // Aquí podrías redirigir a la página de inicio de sesión o hacer alguna otra acción
+  };
+
   const handleSignup = async (event) => {
     event.preventDefault();
     try {
@@ -39,7 +45,7 @@ export const FormularioRegistro = () => {
       await axios.post("http://localhost:3000/api/v1/signup", formData);
       setFormData(initialState);
   
-      alert('Usuario creado correctamente');
+      setMostrarModal(true);
     } catch (error) {
       console.error("Error en la solicitud:", error);
     }
@@ -201,6 +207,7 @@ export const FormularioRegistro = () => {
           </div>
         </div>
       </form>
+      <RegistroExitoso show={mostrarModal} handleClose={handleClose} />
     </>
   );
 };

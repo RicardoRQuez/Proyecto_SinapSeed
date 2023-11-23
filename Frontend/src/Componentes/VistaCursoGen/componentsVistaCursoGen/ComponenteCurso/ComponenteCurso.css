@@ -26,6 +26,14 @@
     color:white;
 
 }
+.botonComentar {
+    background-color: white;
+    border:#f088eb;
+    border-radius: 5px;
+    color:#f088eb;
+    margin-left: 10px;
+
+}
 
 .h4Luis{
     color:#f088eb;
@@ -34,4 +42,13 @@
 
 .parrafoLuis{
     font-family: robotol;
+}
+.imagenPerfil{
+    margin-top: 10px;
+    margin-left: 250px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 180px; 
+    max-width: 100%;
+    border-radius: 50px;
 }
