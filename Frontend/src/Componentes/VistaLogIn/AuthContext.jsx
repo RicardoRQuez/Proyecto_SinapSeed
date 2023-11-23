@@ -2,6 +2,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import { jwtDecode } from "jwt-decode";
 
 const AuthContext = createContext();
 
@@ -11,7 +12,7 @@ export const AuthProvider = ({ children }) => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   const setEmailValue = (value) => {
     setEmail(value);
@@ -24,7 +25,7 @@ export const AuthProvider = ({ children }) => {
   const setIsAdminValue = (value) => {
     setIsAdmin(value);
   };
-  
+
   const onLogin = () => {
     setAuthenticated(true);
     console.log("Usuario inició sesión");
@@ -106,7 +107,8 @@ export const AuthProvider = ({ children }) => {
     onLogout();
   };
 
- 
+  if (loginSuccess) {
+  }
 
   return (
     <AuthContext.Provider

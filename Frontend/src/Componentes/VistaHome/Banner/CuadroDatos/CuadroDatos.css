@@ -1,14 +1,14 @@
 
 .container.datos-portada{
  
-    background-color: #ffffff9f;
-    border-radius: 5px;
-    
+  background-color: #ffffff9f;
+  border-radius: 5px;
+  
 }  
 
 .iconito{
 
-  margin-top: 20px;  
+margin-top: 20px;  
 height: 60px;
 
 
@@ -16,12 +16,12 @@ height: 60px;
 }
 
 .enlace-columna {
-    text-decoration: none;
-    font-weight: 600;
-    color: #ac479e;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ac479e;
 
-  }
-  
-  .enlace-columna:hover {
-    color: #050f13; /* Cambia el color del texto cuando el mouse está sobre el enlace */
-  }
+}
+
+.enlace-columna:hover {
+  color: #050f13; /* Cambia el color del texto cuando el mouse está sobre el enlace */
+}
