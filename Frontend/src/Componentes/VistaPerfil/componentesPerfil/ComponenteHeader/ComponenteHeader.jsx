@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './ComponenteJEDER.css'
 /**
  * Componente React que muestra el encabezado del perfil de usuario.
  * 

@@ -173,6 +173,7 @@ export const deleteUserById = async (req, res) => {
 
 
 //-----------------------------
+//-----------------------------
 export const verificarDatos = async (req, res) => {
   const { nombre, rut, email, telefono } = req.body;
 
