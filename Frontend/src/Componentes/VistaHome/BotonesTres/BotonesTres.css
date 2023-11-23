@@ -45,3 +45,11 @@
     font-size:larger;
 }
 
+.img-fluid.botones-grandes.Sabrina{
+
+
+    
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(184, 12, 207, 0.808); /* 10px de sombra negra con opacidad 0.5 */
+
+      }

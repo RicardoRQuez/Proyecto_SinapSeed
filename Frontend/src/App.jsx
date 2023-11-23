@@ -22,6 +22,7 @@ import {VistaMisionVision} from "./Componentes/QuieneSomos/vistaQuieneSomos.jsx"
 import { VistaForgotRoot } from "./Componentes/VistaForgot/VistaForgotRoot.jsx";
 import { VistaError } from "./Componentes/VistaError/VistaError.jsx";
 import { ShoppingCart } from "./Componentes/ShoppingCart/ShoppingCart.jsx";
+import {AlumniJSX} from "./Componentes/Alumni/Alumni.jsx"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -54,6 +55,7 @@ export function App() {
           <Route path="/quienesSomos" element={<VistaMisionVision />} />
           <Route path="/forgot" element={<VistaForgotRoot />} />
           <Route path="/ShoppingCart" element={<ShoppingCart />} />
+          <Route path="/alumni" element={<AlumniJSX />} />
           <Route path="*" element={<VistaError />} />
         </Routes>
         <Footer />
