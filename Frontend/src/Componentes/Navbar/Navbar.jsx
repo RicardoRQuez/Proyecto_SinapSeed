@@ -1,44 +1,46 @@
-import { NavLink, useNavigate } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
-import './estiloNavbar.css';
-import { VistaLogin } from '../VistaLogIn/VistaLogin.jsx';
-import { useAuth, useAuthFunctions } from '../VistaLogIn/AuthContext';
+import { NavLink, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import "./estiloNavbar.css";
+import { VistaLogin } from "../VistaLogIn/VistaLogin.jsx";
+import { useAuth, useAuthFunctions } from "../VistaLogIn/AuthContext";
 
 export function MyNavbar() {
   const { showLogin, setShowLogin, authenticated, isAdmin } = useAuth();
   const { handleLogout } = useAuthFunctions();
   const navigate = useNavigate();
 
-  const [botonTexto, setBotonTexto] = useState('Cerrar Sesión');
-  const [holaBotonTexto, setHolaBotonTexto] = useState('Iniciar Sesión');
-
+  const [botonTexto, setBotonTexto] = useState("Cerrar Sesión");
+  const [holaBotonTexto, setHolaBotonTexto] = useState("Iniciar Sesión");
 
   const toggleLogin = () => {
     setShowLogin(!showLogin);
   };
 
   const closeLogin = () => {
-    setShowLogin(false);
+ 
+    setShowLogin(false);  
+  
   };
 
   const goToHome = () => {
-    navigate('/');
+    navigate("/");
   };
 
   const handleMouseEnter = () => {
-    setBotonTexto('¡Nos Vemos!');
+    setBotonTexto("¡Nos Vemos!");
   };
 
   const handleMouseLeave = () => {
-    setBotonTexto('Cerrar Sesión');
+    setBotonTexto("Cerrar Sesión");
+
   };
 
   const handleMouseEnterHola = () => {
-    setHolaBotonTexto('¡Hola De Nuevo!');
+    setHolaBotonTexto("¡Hola De Nuevo!");
   };
 
   const handleMouseLeaveHola = () => {
-    setHolaBotonTexto('Iniciar Sesión');
+    setHolaBotonTexto("Iniciar Sesión");
   };
 
   useEffect(() => {
@@ -63,7 +65,7 @@ export function MyNavbar() {
       <div className="container-fluid diego">
         <NavLink to="/">
           <img
-            src='/public/imágenes/sinapsisFondoOscuro2.png'
+            src="/public/imágenes/sinapsisFondoOscuro2.png"
             alt="Logo"
             className="navbar-logo"
           />
@@ -83,11 +85,6 @@ export function MyNavbar() {
               <li className="nav-item">
                 <NavLink className="nav-link" to="/cursosGen">
                   Cursos
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/foro">
-                  Foro
                 </NavLink>
               </li>
               <li className="nav-item">
@@ -112,19 +109,15 @@ export function MyNavbar() {
                       Admin. Cursos
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/administrar-foro">
-                      Admin. Foro
-                    </NavLink>
-                  </li>
                 </>
               )}
               <li className="nav-item">
                 <button
                   className="nav-link inicioSesion"
                   onClick={() => {
-                    handleLogout();
                     goToHome();
+                    handleLogout();
+                  
                   }}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
@@ -150,8 +143,6 @@ export function MyNavbar() {
                   {holaBotonTexto}
                 </button>
               </li>
-
-              
             </>
           )}
         </ul>

@@ -14,8 +14,8 @@
 }
 
 
-.row.imagenLoginLuis{
-    background-image: url('/imágenes/BannerPerfil.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+.imagenLoginLuis{
+    background-image: url('./resources/imagen-login.jpeg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir completamente el contenedor */
     background-position: center; /* Centra la imagen en el contenedor */
     background-attachment: fixed; /* Hace que la imagen de fondo esté fija */
@@ -25,8 +25,9 @@
     justify-content: center;
     color: rgb(22, 22, 22); /* Puedes cambiar el color del texto para que sea legible en la imagen */
     font-size: 24px;
-
+    
 }
+
 
 
 

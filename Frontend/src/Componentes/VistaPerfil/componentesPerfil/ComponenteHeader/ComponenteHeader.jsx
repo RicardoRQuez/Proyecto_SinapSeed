@@ -1,19 +1,12 @@
-import React from 'react';
-import './ComponenteJEDER.css'
-/**
- * Componente React que muestra el encabezado del perfil de usuario.
- * 
- * @param {string} nombreUsuario - Nombre del usuario para mostrar en el encabezado.
- * @returns {JSX.Element} Elemento JSX que representa el encabezado del perfil.
- */
-
-export const ComponenteHeader = ({nombreUsuario}) => {
+export const ComponenteHeader = ({ nombreUsuario }) => {
   const nombreMayusculas = nombreUsuario.toUpperCase();
+
   return (
-    <header className="row headerLuisPerfil">
+    <header className="headerLuisPerfil">
       <h1 className="tituloPerfil">
-        ¡ BIENVENIDO A TU PERFIL <span className="nombrePerfil">{nombreMayusculas}</span> !
+        ¡BIENVENIDO A TU PERFIL <span className="nombrePerfil">{nombreMayusculas}</span>!
       </h1>
     </header>
   );
 };
+
