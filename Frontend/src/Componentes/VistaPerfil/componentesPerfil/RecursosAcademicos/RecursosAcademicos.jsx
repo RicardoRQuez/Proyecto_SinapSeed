@@ -1,14 +1,5 @@
 import React from "react";
 import "./RecursosAcademicos.css";
-import { Link } from 'react-router-dom';
-
-/**
- * Componente React que muestra los recursos académicos de un usuario.
- * Permite visualizar información sobre cursos, bootcamps, clases, seminarios,
- * certificados y compras relacionadas con la educación.
- *
- * @returns {JSX.Element} Elemento JSX que representa la sección de recursos académicos.
- */
 
 export const RecursosAcademicos = () => {
   return (
@@ -60,11 +51,12 @@ export const RecursosAcademicos = () => {
           <button type="button" className="btn botonLuisPerfil">
             Mis Certificados
           </button>
-          <Link to="/ShoppingCart" className="btn botonLuisPerfil">
+          <button type="button" className="btn botonLuisPerfil">
             Mis compras
-          </Link>
+          </button>
         </div>
       </section>
     </>
   );
 };
+
