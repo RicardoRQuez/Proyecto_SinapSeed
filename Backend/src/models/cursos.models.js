@@ -30,6 +30,11 @@ const cursoSchema = new mongoose.Schema({
     type:String,
     require : true,
     trim: true,
+  },
+  horario :{
+    type:String,
+    require : true,
+    trim: true,
   }
 
 },{

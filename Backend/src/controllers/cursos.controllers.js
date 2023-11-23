@@ -4,7 +4,7 @@ import multer from 'multer';
 export const uploadImagen = multer().single('imagen'); // Middleware para manejar la carga de imágenes
 
 export const createCurso = async (req, res) => {
-  const { titulo, descripcion, resumen, precio, puntaje } = req.body;
+  const { titulo, descripcion, resumen, precio, puntaje, horario } = req.body;
   const imagen = req.file ? req.file.buffer : undefined;
   
   try {
@@ -13,7 +13,9 @@ export const createCurso = async (req, res) => {
         descripcion, 
         resumen,
         precio,
-        puntaje
+        puntaje,
+        imagen,
+        horario
     });
 
     res.status(201).json({ message: "Curso creado correctamente" });
