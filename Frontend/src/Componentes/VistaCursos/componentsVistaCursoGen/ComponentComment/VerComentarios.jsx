@@ -159,7 +159,6 @@ export const VerComentarios = ({ comentario }) => {
     const urlCreator = window.URL || window.webkitURL;
     return urlCreator.createObjectURL(blob);
   };
-
   return (
     <div className="comments-container">
       <Container>
@@ -175,9 +174,9 @@ export const VerComentarios = ({ comentario }) => {
                 <Card.Body className={styles.bordeComentario}>
                   {usuarioActual && usuarioActual.imagen && (
                     <img
-                      src={bufferToDataURL(usuarioActual.imagen, "image/jpeg")}
+                      src={bufferToDataURL(comment.imagen, "image/jpeg")}
                       className={styles.avatar}
-                      alt="Avatar"
+                      alt="Usuario sin imagen"
                       width="70px"
                       height="70px"
                     />

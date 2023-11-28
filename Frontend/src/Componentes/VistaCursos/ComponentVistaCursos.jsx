@@ -31,14 +31,14 @@ export const CursoComponent = ({titulo, resumen, descripcion, imagen, precio, pu
           </Card>
             <div className="col mt-3">
             <ListGroup>
-            <ListGroup.Item className={styles.tituloPrecio}><span className={styles.precio}>Precio:</span> {precio}</ListGroup.Item>
+            <ListGroup.Item className={`${styles.tituloPrecio} ${styles.espaciadoPrecio}`}><span className={styles.precio}>Precio:</span> {precio}</ListGroup.Item>
             </ListGroup>
             </div>
           </div>
         </div>
         <div className="col-1"></div>
         <div className="col-5 mt-5">
-        <Card.Img variant="top" src={imagen}   className={`${styles.imagenCursos}`}/>
+        <Card.Img variant="top" src={imagen}   className={`${styles.imagenCursos} ${styles.espaciadoPrecio}`}/>
           <div className="row mt-3 text-center">
             {" "}
             {/* Primera fila */}
@@ -47,14 +47,7 @@ export const CursoComponent = ({titulo, resumen, descripcion, imagen, precio, pu
     </ListGroup>
           </div>
           
-          <div className="row mt-3">
-            {" "}
-            {/* Segunda fila */}
-           <Card className={styles.linkForo}>
-             Quieres ingresar al foro con el detalle de los usuarios de esta
-              puntuación? <a href="/foro">Pincha Acá</a>
-              </Card>
-          </div>
+          
         </div>
       </div>
       <br />

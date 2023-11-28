@@ -106,11 +106,12 @@ padding: 15px; /* Ajusta el padding según sea necesario */
   font-weight: 700;
   line-height: normal;
   font-family: 'Arial', sans-serif;
+  margin-top: 15px;
   }
 
   .imagenCursos{
-   width: 300px; 
-   height: 300px;
+   width: auto; 
+   height: 200px;
    margin-left: 150px;  
 
   }
@@ -119,4 +120,9 @@ padding: 15px; /* Ajusta el padding según sea necesario */
     font-size: bold;
     color: #000;
 
+  }
+  
+  
+  .margenDerechoImagen {
+    margin-right: 50px; 
   }

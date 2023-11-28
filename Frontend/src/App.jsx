@@ -43,7 +43,6 @@ export function App() {
           <Route path="/cursosGen" element={<VistaCursoGen />} />
           <Route path="/noticias" element={<VistaNoticias />} />
           <Route path="/cursos/:id" element={<VistaCursos />} />
-          <Route path="/foro" element={<VistaForo />} />
           <Route path="/perfil" element={<VistaPerfil  />} />
           <Route path="/administrar-usuarios" element={<AdminUser />} />
 

@@ -10,6 +10,8 @@ export const Comentario = ({
   nombreUsario,
   cursoId,
   usuarioActualId,
+  imagenUsuarioCrearComentario,
+  
 }) => {
   const [comments, setComments] = useState("");
   const [commentText, setCommentText] = useState("");
@@ -18,15 +20,21 @@ export const Comentario = ({
     try {
       console.log("antes del key", cursoId);
       const consultaCookie = Cookies.get("token");
+      const formData = new FormData();
+      formData.append("comentario", comments);
+      formData.append("imagen", new Blob([new Uint8Array(imagenUsuarioCrearComentario.data)], { type: "image/jpeg" }));
+      
       const response = await axios.post(
         `http://localhost:3000/api/v1/comment/${cursoId}/${usuarioActualId}`, // Reemplaza la URL con tu endpoint
+        formData,  // Enviar directamente formData como cuerpo de la solicitud
         {
-          comentario: comments,
-        },
-        {
-          headers: { token: consultaCookie },
+          headers: {
+            token: consultaCookie,
+            'Content-Type': 'multipart/form-data',  // Es importante establecer el tipo de contenido correcto
+          },
         }
       );
+      
 
       console.log("Respuesta del servidor:", response.data);
   
@@ -37,7 +45,7 @@ export const Comentario = ({
       console.error("Error al crear el comentario:", error);
     }
   };
-
+  console.log(imagenUsuarioCrearComentario)
   return (
     <>
       <Container>

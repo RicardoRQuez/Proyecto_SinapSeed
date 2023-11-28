@@ -73,7 +73,6 @@ export const VistaCursos = () => {
     const urlCreator = window.URL || window.webkitURL;
     return urlCreator.createObjectURL(blob);
   };
-  console.log('curso Actual return',curso)
   return (
     <>
       <CursoComponent
@@ -88,6 +87,7 @@ export const VistaCursos = () => {
       <Comentario
       cursoId={curso._id}
       imagenUsuario={bufferToDataURL(usuarioActual.imagen, 'image/jpeg')}
+      imagenUsuarioCrearComentario={usuarioActual.imagen}
       nombreUsario={usuarioActual.nombre}
       usuarioActualId={usuarioActual._id}
       />
