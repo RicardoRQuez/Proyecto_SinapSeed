@@ -1,10 +1,10 @@
 import express from 'express';
-import { createComment, findAllComment, updateCommentById, deleteCommentById } from '../controllers/foro.controllers.js';
+import { uploadImagen, createComment, findAllComment, updateCommentById, deleteCommentById } from '../controllers/foro.controllers.js';
 import { verifyToken } from '../middleware/verifyToken.js';
 
 const router = express.Router();
 
-router.post('/comment/:courseId/:userId', verifyToken,createComment);
+router.post('/comment/:courseId/:userId', verifyToken, uploadImagen, createComment);
 router.get('/comment', findAllComment);
 router.put('/comment/:id', updateCommentById);
 router.delete('/comment/:id', deleteCommentById);

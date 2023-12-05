@@ -15,7 +15,10 @@ const commentSchema = new mongoose.Schema({
     required:true,
     trim:true 
   },
-
+  imagen: {
+    type: Buffer,
+  },
+  
 },{
   timestamps:true,
 });

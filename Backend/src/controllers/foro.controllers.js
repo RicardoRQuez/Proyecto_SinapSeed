@@ -1,10 +1,14 @@
 import Comment from "../models/foro.models.js";
 import User from "../models/users.models.js";
+import multer from 'multer';
+
+export const uploadImagen = multer().single('imagen'); // Middleware para manejar la carga de imágenes
 
 // controlador para comentarios
 export const createComment = async (req, res) => {
   const { courseId, userId, userName } = req.params;
   const { comentario } = req.body;
+  const imagen = req.file ? req.file.buffer : undefined;
 
   try {
     // Utilizar el método create para crear y guardar el comentario
@@ -12,6 +16,7 @@ export const createComment = async (req, res) => {
       courseId,
       userId,
       comentario,
+      imagen,
     });
 
     res.status(201).json(savedComment);
