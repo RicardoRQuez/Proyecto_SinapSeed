@@ -7,10 +7,11 @@ export const Calendario = () => {
   
   return (
     <>
-    <a href="https://101.nerdear.la/es/" target="_blank">
+    <header className='tituloNerderla'> Evento del 10 al 11 de abril <span className='rosadito'>¡No te lo pierdas! </span> </header>
+
+    <a href="https://congreso.america-digital.com/" target="_blank">
     <div className="calendario container" id="particles-container">
 
-<header className='tituloNerderla'> Evento del 22 al 24 de noviembre <span className='rosadito'>¡No te lo pierdas! </span> </header>
    
           
     </div>

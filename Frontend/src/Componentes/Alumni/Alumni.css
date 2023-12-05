@@ -23,8 +23,9 @@ text-align: center;
 }
 
 .img-fluid.maclovin{
-width: 18rem;
+height: 20rem;
     border-radius: 15px;
+    margin-top: 20px;
 }
 
 
@@ -33,7 +34,6 @@ width: 18rem;
     margin-top: 30px;
 }
 
-.marginTopRow{
-
-    margin-top: 8rem;
-}
+.marginTopRow {
+    margin-top: 200px; /* O el valor que desees */
+  }

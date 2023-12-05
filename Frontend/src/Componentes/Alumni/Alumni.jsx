@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Alumni.css";
+
 export function AlumniJSX() {
   return (
     <>
@@ -12,7 +13,7 @@ export function AlumniJSX() {
       <Container fluid className="contenedorTabla">
         <Row className="marginTopRow">
           <Col>
-            <h2 className="titulinios"> Egresado en Seguridad Cibernética</h2>
+            <h2 className="titulinios">Diego McLovin Egresado en Seguridad Cibernética</h2>
             <p>
               Mi viaje en el mundo de la Tecnología de la Información se disparó
               después de tomar los cursos de Seguridad Cibernética. Antes me
@@ -39,7 +40,7 @@ export function AlumniJSX() {
             <img
               src="public\imágenes\mujer1.jpg"
               alt="imagen"
-              className="img-fluid Maclovin"
+              className="img-fluid maclovin"
             />
           </Col>
           <Col>
@@ -75,7 +76,7 @@ export function AlumniJSX() {
             <img
               src="public\imágenes\mujer2.jpg"
               alt="imagen"
-              className="img-fluid Maclovin"
+              className="img-fluid maclovin"
             />
             <p> Javier Rodríguez</p>
           </Col>

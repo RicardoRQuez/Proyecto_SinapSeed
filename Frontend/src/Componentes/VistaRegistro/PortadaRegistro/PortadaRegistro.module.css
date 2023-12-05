@@ -28,4 +28,19 @@
   color: #f088eb;
 }
 
+.bannerRegistro{
+  background-image: url("../../../../public/imágenes/RegistroImagenArriba.png");
+  background-size: cover;
+ flex-direction: column;
+ display:flex;
+ height:40vh;
+ width: 100vw;
 
+}
+.tituloRegistro{
+  color:#facaf7f4; 
+  font-weight: 700;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 120px;
+}

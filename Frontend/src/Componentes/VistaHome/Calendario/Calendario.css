@@ -2,20 +2,20 @@
 
  
  
-    height: 18rem;
+    height: 20rem;
     border-radius: 1rem;
-    background-image: url(/imágenes/evento2.png);
+    background-image: url(/imágenes/americaDigital.png);
     background-size: 100% auto;
 
    
   background-position: center; /* Centra la imagen */
-width: 95%;
+width: 80%;
     
     }
 
 .tituloNerderla{
-
-    color: #f7f3f3;
+margin: 1rem;
+    color: #190427;
     font-size: 2.8rem;
 text-align: center;
 font-weight: 600;

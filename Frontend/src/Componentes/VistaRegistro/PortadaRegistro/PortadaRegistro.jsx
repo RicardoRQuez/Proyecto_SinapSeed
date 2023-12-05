@@ -3,16 +3,21 @@ import styles from "./PortadaRegistro.module.css";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { FormularioRegistro } from "../FormularioRegistro/FormularioRegistro.jsx";
-import image from '../../../assets/resources/fondo_Registro.jpg';
+
 
 export const PortadaRegistro = () => {
   return (
+<> 
+
+    <div className={styles.bannerRegistro}>
+        <h1 className={styles.tituloRegistro}>Registro</h1>
+      </div>
     <div className={`${styles.portadaRegistro} d-flex flex-column ninio`}>
-      <img src={image} />
+
       <Row className="container-fluid texto-principal">
         <Col lg={1}></Col>
         <Col lg={5}>
-          <h1 className={styles.Color}>¡Registrate!</h1>
+          <h1 className={styles.Color}>¡Bienvenido!</h1>
         </Col>
         <Col lg={5}>
           <p className={styles.parrafoPortadaRegistro}>
@@ -30,5 +35,6 @@ export const PortadaRegistro = () => {
         
       </Row>
     </div>
+    </>
   );
 };
