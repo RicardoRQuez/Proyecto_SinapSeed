@@ -1,57 +1,56 @@
 
 
-.imagenPerfil {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    width: 200px;
-    height: 180px;
-    max-width: 100%;
-    border-radius: 50px;
-    margin-right: 15rem;
-  }
+.imagenPerfil{
+  margin-top: 10px;
 
-.subtituloDatosPersonales{
-    font-size: 1.5rem;
-    padding-top: 0px;
-    margin-top: 10px;
-    margin-bottom: 0px;
+  margin-bottom: 20px;
+  width: 10rem;
+  height:10rem; 
+
+  border-radius: 50px;
 }
 
-.botonComponenteInfo{
-    background-color: #f088eb;
-    color: white;
-    font-family: robotob;
-    margin-left: 270px;
+.subtituloDatosPersonales{
+  font-size: 1.5rem;
+  padding-top: 0px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.btn.botonComponenteInfo{
+  background-color: #f088eb;
+  color: white;
+  font-family: robotob;
+  margin-left: 270px;
 }
 
 .password-toggleLuisPerfil {
-    left: 80%;
-    top: 70%;
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-image: url('../../../../assets/resources/ojon.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    cursor: pointer;
-  }
+  left: 80%;
+  top: 70%;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-image: url('../../../../assets/resources/ojon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
 
-  .subtituloChiqui{
-    font-size: 1.1rem;
-    color: #f088eb;
-    font-family: robotob;
-    margin-left: 5px;
-  }
+.subtituloChiqui{
+  font-size: 1.1rem;
+  color: #f088eb;
+  font-family: robotob;
+  margin-left: 5px;
+}
+.columnaImagen{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .centrarImagen {
-    display: flex;
-    justify-content: center; /* Alinea horizontalmente */
-    align-items: center; /* Alinea verticalmente */
-  }
+.containercomponenteINFO{
 
-  .containercomponenteINFO{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -1,6 +1,6 @@
 /* Estilos para el contenedor principal de la caja PrincipalBox */
 
-.containerprincipalBox {
+.row.containerprincipalBox {
     background-color: white;
     border: 5px solid #F7F7F7;
     border-radius: 20px;
