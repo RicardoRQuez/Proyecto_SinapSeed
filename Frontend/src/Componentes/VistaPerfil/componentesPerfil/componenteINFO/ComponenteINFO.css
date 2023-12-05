@@ -42,15 +42,12 @@
   font-family: robotob;
   margin-left: 5px;
 }
-.columnaImagen{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .containercomponenteINFO{
 
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+
 }

@@ -24,7 +24,7 @@ import { VistaError } from "./Componentes/VistaError/VistaError.jsx";
 import { ShoppingCart } from "./Componentes/ShoppingCart/ShoppingCart.jsx";
 import {AlumniJSX} from "./Componentes/Alumni/Alumni.jsx"
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import ScrollToTop from './ScrollToTop';
 
 export function App() {
   const { showLogin } = useAuth();
@@ -32,6 +32,7 @@ export function App() {
   return (
     <Router >
       <AuthProvider>
+      <ScrollToTop />
         <MyNavbar/>
 
         {showLogin && <VistaLogin />}

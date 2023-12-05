@@ -7,6 +7,9 @@
     font-size: 18px;
     font-weight: 500;
     border: 5px solid #35023b;
+ width: 95%;
+ margin-left: auto;
+ margin-right: auto;
 }
 
 .tituloEquipoSinapSeed{
@@ -19,13 +22,3 @@
     margin: 30px;
 }
 
-.cajitaFotoss{
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center; 
-    color: #300a2e;
-    font-size: 18px;
-    
-}

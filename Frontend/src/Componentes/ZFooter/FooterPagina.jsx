@@ -27,35 +27,21 @@ export const Footer = () => {
             <FontAwesomeIcon icon={faTwitter} />
           </a>
 
-          {/* Google */}
-          <a
-            className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark"
-          >
-            <FontAwesomeIcon icon={faGoogle} />
-          </a>
+      
 
           {/* Instagram */}
           <a
             className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
+            href="https://www.instagram.com/sinapseed_/?hl=es-la"
             role="button"
             data-mdb-ripple-color="dark"
+            target="_blank" 
+        
           >
             <FontAwesomeIcon icon={faInstagram} />
           </a>
 
-          {/* Linkedin */}
-          <a
-            className="btn btn-link btn-floating btn-lg text-dark m-1"
-            href="#!"
-            role="button"
-            data-mdb-ripple-color="dark"
-          >
-            <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>
+   
 
           {/* Github */}
           <a
@@ -70,12 +56,11 @@ export const Footer = () => {
       </div>
 
       <div className="text-center text-dark p-3" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        
-        <a className="text-dark" href="/">
+     
+        <a className="text-dark" href="https://www.instagram.com/enjulandia/">
         © 2023 SinapSeed
         </a>
       </div>
     </footer>
   );
 };
-

@@ -7,7 +7,7 @@ export const FormatoCuadro = ({imagenes, numeros, textos}) => {
   return (
     <> 
 
-<img className='fotografia' src={imagenes} alt="" />
+<img className='fotografia img-fluid' src={imagenes} alt="" />
 <strong>{numeros}</strong>
 <div>{textos}</div>
 

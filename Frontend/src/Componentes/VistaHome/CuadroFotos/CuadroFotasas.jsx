@@ -5,11 +5,11 @@ import { FormatoCuadro } from "./FormatoCuadroFotos.jsx";
 export const EquipoSinapSeed = () => {
   return (
     <>
-      <div className="cajitaFotos container-fluid">
+      <div className="cajitaFotos">
         <h2 className="tituloEquipoSinapSeed">EQUIPO SINAPSEED</h2>
 
         <div className="row justify-content-between">
-          <div className="col-2 col-md-1">
+          <div className="col">
             <a
               href="https://www.linkedin.com/in/diego-mart%C3%ADnez-lienlaf-45b4a2295/"
               target="_blank"
@@ -22,7 +22,7 @@ export const EquipoSinapSeed = () => {
               />
             </a>
           </div>
-          <div className="col-2 col-md-1">
+          <div className="col">
             <a
               href="https://www.linkedin.com/in/ivana-castillo1/"
               target="_blank"
@@ -35,7 +35,7 @@ export const EquipoSinapSeed = () => {
               />
             </a>
           </div>
-          <div className="col-2 col-md-1">
+          <div className="col">
             <a
               href="https://www.linkedin.com/in/sabrina-silva-rodr%C3%ADguez-4b407b112/"
               target="_blank"
@@ -48,7 +48,7 @@ export const EquipoSinapSeed = () => {
               />
             </a>
           </div>
-          <div className="col-2 col-md-1">
+          <div className="col">
             <a
               href="https://www.linkedin.com/in/ricardo-rodriguez-quezada-b8948b27b/"
               target="_blank"
@@ -61,7 +61,7 @@ export const EquipoSinapSeed = () => {
               />
             </a>
           </div>
-          <div className="col-2 col-md-1">
+          <div className="col">
             <a
               href="https://www.linkedin.com/in/luisdiazcaroca/"
               target="_blank"
@@ -74,7 +74,7 @@ export const EquipoSinapSeed = () => {
               />
             </a>
           </div>
-          <div className="col-2 col-md-1">
+          <div className="col">
             <a
               href="https://www.linkedin.com/in/catalina-galaz-garrido/"
               target="_blank"
@@ -87,7 +87,7 @@ export const EquipoSinapSeed = () => {
               />
             </a>
           </div>
-          <div className="col-2 col-md-1">
+          <div className="col">
             <a
               href="https://www.linkedin.com/in/luis-montero-dev/"
               target="_blank"

@@ -22,7 +22,7 @@ margin-top:40px;
   font-weight: 400;
   border-radius: 5px;
   display: inline-flex;
-  width: 50px;
+  width: 90px;
   text-decoration: none;
   align-items: center; /* Centra verticalmente */
   justify-content: center; /* Centra horizontalmente */
@@ -37,7 +37,7 @@ margin-top:40px;
   border-radius: 5px;
   border: 6px solid rgb(247, 73, 50);
   text-decoration: none; /* Elimina el subrayado */
-  width: 70px;
+  width: 90px;
 
 
 }

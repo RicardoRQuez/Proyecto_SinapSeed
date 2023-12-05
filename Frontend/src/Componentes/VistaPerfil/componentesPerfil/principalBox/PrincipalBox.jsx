@@ -7,9 +7,9 @@ export const PrincipalBox = () => {
     <>
       <main className=" row containerprincipalBox">
         
-        <section className="col-12">
+   
           <ComponenteINFO />
-        </section>
+     
       </main>
     </>
   );
