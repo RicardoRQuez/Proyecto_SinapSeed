@@ -25,8 +25,8 @@ export const Comentario = ({
       formData.append("imagen", new Blob([new Uint8Array(imagenUsuarioCrearComentario.data)], { type: "image/jpeg" }));
       
       const response = await axios.post(
-        `http://localhost:3000/api/v1/comment/${cursoId}/${usuarioActualId}`, // Reemplaza la URL con tu endpoint
-        formData,  // Enviar directamente formData como cuerpo de la solicitud
+        `http://localhost:3000/api/v1/comment/${cursoId}/${usuarioActualId}`,
+        formData,  
         {
           headers: {
             token: consultaCookie,
@@ -45,7 +45,6 @@ export const Comentario = ({
       console.error("Error al crear el comentario:", error);
     }
   };
-  console.log(imagenUsuarioCrearComentario)
   return (
     <>
       <Container>
